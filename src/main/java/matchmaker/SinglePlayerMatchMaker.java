@@ -2,6 +2,8 @@ package matchmaker;
 
 import model.GameSession;
 import model.Player;
+import model.SessionIsFullException;
+import model.SingleGameSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -30,9 +32,15 @@ public class SinglePlayerMatchMaker implements MatchMaker {
   public void joinGame(@NotNull Player player) {
     GameSession newGameSession = createNewGame();
     activeGameSessions.add(newGameSession);
-    newGameSession.join(player);
-    if (log.isInfoEnabled()) {
-      log.info(player + " joined " + newGameSession);
+    try {
+      newGameSession.join(player);
+      if (log.isInfoEnabled()) {
+        log.info(player + " joined " + newGameSession);
+      }
+    } catch (SessionIsFullException e){
+      if (log.isInfoEnabled()) {
+        log.info("Session " + newGameSession + " is full");
+      }
     }
   }
 
@@ -49,6 +57,6 @@ public class SinglePlayerMatchMaker implements MatchMaker {
    */
   @NotNull
   private GameSession createNewGame() {
-    throw new NotImplementedException();//Implement it!
+    return new SingleGameSession();
   }
 }

@@ -1,5 +1,6 @@
 package model;
 
+import model.gameObjects.PlayerBall;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -11,29 +12,36 @@ import org.jetbrains.annotations.NotNull;
  * @author Alpi
  */
 public class Player {
-  @NotNull
-  private static final Logger log = LogManager.getLogger(Player.class);
-  @NotNull
-  private String name;
+    @NotNull
+    private static final Logger log = LogManager.getLogger(Player.class);
+    @NotNull
+    private String name;
 
-  //TODO maybe we need something else here?
+    public final long id;
 
   /**
    * Create new Player
    *
    * @param name        visible name
    */
-  public Player(@NotNull String name) {
+  public Player(@NotNull String name, long id) {
     this.name = name;
+    this.id = id;
     if (log.isInfoEnabled()) {
       log.info(toString() + " created");
     }
   }
 
-  @Override
+    @NotNull
+    public String getName() {
+        return name;
+    }
+
+    @Override
   public String toString() {
     return "Player{" +
         "name='" + name + '\'' +
+        "id='" + id + '\'' +
         '}';
   }
 }

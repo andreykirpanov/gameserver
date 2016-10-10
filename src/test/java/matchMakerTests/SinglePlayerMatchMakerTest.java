@@ -15,7 +15,7 @@ public class SinglePlayerMatchMakerTest {
   @Test
   public void testSinglePlayerGameSessionCreated() {
     MatchMaker singlePlayerMatchMaker = new SinglePlayerMatchMaker();
-    Player player = new Player("Arkady");
+    Player player = new Player("Arkady", 1);
     singlePlayerMatchMaker.joinGame(player);
 
     Assert.assertEquals(1, singlePlayerMatchMaker.getActiveGameSessions().size());
