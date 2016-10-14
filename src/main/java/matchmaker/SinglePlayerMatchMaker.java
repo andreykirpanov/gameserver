@@ -22,24 +22,31 @@ public class SinglePlayerMatchMaker implements MatchMaker {
   private final Logger log = LogManager.getLogger(SinglePlayerMatchMaker.class);
   @NotNull
   private final List<GameSession> activeGameSessions = new ArrayList<>();
+  @NotNull
+  private GameSession currentGameSession;
+
+  public SinglePlayerMatchMaker(){
+    GameSession currentGameSession = createNewGame();
+    activeGameSessions.add(currentGameSession);
+  }
 
   /**
    * Creates new GameSession for single player
    *
    * @param player single player
    */
+
+  //Попытка подключить игрока к игровой сессии, выбрасывается SessionIsFullException если сессия переполнена
   @Override
   public void joinGame(@NotNull Player player) {
-    GameSession newGameSession = createNewGame();
-    activeGameSessions.add(newGameSession);
     try {
-      newGameSession.join(player);
+      currentGameSession.join(player);
       if (log.isInfoEnabled()) {
-        log.info(player + " joined " + newGameSession);
+        log.info(player + " joined " + currentGameSession);
       }
     } catch (SessionIsFullException e){
       if (log.isInfoEnabled()) {
-        log.info("Session " + newGameSession + " is full");
+        log.info("Session " + currentGameSession + " is full");
       }
     }
   }
@@ -49,12 +56,7 @@ public class SinglePlayerMatchMaker implements MatchMaker {
     return new ArrayList<>(activeGameSessions);
   }
 
-  /**
-   * TODO HOMEWORK 1. Implement new game creation. Instantiate GameSession state
-   * Log every game instance creation
-   *
-   * @return new GameSession
-   */
+
   @NotNull
   private GameSession createNewGame() {
     return new SingleGameSession();

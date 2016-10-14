@@ -33,6 +33,8 @@ public class SingleGameSession implements GameSession {
         }
     }
 
+
+    //разбрасывает объекты SmallFood в случайных местах на карте
     private List<SmallFood> generateSmallFood(){
         List<SmallFood> result = new ArrayList<>();
         for(int i = 0; i < GameConstants.SMALL_FOOD_AMOUNT; i ++){

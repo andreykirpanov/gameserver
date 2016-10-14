@@ -8,6 +8,8 @@ import org.apache.logging.log4j.Logger;
 /**
  * Created by User on 10.10.2016.
  */
+
+//Игровая сущность, управляемая игроком
 public class PlayerBall {
 
     private final Logger log = LogManager.getLogger(SinglePlayerMatchMaker.class);

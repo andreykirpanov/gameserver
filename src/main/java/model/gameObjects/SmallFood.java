@@ -5,7 +5,12 @@ import model.Location;
 /**
  * Created by User on 10.10.2016.
  */
+
+//Небольшие кусочик еды, разбросанные по всей карте, которые маленькие игроки едят, чтобы немного подрасти
+
 public class SmallFood {
+
+
     public Location location;
     private int size;
 
