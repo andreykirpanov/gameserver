@@ -1,5 +1,7 @@
 package server.authInfo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -14,16 +16,25 @@ public class TokenUserStorage {
         tokenByUser = new ConcurrentHashMap<>();
     }
 
-    public void add(Token token, User user){
+    public static void add(Token token, User user){
         userByToken.put(token, user);
         tokenByUser.put(user, token);
     }
 
-    public User getUserByToken(Token token){
+    public static void delete(User user){
+        userByToken.remove(getTokenByUser(user));
+        tokenByUser.remove(user);
+    }
+
+    public static List<User> getUsers(){
+        return new ArrayList<>(userByToken.values());
+    }
+
+    public static User getUserByToken(Token token){
         return userByToken.get(token);
     }
 
-    public Token getTokenByUser(User user){
+    public static Token getTokenByUser(User user){
         return tokenByUser.get(user);
     }
 }

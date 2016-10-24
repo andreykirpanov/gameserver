@@ -1,11 +1,15 @@
 package server.authInfo;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 /**
  * Created by User on 20.10.2016.
  */
 public class User {
     private String login;
     private String password;
+    private static final ObjectMapper mapper = new ObjectMapper();
 
     public User(String login, String password) {
         this.login = login;
@@ -26,6 +30,10 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String writeJson() throws JsonProcessingException {
+        return mapper.writeValueAsString(this);
     }
 
     @Override
