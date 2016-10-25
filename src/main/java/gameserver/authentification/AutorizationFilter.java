@@ -2,6 +2,8 @@ package gameserver.authentification;
 
 import gameserver.authInfo.Token;
 import gameserver.authInfo.TokenUserStorage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.container.ContainerRequestContext;
@@ -18,6 +20,8 @@ import java.io.IOException;
 @Provider
 
 public class AutorizationFilter implements ContainerRequestFilter {
+
+    private static final Logger log = LogManager.getLogger(Authentification.class);
     @Override
     public void filter(ContainerRequestContext containerRequestContext) throws IOException {
         String authorizationHeader = containerRequestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
@@ -29,10 +33,11 @@ public class AutorizationFilter implements ContainerRequestFilter {
         String token = authorizationHeader.substring("Bearer".length()).trim();
 
         try {
-            Authentification.validateToken(token);
-            Authentification.setCurrentUser(TokenUserStorage.getUserByToken(
-                    Token.getTokenObjectByNumber(Long.parseLong(token))));
+            Authentification.validateToken(Token.getTokenObjectByString(token));
+            Authentification.setAutorizedUser(TokenUserStorage.getUserByToken(
+                    Token.getTokenObjectByString(token)));
         } catch (Exception e) {
+            log.info("Wrong token from user");
             containerRequestContext.abortWith(
                     Response.status(Response.Status.UNAUTHORIZED).build());
         }

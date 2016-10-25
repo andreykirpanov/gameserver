@@ -1,5 +1,6 @@
 package gameserver.authInfo;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,8 +12,8 @@ import java.util.List;
  */
 public class UsersJSON {
 
-    private static final ObjectMapper mapper = new ObjectMapper();
-    private List<User> users;
+    public static final ObjectMapper mapper = new ObjectMapper();
+    public List<User> users;
     static {
         mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
     }

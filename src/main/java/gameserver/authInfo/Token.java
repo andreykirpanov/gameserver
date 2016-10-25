@@ -2,6 +2,7 @@ package gameserver.authInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -32,22 +33,31 @@ public class Token {
         return ThreadLocalRandom.current().nextLong();
     }
 
-
-    public Long getToken() {
-        return number;
-    }
-
-    public static boolean isTokenExist(Long token){
-        return existingTokens.contains(token);
-    }
-
-    public static Token getTokenObjectByNumber(Long token){
+    public static Token getTokenObjectByString(String token){
+        Long longToken = Long.parseLong(token);
         for(Token curToken: existingTokenObjects){
-            if(curToken.number.equals(token) ){
+            if(curToken.number.equals(longToken) ){
                 return curToken;
             }
         }
         return null;
+    }
+
+    @Override
+    public boolean equals(Object other){
+        if(other == null){
+            return false;
+        }
+        if(other instanceof Token){
+            Token otherToken = (Token) other;
+            return this.number.equals(otherToken.number);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        return (number != null)? number.hashCode(): 0;
     }
 
     @Override

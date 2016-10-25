@@ -7,9 +7,11 @@ import gameserver.authInfo.TokenUserStorage;
 import gameserver.authInfo.User;
 import gameserver.authInfo.UsersJSON;
 
+import javax.jws.soap.SOAPBinding;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
+import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -26,9 +28,13 @@ public class Authentification {
         registeredUsers = new CopyOnWriteArrayList<>();
     }
 
-    public static void setCurrentUser(User user) {
+    public static void setAutorizedUser(User user) {
         autorizedUser = user;
     }
+
+    public static User getAutorizedUser(){return autorizedUser;}
+
+    public static List<User> getRegisteredUsers(){return registeredUsers;}
 
     @POST
     @Path("/register")
@@ -74,7 +80,7 @@ public class Authentification {
                 log.info("User '{}' already logged in.", currentUser);
             }
             log.info("User '{}' logged in.", currentUser);
-            return Response.ok(TokenUserStorage.getTokenByUser(currentUser).getToken()).build();
+            return Response.ok(TokenUserStorage.getTokenByUser(currentUser).toString()).build();
         } catch (Exception e){
             log.info("Error login user.");
             return Response.status(Response.Status.UNAUTHORIZED).build();
@@ -85,11 +91,11 @@ public class Authentification {
         return registeredUsers.contains(user);
     }
 
-    public static void validateToken(String token) throws Exception{
-        Long longToken = Long.parseLong(token);
-        if(Token.isTokenExist(longToken)){
-            log.info("Correct token from '{}'", longToken);
+    public static void validateToken(Token token) throws Exception{
+        if(TokenUserStorage.containsToken(token)){
+            log.info("Correct token from '{}'", TokenUserStorage.getUserByToken(token));
         } else{
+
             throw new Exception("Token validation exception");
         }
 
@@ -102,6 +108,7 @@ public class Authentification {
     public Response logout(){
         try{
             TokenUserStorage.delete(autorizedUser);
+            log.info("User '{}' logged out", autorizedUser);
             return Response.ok("User logged out").build();
         } catch(Exception e) {
             log.info("Error logout user.");
@@ -109,40 +116,7 @@ public class Authentification {
         }
     }
 
-    @Autorized
-    @POST
-    @Path("/profile/name")
-    @Consumes("application/x-www-form-urlencoded")
-    @Produces("text/plain")
-    public Response changeName(@FormParam("name")String newName){
-        try {
-            if (newName == null) {
-                return Response.status(Response.Status.BAD_REQUEST).build();
-            }
-            autorizedUser.setLogin(newName);
-            for(User user: registeredUsers){
-                if(user.equals(autorizedUser)){
-                    user.setLogin(newName);
-                }
-            }
-            log.info("User '{}' has new name", autorizedUser);
-            return Response.ok("Name changed").build();
-        } catch (Exception e){
-            log.info("Error name changing for '{}'", autorizedUser);
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
-    }
 
-    @POST
-    @Path("/data/users")
-    @Produces("application/json")
-    public Response getLoggedInUsersList(){
-        try{
-            log.info("Users JSON requested", autorizedUser);
-            return Response.ok((new UsersJSON(TokenUserStorage.getUsers())).writeJson()).build();
-        } catch (Exception e){
-            log.info("Error sending users info", autorizedUser);
-            return Response.status(Response.Status.BAD_REQUEST).build();
-    }
-    }
+
+
 }

@@ -41,4 +41,8 @@ public class TokenUserStorage {
     public static boolean containsUser(User user){
         return userByToken.values().contains(user);
     }
+
+    public static boolean containsToken(Token token){
+        return tokenByUser.values().contains(token);
+    }
 }
