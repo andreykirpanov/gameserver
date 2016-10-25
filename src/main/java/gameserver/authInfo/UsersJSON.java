@@ -1,4 +1,4 @@
-package server.authInfo;
+package gameserver.authInfo;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;

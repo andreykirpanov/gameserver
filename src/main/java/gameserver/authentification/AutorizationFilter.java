@@ -1,7 +1,7 @@
-package server.authentification;
+package gameserver.authentification;
 
-import server.authInfo.Token;
-import server.authInfo.TokenUserStorage;
+import gameserver.authInfo.Token;
+import gameserver.authInfo.TokenUserStorage;
 
 import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.container.ContainerRequestContext;

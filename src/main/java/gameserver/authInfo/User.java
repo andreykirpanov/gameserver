@@ -1,4 +1,4 @@
-package server.authInfo;
+package gameserver.authInfo;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,13 +41,16 @@ public class User {
         if(other == null){
             return false;
         }
-        if(!(other instanceof User)){
-            return false;
-        }
-        if(this.getLogin() == ((User) other).getLogin() && this.getPassword() == ((User) other).getPassword()){
-            return true;
+        if(other instanceof User){
+            User otherUser = (User) other;
+            return this.getLogin().equals(otherUser.getLogin()) && this.getPassword().equals(otherUser.getPassword());
         }
         return false;
+    }
+
+    @Override
+    public int hashCode(){
+        return ((login != null)? login.hashCode(): 0) + ((password != null)? password.hashCode(): 0);
     }
 
     @Override

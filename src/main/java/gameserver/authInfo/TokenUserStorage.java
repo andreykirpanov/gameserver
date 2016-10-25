@@ -1,4 +1,4 @@
-package server.authInfo;
+package gameserver.authInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,5 +36,9 @@ public class TokenUserStorage {
 
     public static Token getTokenByUser(User user){
         return tokenByUser.get(user);
+    }
+
+    public static boolean containsUser(User user){
+        return userByToken.values().contains(user);
     }
 }

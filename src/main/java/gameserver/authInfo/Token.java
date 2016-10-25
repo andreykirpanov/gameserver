@@ -1,4 +1,4 @@
-package server.authInfo;
+package gameserver.authInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ public class Token {
 
     static {
         existingTokens = new ArrayList<>();
+        existingTokenObjects = new ArrayList<>();
     }
 
     public Token(){
@@ -47,6 +48,11 @@ public class Token {
             }
         }
         return null;
+    }
+
+    @Override
+    public String toString(){
+        return number.toString();
     }
 
 }

@@ -1,4 +1,4 @@
-package server.authentification;
+package gameserver.authentification;
 
 import javax.ws.rs.NameBinding;
 import java.lang.annotation.ElementType;

@@ -1,10 +1,11 @@
-package server;
+package gameserver;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import gameserver.authentification.AutorizationFilter;
 
 /**
  * Created by User on 20.10.2016.
@@ -17,6 +18,7 @@ public class GameServer {
     private GameServer(){}
 
     public static void run(){
+
         Server gameServer = new Server(PORT);
 
         ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
@@ -30,7 +32,12 @@ public class GameServer {
 
         jerseyServlet.setInitParameter(
                 "jersey.config.server.provider.packages",
-                "ru.gameserver.gameserver.server"
+                "gameserver"
+        );
+
+        jerseyServlet.setInitParameter(
+                "com.sun.jersey.spi.container.ContainerRequestFilters",
+                AutorizationFilter.class.getCanonicalName()
         );
 
         try {
