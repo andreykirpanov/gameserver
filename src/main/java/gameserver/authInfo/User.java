@@ -3,6 +3,8 @@ package gameserver.authInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  * Created by User on 20.10.2016.
  */
@@ -34,6 +36,10 @@ public class User {
 
     public String writeJson() throws JsonProcessingException {
         return mapper.writeValueAsString(this);
+    }
+
+    private int generateId(){
+        return ThreadLocalRandom.current().nextInt();
     }
 
     @Override

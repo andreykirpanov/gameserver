@@ -1,5 +1,7 @@
 package gameserver.usersdata;
 
+import gameserver.authInfo.Token;
+import gameserver.authInfo.TokenUserStorage;
 import gameserver.authInfo.User;
 import gameserver.authentification.Authentification;
 import gameserver.authentification.Autorized;
@@ -8,6 +10,8 @@ import org.apache.logging.log4j.Logger;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+
+//10.3.13.96
 
 /**
  * Created by User on 25.10.2016.
@@ -26,13 +30,17 @@ public class NameChanger {
             if (newName == null) {
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
-            Authentification.getAutorizedUser().setLogin(newName);
+            User currentUser = Authentification.getAutorizedUser();
+            Token oldToken = TokenUserStorage.getTokenByUser(currentUser);
+            TokenUserStorage.delete(currentUser);
             for(User user: Authentification.getRegisteredUsers()){
-                if(user.equals(Authentification.getAutorizedUser())){
+                if(user.equals(currentUser)){
                     user.setLogin(newName);
                 }
             }
-            log.info("User '{}' has new name", Authentification.getAutorizedUser());
+            currentUser.setLogin(newName);
+            TokenUserStorage.add(oldToken,currentUser);
+            log.info("User '{}' has new name", currentUser);
             return Response.ok("Name changed").build();
         } catch (Exception e){
             log.info("Error name changing for '{}'", Authentification.getAutorizedUser());

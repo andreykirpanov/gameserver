@@ -112,7 +112,7 @@ public class Authentification {
             return Response.ok("User logged out").build();
         } catch(Exception e) {
             log.info("Error logout user.");
-            return Response.status(Response.Status.NO_CONTENT).build();
+            return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }
 
