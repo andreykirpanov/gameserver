@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * Created by User on 20.10.2016.
  */
 @Entity
-@Table(name="LoggedInUsers")
+@Table(name="logged_in_users")
 public class Token {
     @Id
     private Long number;

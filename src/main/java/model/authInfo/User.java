@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * Created by User on 20.10.2016.
  */
 @Entity
-@Table(name="USER_TABLE")
+@Table(name="user_table")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
