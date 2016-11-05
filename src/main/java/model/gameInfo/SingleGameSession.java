@@ -1,4 +1,4 @@
-package model;
+package model.gameInfo;
 
 import model.gameObjects.GameField;
 import model.gameObjects.PlayerBall;

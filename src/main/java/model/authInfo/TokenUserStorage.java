@@ -1,4 +1,4 @@
-package gameserver.authInfo;
+package model.authInfo;
 
 import java.util.ArrayList;
 import java.util.List;

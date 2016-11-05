@@ -2,12 +2,10 @@ package gameserver.authentification;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import gameserver.authInfo.Token;
-import gameserver.authInfo.TokenUserStorage;
-import gameserver.authInfo.User;
-import gameserver.authInfo.UsersJSON;
+import model.authInfo.Token;
+import model.authInfo.TokenUserStorage;
+import model.authInfo.User;
 
-import javax.jws.soap.SOAPBinding;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 

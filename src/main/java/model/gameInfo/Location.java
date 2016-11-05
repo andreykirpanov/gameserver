@@ -1,4 +1,4 @@
-package model;
+package model.gameInfo;
 
 /**
  * Created by User on 10.10.2016.

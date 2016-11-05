@@ -1,22 +1,28 @@
-package gameserver.authInfo;
+package model.authInfo;
 
+import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by User on 20.10.2016.
  */
+@Entity
+@Table(name="LoggedInUsers")
 public class Token {
-
+    @Id
     private Long number;
+
+    @Temporal(TemporalType.DATE)
+    private LocalDateTime issueDate;
+
+    @Transient
     private static List<Long> existingTokens;
-    private static List<Token> existingTokenObjects;
 
     static {
         existingTokens = new ArrayList<>();
-        existingTokenObjects = new ArrayList<>();
     }
 
     public Token(){
@@ -26,21 +32,11 @@ public class Token {
         } while(existingTokens.contains(generated));
         existingTokens.add(generated);
         number = generated;
-        existingTokenObjects.add(this);
+        issueDate = LocalDateTime.now();
     }
 
     private Long generateToken(){
         return ThreadLocalRandom.current().nextLong();
-    }
-
-    public static Token getTokenObjectByString(String token){
-        Long longToken = Long.parseLong(token);
-        for(Token curToken: existingTokenObjects){
-            if(curToken.number.equals(longToken) ){
-                return curToken;
-            }
-        }
-        return null;
     }
 
     @Override
@@ -64,5 +60,7 @@ public class Token {
     public String toString(){
         return number.toString();
     }
+
+    //TODO: get/set for date and token
 
 }

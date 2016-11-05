@@ -1,4 +1,4 @@
-package model;
+package model.gameInfo;
 
 import org.jetbrains.annotations.NotNull;
 
