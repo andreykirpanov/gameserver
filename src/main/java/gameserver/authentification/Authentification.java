@@ -43,7 +43,7 @@ public class Authentification {
             if (login == null || password == null) {
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
-            User currentUser = new User(login, password);
+            User currentUser = new User("a","a","a");
             if (registeredUsers.contains(currentUser)) {
                 log.info("User '{}' already exists", currentUser);
                 return Response.status(Response.Status.NOT_ACCEPTABLE).build();
@@ -67,7 +67,7 @@ public class Authentification {
             if (login == null || password == null) {
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
-            User currentUser = new User(login, password);
+            User currentUser = new User("a","a","a");
             if (!validatePassword(currentUser)) {
                 log.info("Wrong password for user {}", currentUser);
                 return Response.status(Response.Status.UNAUTHORIZED).build();

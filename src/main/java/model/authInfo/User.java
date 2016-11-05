@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -12,7 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * Created by User on 20.10.2016.
  */
 @Entity
-@Table(name="User")
+@Table(name="USER_TABLE")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,13 +23,16 @@ public class User {
     private String login;
     private String password;
 
-    @Temporal(TemporalType.DATE)
-    private LocalDateTime registrationDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date registrationDate;
 
+    @Column(nullable = true)
     private String email;
 
     @Transient
     private static final ObjectMapper mapper = new ObjectMapper();
+
+    private User(){}
 
     public User(String login, String password, String email) {
         this.login = login;
@@ -37,7 +42,7 @@ public class User {
         } else if(validateEmail(email)){
             this.email = email;
         }
-        registrationDate = LocalDateTime.now();
+        registrationDate = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
     }
 
     public String writeJson() throws JsonProcessingException {
@@ -55,7 +60,7 @@ public class User {
         }
         if(other instanceof User){
             User otherUser = (User) other;
-            return this.getLogin().equals(otherUser.getLogin()) && this.getPassword().equals(otherUser.getPassword());
+            return this.getLogin().equals(otherUser.getLogin()) && this.password.equals(otherUser.password);
         }
         return false;
     }
@@ -80,26 +85,19 @@ public class User {
         return login;
     }
 
-    public void setLogin(String name) {
+    public User setLogin(String name) {
         this.login= name;
-    }
-
-    private String getPassword() {
-        return password;
-    }
-
-    private void setPassword(String password) {
-        this.password = password;
+        return this;
     }
 
     public int getId(){return id;}
 
-    private void setId(int id){ this.id = id; }
+    public String getEmail(){return email;}
 
-    private LocalDateTime getRegistrationDate(){return registrationDate;}
+    public User setEmail(String email){
+        this.email = email;
+        return this;
+    }
 
-    private void setRegistrationDate(LocalDateTime date){this.registrationDate = date;}
-
-    //TODO: add get/set for email
-
+    public Date getRegistrationDate(){return registrationDate;}
 }

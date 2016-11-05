@@ -22,8 +22,8 @@
 
         <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
 
-        <mapping class="model.authInfo.User"/>
         <mapping class="model.authInfo.Token"/>
+        <mapping class="model.authInfo.User"/>
 
 
     </session-factory>

@@ -2,7 +2,9 @@ package model.authInfo;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -15,8 +17,8 @@ public class Token {
     @Id
     private Long number;
 
-    @Temporal(TemporalType.DATE)
-    private LocalDateTime issueDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date issueDate;
 
     @Transient
     private static List<Long> existingTokens;
@@ -32,7 +34,7 @@ public class Token {
         } while(existingTokens.contains(generated));
         existingTokens.add(generated);
         number = generated;
-        issueDate = LocalDateTime.now();
+        issueDate = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
     }
 
     private Long generateToken(){
@@ -58,7 +60,7 @@ public class Token {
 
     @Override
     public String toString(){
-        return number.toString();
+        return "Token{number=" + number.toString() + "issueDate=" + issueDate.toString();
     }
 
     //TODO: get/set for date and token
