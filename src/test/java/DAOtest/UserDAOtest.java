@@ -3,13 +3,20 @@ package DAOtest;
 import model.authDAO.UserDAO;
 import model.authInfo.User;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import javax.validation.constraints.AssertTrue;
 
 /**
  * Created by User on 05.11.2016.
  */
-public class UserDAOtest {
+public class UserDAOTest {
 
     UserDAO userDAO = new UserDAO();
+    User user =  new User("Andrew1","1234","a@m.ru");
 
     @Test
     public void testGetAll(){
@@ -18,9 +25,36 @@ public class UserDAOtest {
 
     @Test
     public void  insertTest(){
-        User user =  new User("Andrew1","1234","a@m.ru");
         userDAO.insert(user);
-        System.out.println(userDAO.getAll());
+        assertTrue(userDAO.getAll().contains(user));
+    }
+
+    @Test
+    public void deleteTest(){
+        userDAO.delete(user);
+        assertFalse(userDAO.getAll().contains(user));
+    }
+
+    @Test
+    public void getAllWhereTest(){
+        userDAO.insert(user);
+        assertEquals(userDAO.getAllWhere("login = \'" + user.getLogin() + "\'").get(0), user);
+        userDAO.delete(user);
+    }
+
+    @Test
+    public void getUserByIdTest(){
+        userDAO.insert(user);
+        int id = userDAO.getAllWhere("login = \'" + user.getLogin() + "\'").get(0).getId();
+        assertEquals(user, userDAO.getUserById(id));
+        userDAO.delete(user);
+    }
+
+    @Test
+    public void getUserIdTest(){
+        userDAO.insert(user);
+        assertNotEquals(0, userDAO.getUserId(user));
+        userDAO.delete(user);
     }
 
 }

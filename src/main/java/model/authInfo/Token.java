@@ -20,6 +20,8 @@ public class Token {
     @Temporal(TemporalType.TIMESTAMP)
     private Date issueDate;
 
+    private int userId;
+
     @Transient
     private static List<Long> existingTokens;
 
@@ -27,7 +29,9 @@ public class Token {
         existingTokens = new ArrayList<>();
     }
 
-    public Token(){
+    private Token(){}
+
+    public Token(int userId){
         Long generated;
         do{
             generated = generateToken();
@@ -35,6 +39,7 @@ public class Token {
         existingTokens.add(generated);
         number = generated;
         issueDate = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
+        this.userId = userId;
     }
 
     private Long generateToken(){
@@ -62,6 +67,12 @@ public class Token {
     public String toString(){
         return "Token{number=" + number.toString() + "issueDate=" + issueDate.toString();
     }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public Long getNumber(){return number;}
 
     //TODO: get/set for date and token
 

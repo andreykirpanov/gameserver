@@ -73,7 +73,7 @@ public class Authentification {
                 return Response.status(Response.Status.UNAUTHORIZED).build();
             }
             if(!TokenUserStorage.containsUser(currentUser)){
-                TokenUserStorage.add(new Token(), currentUser);
+                TokenUserStorage.add(new Token(1), currentUser);
             } else{
                 log.info("User '{}' already logged in.", currentUser);
             }

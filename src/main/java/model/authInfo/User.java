@@ -90,6 +90,8 @@ public class User {
         return this;
     }
 
+    public String getPassword(){return password;}
+
     public int getId(){return id;}
 
     public String getEmail(){return email;}

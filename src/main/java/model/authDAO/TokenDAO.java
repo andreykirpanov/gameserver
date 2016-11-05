@@ -1,7 +1,10 @@
 package model.authDAO;
 
+import jersey.repackaged.com.google.common.base.Joiner;
 import model.authInfo.Token;
+import model.authInfo.User;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,16 +18,25 @@ public class TokenDAO implements AuthDAO<Token> {
 
     @Override
     public List<Token> getAllWhere(String... hqlCondidtions) {
-        return null;
+        String fullCondition = Joiner.on(" and ").join(Arrays.asList(hqlCondidtions));
+        return DbConnection.selectTransaction("from Token where " + fullCondition);
     }
 
     @Override
-    public void insert(Token token) {
-        DbConnection.insertTransaction(token);
+    public boolean insert(Token token) {
+         return DbConnection.insertTransaction(token);
     }
 
     @Override
-    public void delete(Token token) {
+    public boolean delete(Token token) {
+        return DbConnection.deleteTransaction(token);
+    }
 
+    public boolean deleteByStringToken(String token){
+        return delete(getAllWhere("number = \'" + token + "\'").get(0));
+    }
+
+    public int getUserIdByStringToken(String token){
+        return getAllWhere("number = \'" + token + "\'").get(0).getUserId();
     }
 }

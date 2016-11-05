@@ -11,8 +11,8 @@ public interface AuthDAO<T> {
 
     List<T> getAllWhere(String ... hqlCondidtions);
 
-    void insert(T t);
+    boolean insert(T t);
 
-    void delete(T t);
+    boolean delete(T t);
 
 }

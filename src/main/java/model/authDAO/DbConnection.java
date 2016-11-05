@@ -1,11 +1,11 @@
 package model.authDAO;
 
+import model.authInfo.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.boot.model.relational.Database;
 import org.hibernate.cfg.Configuration;
 
 import java.util.Collections;
@@ -44,17 +44,35 @@ public class DbConnection {
         }
     }
 
-    public static <T> void insertTransaction(T t){
+    public static <T> boolean insertTransaction(T t){
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
             session.save(t);
             transaction.commit();
+            return true;
         }catch (Exception e){
             log.error("Transaction failed.", e);
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();
             }
+            return false;
+        }
+    }
+
+    public static <T> boolean deleteTransaction(T t){
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            session.delete(t);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            log.error("Transaction failed.", e);
+            if (transaction != null && transaction.isActive()) {
+                transaction.rollback();
+            }
+            return false;
         }
     }
 
