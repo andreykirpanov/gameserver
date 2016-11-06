@@ -41,4 +41,9 @@ public class UserDAO implements AuthDAO<User>  {
         return getAllWhere("login = \'" + user.getLogin() + "\'",
                 "password = \'" + user.getPassword() + "\'").get(0).getId();
     }
+
+    public User getUserByLoginData(String login, String password){
+        List<User> requestResult = getAllWhere("login = \'" + login + "\'", "password = \'" + password + "\'");
+        return requestResult.isEmpty() ? null : requestResult.get(0);
+    }
 }

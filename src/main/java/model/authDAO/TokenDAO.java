@@ -39,4 +39,14 @@ public class TokenDAO implements AuthDAO<Token> {
     public int getUserIdByStringToken(String token){
         return getAllWhere("number = \'" + token + "\'").get(0).getUserId();
     }
+
+    public Token getTokenByUserId(int id){
+        List<Token> requestResult = getAllWhere("userId = \'" + id + "\'");
+        return requestResult.isEmpty() ? null : requestResult.get(0);
+    }
+
+    public Token getTokenByStringToken(String stringToken){
+        List<Token> requestResult = getAllWhere("number = \'" + stringToken + "\'");
+        return requestResult.isEmpty() ? null : requestResult.get(0);
+    }
 }

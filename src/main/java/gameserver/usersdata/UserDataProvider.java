@@ -1,6 +1,5 @@
 package gameserver.usersdata;
 
-import model.authInfo.TokenUserStorage;
 import model.authInfo.UsersJSON;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +16,7 @@ import javax.ws.rs.core.Response;
 public class UserDataProvider {
     private static final Logger log = LogManager.getLogger(UserDataProvider.class);
 
-    @POST
+    /*@POST
     @Path("/users")
     @Produces("application/json")
     public Response getLoggedInUsersList(){
@@ -28,5 +27,5 @@ public class UserDataProvider {
             log.info("Error sending users info");
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-    }
+    }*/
 }

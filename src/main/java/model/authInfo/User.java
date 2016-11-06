@@ -3,6 +3,7 @@ package model.authInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -34,15 +35,20 @@ public class User {
 
     private User(){}
 
-    public User(String login, String password, String email) {
+    public User(String login, String password){
         this.login = login;
         this.password = password;
-        if(email == null){
-            this.email = "";
-        } else if(validateEmail(email)){
-            this.email = email;
-        }
         registrationDate = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
+        email = "";
+    }
+
+    public User(String login, String password, String email) {
+        this(login, password);
+        if(!email.isEmpty()){
+            if(validateEmail(email)){
+                this.email = email;
+            }
+        }
     }
 
     public String writeJson() throws JsonProcessingException {
@@ -72,7 +78,8 @@ public class User {
 
     @Override
     public String toString(){
-        return String.format("User{login=%s,password=%s}", login, password);
+        return String.format("User{id=%s,login=%s,registration_time=%s,email=%s}",
+                id, login, registrationDate, email);
     }
 
     private boolean validateEmail(String email){

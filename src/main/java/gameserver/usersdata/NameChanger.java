@@ -1,7 +1,6 @@
 package gameserver.usersdata;
 
 import model.authInfo.Token;
-import model.authInfo.TokenUserStorage;
 import model.authInfo.User;
 import gameserver.authentification.Authentification;
 import gameserver.authentification.Autorized;
@@ -20,7 +19,7 @@ import javax.ws.rs.core.Response;
 public class NameChanger {
     private static final Logger log = LogManager.getLogger(NameChanger.class);
 
-    @Autorized
+    /*@Autorized
     @POST
     @Path("/name")
     @Consumes("application/x-www-form-urlencoded")
@@ -46,5 +45,5 @@ public class NameChanger {
             log.info("Error name changing for '{}'", Authentification.getAutorizedUser());
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-    }
+    }*/
 }

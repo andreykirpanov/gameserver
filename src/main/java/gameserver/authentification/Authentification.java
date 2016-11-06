@@ -1,16 +1,17 @@
 package gameserver.authentification;
 
+import model.authDAO.TokenDAO;
+import model.authDAO.UserDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import model.authInfo.Token;
-import model.authInfo.TokenUserStorage;
 import model.authInfo.User;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Created by User on 20.10.2016.
@@ -18,21 +19,21 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @Path("/auth")
 public class Authentification {
 
-    private static User autorizedUser;
     private static final Logger log = LogManager.getLogger(Authentification.class);
-    private static CopyOnWriteArrayList<User> registeredUsers;
+    private static UserDAO userDAO;
+    private static TokenDAO tokenDAO;
 
     static {
-        registeredUsers = new CopyOnWriteArrayList<>();
+        userDAO = new UserDAO();
+        tokenDAO = new TokenDAO();
     }
 
-    public static void setAutorizedUser(User user) {
+    /*public static void setAutorizedUser(User user) {
         autorizedUser = user;
     }
 
-    public static User getAutorizedUser(){return autorizedUser;}
+    public static User getAutorizedUser(){return autorizedUser;}*/
 
-    public static List<User> getRegisteredUsers(){return registeredUsers;}
 
     @POST
     @Path("/register")
@@ -43,14 +44,14 @@ public class Authentification {
             if (login == null || password == null) {
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
-            User currentUser = new User("a","a","a");
-            if (registeredUsers.contains(currentUser)) {
-                log.info("User '{}' already exists", currentUser);
+            if (userDAO.getUserByLoginData(login,password) != null) {
+                log.info("User with login={} and password={} already exists", login, password);
                 return Response.status(Response.Status.NOT_ACCEPTABLE).build();
             }
-            registeredUsers.add(currentUser);
-            log.info("New user '{}' registered", currentUser);
-            return Response.ok("User " + currentUser + " registered").build();
+            User newUser = new User(login, password);
+            userDAO.insert(newUser);
+            log.info("New user '{}' registered", newUser);
+            return Response.ok("User " + newUser + " registered").build();
         } catch (Exception e){
             log.info("Error register user.");
             return Response.status(Response.Status.BAD_REQUEST).build();
@@ -67,33 +68,35 @@ public class Authentification {
             if (login == null || password == null) {
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
-            User currentUser = new User("a","a","a");
-            if (!validatePassword(currentUser)) {
-                log.info("Wrong password for user {}", currentUser);
+
+            User currentUser = userDAO.getUserByLoginData(login, password);
+            if (currentUser == null) {
+                log.info("Wrong password for user login={} password={}", login, password);
                 return Response.status(Response.Status.UNAUTHORIZED).build();
             }
-            if(!TokenUserStorage.containsUser(currentUser)){
-                TokenUserStorage.add(new Token(1), currentUser);
-            } else{
+
+            Token currentToken = tokenDAO.getTokenByUserId(currentUser.getId());
+            if(currentToken != null){
                 log.info("User '{}' already logged in.", currentUser);
+                return Response.ok(currentToken.getNumber()).build();
             }
+
+            currentToken = new Token(currentUser.getId());
+            tokenDAO.insert(currentToken);
             log.info("User '{}' logged in.", currentUser);
-            return Response.ok(TokenUserStorage.getTokenByUser(currentUser).toString()).build();
+            return Response.ok(currentToken.getNumber()).build();
+
         } catch (Exception e){
             log.info("Error login user.");
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
     }
 
-    private boolean validatePassword(User user){
-        return registeredUsers.contains(user);
-    }
-
-    public static void validateToken(Token token) throws Exception{
-        if(TokenUserStorage.containsToken(token)){
-            log.info("Correct token from '{}'", TokenUserStorage.getUserByToken(token));
+    public static void validateToken(String stringToken) throws Exception{
+        Token requestedToken = tokenDAO.getTokenByStringToken(stringToken);
+        if(requestedToken != null){
+            log.info("Correct token from '{}'", userDAO.getUserById(tokenDAO.getUserIdByStringToken(stringToken)));
         } else{
-
             throw new Exception("Token validation exception");
         }
 
@@ -103,10 +106,12 @@ public class Authentification {
     @POST
     @Path("/logout")
     @Produces("text/plain")
-    public Response logout(){
+    public Response logout(@Context HttpHeaders headers){
         try{
-            TokenUserStorage.delete(autorizedUser);
-            log.info("User '{}' logged out", autorizedUser);
+            String authorizationHeader = headers.getHeaderString(HttpHeaders.AUTHORIZATION);
+            String token = authorizationHeader.substring("Bearer".length()).trim();
+            tokenDAO.deleteByStringToken(token);
+            log.info("User with token='{}' logged out", token);
             return Response.ok("User logged out").build();
         } catch(Exception e) {
             log.info("Error logout user.");
