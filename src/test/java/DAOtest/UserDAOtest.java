@@ -36,6 +36,15 @@ public class UserDAOTest {
     }
 
     @Test
+    public void updateTest(){
+        userDAO.insert(user);
+        int id = userDAO.getAllWhere("login = \'" + user.getLogin() + "\'").get(0).getId();
+        assertTrue(userDAO.update(user.setLogin("Alex")));
+        int newId = userDAO.getAllWhere("login = \'" + user.getLogin() + "\'").get(0).getId();
+        assertEquals(id, newId);
+    }
+
+    @Test
     public void getAllWhereTest(){
         userDAO.insert(user);
         assertEquals(userDAO.getAllWhere("login = \'" + user.getLogin() + "\'").get(0), user);
@@ -56,5 +65,6 @@ public class UserDAOTest {
         assertNotEquals(0, userDAO.getUserId(user));
         userDAO.delete(user);
     }
+
 
 }

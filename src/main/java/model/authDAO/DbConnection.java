@@ -76,4 +76,20 @@ public class DbConnection {
         }
     }
 
+    public static <T> boolean updateTransaction(T t){
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            session.update(t);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            log.error("Transaction failed.", e);
+            if (transaction != null && transaction.isActive()) {
+                transaction.rollback();
+            }
+            return false;
+        }
+    }
+
 }

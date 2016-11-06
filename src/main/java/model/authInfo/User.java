@@ -99,6 +99,11 @@ public class User {
 
     public String getPassword(){return password;}
 
+    public User setPassword(String password){
+        this.password = password;
+        return this;
+    }
+
     public int getId(){return id;}
 
     public String getEmail(){return email;}

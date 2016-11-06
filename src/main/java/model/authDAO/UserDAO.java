@@ -33,6 +33,10 @@ public class UserDAO implements AuthDAO<User>  {
                 "password = \'" + user.getPassword() + "\'").get(0));
     }
 
+    public boolean update(User user){
+        return DbConnection.updateTransaction(user);
+    }
+
     public User getUserById(int userId){
         return getAllWhere("id = \'" + userId + "\'").get(0);
     }

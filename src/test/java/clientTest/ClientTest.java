@@ -45,6 +45,31 @@ public class ClientTest {
     public void anotherTokenTest(){
         Long token = requests.login(login, password);
         requests.logout(token);
-        assertNotEquals(token, requests.login(login, password));
+        Long anotherToken = requests.login(login, password);
+        assertNotEquals(token, anotherToken);
+        requests.logout(anotherToken);
     }
+
+    @Test
+    public void changeNameTest(){
+        Long token = requests.login(login, password);
+        assertTrue(requests.changeName(token, "Boris"));
+        assertEquals( requests.login("Boris",password), token);
+    }
+
+    @Test
+    public void changeEmailTest(){
+        Long token = requests.login(login, password);
+        assertTrue(requests.changeEmail(token, "b@mail.ru"));
+        assertEquals( requests.login(login,password), token);
+    }
+
+    @Test
+    public void changePasswordTest(){
+        Long token = requests.login(login, password);
+        assertTrue(requests.changePassword(token, "1234567"));
+        assertEquals( requests.login(login,"1234567"), token);
+    }
+
+
 }

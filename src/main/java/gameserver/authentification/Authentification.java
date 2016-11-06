@@ -20,19 +20,13 @@ import javax.ws.rs.core.Response;
 public class Authentification {
 
     private static final Logger log = LogManager.getLogger(Authentification.class);
-    private static UserDAO userDAO;
-    private static TokenDAO tokenDAO;
+    public static UserDAO userDAO;
+    public static TokenDAO tokenDAO;
 
     static {
         userDAO = new UserDAO();
         tokenDAO = new TokenDAO();
     }
-
-    /*public static void setAutorizedUser(User user) {
-        autorizedUser = user;
-    }
-
-    public static User getAutorizedUser(){return autorizedUser;}*/
 
 
     @POST

@@ -20,8 +20,8 @@ public class AuthRequests {
 
     private static final OkHttpClient client = new OkHttpClient();
     static {
-        client.setReadTimeout(15, TimeUnit.SECONDS);
-        client.setWriteTimeout(15, TimeUnit.SECONDS);
+        client.setReadTimeout(100, TimeUnit.SECONDS);
+        client.setWriteTimeout(100, TimeUnit.SECONDS);
     }
 
 
@@ -89,6 +89,72 @@ public class AuthRequests {
                 mediaType,""
         );
         String requestUrl = SERVICE_URL + "/auth/logout";
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .post(body)
+                .addHeader("authorization", "Bearer " + token)
+                .addHeader("content-type", "application/x-www-form-urlencoded")
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+            return response.isSuccessful();
+        } catch (IOException e) {
+            log.warn("Something went wrong in getBatch.", e);
+            return false;
+        }
+    }
+
+    public boolean changeName(Long token, String newName) {
+        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+        RequestBody body = RequestBody.create(
+                mediaType,"name=" + newName
+        );
+        String requestUrl = SERVICE_URL + "/profile/name";
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .post(body)
+                .addHeader("authorization", "Bearer " + token)
+                .addHeader("content-type", "application/x-www-form-urlencoded")
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+            return response.isSuccessful();
+        } catch (IOException e) {
+            log.warn("Something went wrong in getBatch.", e);
+            return false;
+        }
+    }
+
+    public boolean changeEmail(Long token, String newEmail) {
+        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+        RequestBody body = RequestBody.create(
+                mediaType,"email=" + newEmail
+        );
+        String requestUrl = SERVICE_URL + "/profile/email";
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .post(body)
+                .addHeader("authorization", "Bearer " + token)
+                .addHeader("content-type", "application/x-www-form-urlencoded")
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+            return response.isSuccessful();
+        } catch (IOException e) {
+            log.warn("Something went wrong in getBatch.", e);
+            return false;
+        }
+    }
+
+    public boolean changePassword(Long token, String newPassword) {
+        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+        RequestBody body = RequestBody.create(
+                mediaType,"password=" + newPassword
+        );
+        String requestUrl = SERVICE_URL + "/profile/password";
         Request request = new Request.Builder()
                 .url(requestUrl)
                 .post(body)
