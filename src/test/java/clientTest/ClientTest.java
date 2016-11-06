@@ -71,5 +71,13 @@ public class ClientTest {
         assertEquals( requests.login(login,"1234567"), token);
     }
 
+    @Test
+    public void getUsers(){
+        requests.register(login, password);
+        requests.register("Alex", "456");
+        requests.login(login, password);
+        requests.login("Alex","456");
+        System.out.println(requests.getUsers());
+    }
 
 }

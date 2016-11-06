@@ -1,11 +1,13 @@
 package client;
 
 import com.squareup.okhttp.*;
+import model.authInfo.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -168,6 +170,25 @@ public class AuthRequests {
         } catch (IOException e) {
             log.warn("Something went wrong in getBatch.", e);
             return false;
+        }
+    }
+
+    public String getUsers() {
+        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+
+        String requestUrl = SERVICE_URL + "/data/users";
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .get()
+                .addHeader("content-type", "application/x-www-form-urlencoded")
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+            return response.body().string();
+        } catch (IOException e) {
+            log.warn("Something went wrong in getBatch.", e);
+            return null;
         }
     }
 }
