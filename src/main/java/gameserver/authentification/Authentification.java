@@ -1,5 +1,6 @@
 package gameserver.authentification;
 
+import model.authDAO.LB;
 import model.authDAO.TokenDAO;
 import model.authDAO.UserDAO;
 import org.apache.logging.log4j.LogManager;
@@ -44,6 +45,7 @@ public class Authentification {
             }
             User newUser = new User(login, password);
             userDAO.insert(newUser);
+            LB.insert(newUser.getId());
             log.info("New user '{}' registered", newUser);
             return Response.ok("User " + newUser + " registered").build();
         } catch (Exception e){

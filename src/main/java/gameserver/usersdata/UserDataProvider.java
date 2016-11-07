@@ -1,16 +1,15 @@
 package gameserver.usersdata;
 
 import gameserver.authentification.Authentification;
+import model.authDAO.LB;
+import model.authInfo.Leader;
 import model.authInfo.Token;
 import model.authInfo.User;
 import model.authInfo.UsersJSON;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,5 +37,23 @@ public class UserDataProvider {
             log.info("Error sending users info");
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
+    }
+
+    @GET
+    @Path("leaderboard")
+    @Consumes("application/x-www-form-urlencoded")
+    @Produces("application/json")
+    public Response getLeaders1(@QueryParam("N") int N){
+        List<Leader> n1;
+        n1= LB.getAll(N);
+        String S="{ ";
+        if(N>n1.size()) N=n1.size();
+        for(int i=0;i<n1.size();i++) {
+            S += n1.get(i).toJSON();
+            if (i<n1.size()-1) S+=", ";
+        }
+        S+=" }";
+        log.info("S");
+        return Response.ok(S).build();
     }
 }
