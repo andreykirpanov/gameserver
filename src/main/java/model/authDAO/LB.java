@@ -1,6 +1,5 @@
 package model.authDAO;
 
-import gameserver.authentification.Authentification;
 import model.authInfo.Leader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

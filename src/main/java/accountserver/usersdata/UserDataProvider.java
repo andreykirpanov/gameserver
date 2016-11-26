@@ -1,7 +1,6 @@
-package gameserver.usersdata;
+package accountserver.usersdata;
 
-import gameserver.authentification.Authentification;
-import model.authDAO.LB;
+import accountserver.authentification.Authentification;
 import model.authInfo.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,6 +1,6 @@
 package model.authInfo;
 
-import gameserver.authentification.Authentification;
+import accountserver.authentification.Authentification;
 
 /**
  * Created by Max on 07.11.2016.

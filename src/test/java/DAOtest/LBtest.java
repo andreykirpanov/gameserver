@@ -1,9 +1,7 @@
 package DAOtest;
 
 import client.AuthRequests;
-import com.squareup.okhttp.*;
-import gameserver.authentification.Authentification;
-import model.authDAO.LB;
+import accountserver.authentification.Authentification;
 import model.authInfo.Leader;
 import model.authInfo.User;
 import org.apache.logging.log4j.LogManager;
@@ -11,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

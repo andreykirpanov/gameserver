@@ -1,8 +1,8 @@
-package gameserver.usersdata;
+package accountserver.usersdata;
 
 import model.authInfo.User;
-import gameserver.authentification.Authentification;
-import gameserver.authentification.Autorized;
+import accountserver.authentification.Authentification;
+import accountserver.authentification.Autorized;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,4 +1,4 @@
-package gameserver.authentification;
+package accountserver.authentification;
 
 import model.authDAO.LB;
 import model.authDAO.TokenDAO;
