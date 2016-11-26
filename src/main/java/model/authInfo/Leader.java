@@ -14,7 +14,7 @@ public class Leader {
         return this;
     }
 
-    public Leader setName(int id){
+    public Leader setId(int id){
         this.id = id;
         return this;
     }

@@ -1,6 +1,5 @@
 package gameserver.usersdata;
 
-import model.authInfo.Token;
 import model.authInfo.User;
 import gameserver.authentification.Authentification;
 import gameserver.authentification.Autorized;
@@ -36,7 +35,9 @@ public class UserDataChanger {
             String token = authorizationHeader.substring("Bearer".length()).trim();
             User currentUser = Authentification.userDAO.getUserById(
                     Authentification.tokenDAO.getUserIdByStringToken(token));
-
+            if(Authentification.userDAO.isNameInUse(newName)==true){
+                return Response.status(Response.Status.BAD_REQUEST).build();
+            }
             currentUser = newName != null ? currentUser.setLogin(newName): currentUser ;
             currentUser = newEmail != null ? currentUser.setEmail(newEmail): currentUser ;
             currentUser = newPassword != null ? currentUser.setPassword(newPassword): currentUser ;

@@ -1,5 +1,6 @@
 package DAOtest;
 
+import client.AuthRequests;
 import com.squareup.okhttp.*;
 import gameserver.authentification.Authentification;
 import model.authDAO.LB;
@@ -27,118 +28,69 @@ public class LBtest {
     @Test
     public void InsertTest() {
         int userid = 247859;
-        LB.insert(userid);
-        Assert.assertEquals(0, LB.getUserScore(userid));
-        LB.deleteUser(userid);
+        Authentification.LB.insert(userid);
+        Assert.assertEquals(0, Authentification.LB.getUserScore(userid));
+        Authentification.LB.delete(userid);
     }
 
     @Test
     public void UpdateScoreTest() {
         int user = 247859;
-        LB.insert(user);
-        LB.updateScore(user, 25);
-        Assert.assertEquals(25, LB.getUserScore(user));
-        LB.deleteUser(user);
+        Authentification.LB.insert(user);
+        Authentification.LB.updateScore(user, 25);
+        Assert.assertEquals(25, Authentification.LB.getUserScore(user));
+        Authentification.LB.delete(user);
     }
 
     @Test
     public void LeaderRegisterTest(){
         String user="LeaderTest";
         String password="LeaderTest";
-        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        RequestBody body = RequestBody.create(
-                mediaType,
-                String.format("user=%s&password=%s", user, password)
-        );
-
-        String requestUrl = SERVICE_URL + "/auth/register";
-        Request request = new Request.Builder()
-                .url(requestUrl)
-                .post(body)
-                .addHeader("content-type", "application/x-www-form-urlencoded")
-                .build();
-        try {
-            OkHttpClient client = new OkHttpClient();
-            Response response = client.newCall(request).execute();
-            System.out.println(response.isSuccessful());
-        } catch (IOException e) {
-            //log.warn("Something went wrong in register.", e);
-            System.out.println(false);
-        }
+        AuthRequests AR=new AuthRequests();
+        AR.register(user,password);
         User jUser= Authentification.userDAO.getUserByLoginData(user,password);
-        Assert.assertEquals(0, LB.getUserScore(jUser.getId()));
+        Assert.assertEquals(0, Authentification.LB.getUserScore(jUser.getId()));
         Authentification.userDAO.delete(jUser);
-        LB.deleteUser(jUser.getId());
+        Authentification.LB.delete(jUser.getId());
     }
 
     @Test
-    public void getLeaderTest(){
+    public void getLeaderTest1(){
         String testJSON="{ \"LeaderUser1\": 2147483647, \"LeaderUser2\": 2147483646, \"LeaderUser3\": 2147483645 }";
         String l1="LeaderUser1";
         String l2="LeaderUser2";
         String l3="LeaderUser3";
         List<String> ls = new ArrayList<String>();
+
         List<User> jUser = new ArrayList<>();
         ls.add(l1);
         ls.add(l2);
         ls.add(l3);
+
+        AuthRequests AR= new AuthRequests();
+
         for(int i=0;i<3;i++) {
             String user = ls.get(i);
             String password = user;
-            MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-            RequestBody body = RequestBody.create(
-                    mediaType,
-                    String.format("user=%s&password=%s", user, password)
-            );
-
-            String requestUrl = SERVICE_URL + "/auth/register";
-            Request request = new Request.Builder()
-                    .url(requestUrl)
-                    .post(body)
-                    .addHeader("content-type", "application/x-www-form-urlencoded")
-                    .build();
-            try {
-                OkHttpClient client = new OkHttpClient();
-                Response response = client.newCall(request).execute();
-                System.out.println(response.isSuccessful());
-            } catch (IOException e) {
-                //log.warn("Something went wrong in register.", e);
-                System.out.println(false);
-            }
+            AR.register(user,password);
             jUser.add( Authentification.userDAO.getUserByLoginData(user,password));
         }
-        LB.updateScore(jUser.get(0).getId(),2147483647);
-        LB.updateScore(jUser.get(1).getId(),2147483646);
-        LB.updateScore(jUser.get(2).getId(),2147483645);
-        List<Leader> l= LB.getAll(3);
-        Assert.assertEquals("LeaderUser1", Authentification.userDAO.getUserById(l.get(0).getId()).getLogin());
-        Assert.assertEquals("LeaderUser2", Authentification.userDAO.getUserById(l.get(1).getId()).getLogin());
-        Assert.assertEquals("LeaderUser3", Authentification.userDAO.getUserById(l.get(2).getId()).getLogin());
-        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+        Authentification.LB.updateScore(jUser.get(0).getId(),2147483647);
+        Authentification.LB.updateScore(jUser.get(1).getId(),2147483646);
+        Authentification.LB.updateScore(jUser.get(2).getId(),2147483645);
 
-        String requestUrl = SERVICE_URL + "/data/leaderboard?N=3";
-        Request request = new Request.Builder()
-                .url(requestUrl)
-                .get()
-                .addHeader("content-type", "application/x-www-form-urlencoded")
-                .build();
-        try {
-            OkHttpClient client = new OkHttpClient();
-            Response response = client.newCall(request).execute();
-            Assert.assertEquals(response.body().string(),testJSON);
-            System.out.println(response.isSuccessful());
-        } catch (IOException e) {
-            //log.warn("Something went wrong in register.", e);
-            System.out.println(false);
-        }
+        List<Leader> l= Authentification.LB.getAll(3);
+
+        Assert.assertEquals(testJSON,AR.getLeaders(3));
 
         for(int i=0;i<3;i++){
             Authentification.userDAO.delete(jUser.get(i));
         }
 
-        LB.deleteUser(jUser.get(0).getId());
-        LB.deleteUser(jUser.get(1).getId());
-        LB.deleteUser(jUser.get(2).getId());
+        Authentification.LB.delete(jUser.get(0).getId());
+        Authentification.LB.delete(jUser.get(1).getId());
+        Authentification.LB.delete(jUser.get(2).getId());
     }
+
 }
 

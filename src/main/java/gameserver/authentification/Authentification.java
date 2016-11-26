@@ -23,10 +23,12 @@ public class Authentification {
     private static final Logger log = LogManager.getLogger(Authentification.class);
     public static UserDAO userDAO;
     public static TokenDAO tokenDAO;
+    public static LB LB;
 
     static {
         userDAO = new UserDAO();
         tokenDAO = new TokenDAO();
+        LB = new LB();
     }
 
 

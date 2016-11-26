@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by User on 05.11.2016.
  */
-public class TokenDAOTest {
+public class TokenDAOtest {
 
     TokenDAO tokenDAO = new TokenDAO();
     UserDAO userDao = new UserDAO();

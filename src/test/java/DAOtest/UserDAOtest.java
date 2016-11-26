@@ -13,7 +13,7 @@ import javax.validation.constraints.AssertTrue;
 /**
  * Created by User on 05.11.2016.
  */
-public class UserDAOTest {
+public class UserDAOtest {
 
     UserDAO userDAO = new UserDAO();
     User user =  new User("Andrew1","1234","a@m.ru");

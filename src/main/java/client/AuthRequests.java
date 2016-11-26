@@ -191,4 +191,30 @@ public class AuthRequests {
             return null;
         }
     }
+
+    public String getLeaders(int N){
+        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+
+        String requestUrl = SERVICE_URL + "/data/leaderboard?N="+N;
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .get()
+                .addHeader("content-type", "application/x-www-form-urlencoded")
+                .build();
+        try {
+            OkHttpClient client = new OkHttpClient();
+            Response response = client.newCall(request).execute();
+            System.out.println(response.isSuccessful());
+            String result;
+            try(ResponseBody body = response.body()){
+                result =  body.string();
+                return result;
+            } catch (Exception e){
+                return null;
+            }
+        } catch (IOException e) {
+            return null;
+            //log.warn("Something went wrong in register.", e);
+        }
+    }
 }

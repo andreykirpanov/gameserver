@@ -2,6 +2,9 @@ package clientTest;
 
 import client.AuthRequests;
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertFalse;
@@ -14,6 +17,8 @@ public class ClientTest {
     AuthRequests requests = new AuthRequests();
     String login = "Andrew";
     String password = "123";
+    String login2 = "Alex";
+    String password2 = "456";
 
     @Test
     public void registerTest(){
@@ -52,9 +57,10 @@ public class ClientTest {
 
     @Test
     public void changeNameTest(){
-        Long token = requests.login(login, password);
-        assertTrue(requests.changeName(token, "Boris"));
-        assertEquals( requests.login("Boris",password), token);
+        Long token = requests.login("Boris", password);
+        assertTrue(requests.changeName(token, login));
+        assertEquals( requests.login(login,password), token);
+        requests.changeName(token, login);
     }
 
     @Test
@@ -69,6 +75,7 @@ public class ClientTest {
         Long token = requests.login(login, password);
         assertTrue(requests.changePassword(token, "1234567"));
         assertEquals( requests.login(login,"1234567"), token);
+        requests.changePassword(token, password);
     }
 
     @Test
@@ -79,5 +86,13 @@ public class ClientTest {
         requests.login("Alex","456");
         System.out.println(requests.getUsers());
     }
+
+    @Test
+    public void equalsChangeNAmeTest(){
+        Long token = requests.login(login2,password2);
+        assertFalse(requests.changeName(token,login));
+        requests.logout(token);
+    }
+
 
 }

@@ -2,10 +2,7 @@ package gameserver.usersdata;
 
 import gameserver.authentification.Authentification;
 import model.authDAO.LB;
-import model.authInfo.Leader;
-import model.authInfo.Token;
-import model.authInfo.User;
-import model.authInfo.UsersJSON;
+import model.authInfo.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -45,7 +42,7 @@ public class UserDataProvider {
     @Produces("application/json")
     public Response getLeaders1(@QueryParam("N") int N){
         List<Leader> n1;
-        n1= LB.getAll(N);
+        n1= Authentification.LB.getAll(N);
         String S="{ ";
         if(N>n1.size()) N=n1.size();
         for(int i=0;i<n1.size();i++) {
@@ -56,4 +53,5 @@ public class UserDataProvider {
         log.info("S");
         return Response.ok(S).build();
     }
+
 }

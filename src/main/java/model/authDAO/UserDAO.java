@@ -2,6 +2,8 @@ package model.authDAO;
 
 import jersey.repackaged.com.google.common.base.Joiner;
 import model.authInfo.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
  * Created by User on 05.11.2016.
  */
 public class UserDAO implements AuthDAO<User>  {
+    private static final Logger log = LogManager.getLogger(AuthDAO.class);
 
     @Override
     public List<User> getAll() {
@@ -49,5 +52,12 @@ public class UserDAO implements AuthDAO<User>  {
     public User getUserByLoginData(String login, String password){
         List<User> requestResult = getAllWhere("login = \'" + login + "\'", "password = \'" + password + "\'");
         return requestResult.isEmpty() ? null : requestResult.get(0);
+    }
+
+    public boolean isNameInUse(String name){
+        if(this.getAllWhere("login = \'" + name+"\'").isEmpty()) {
+            return false;
+        }
+        return true;
     }
 }
