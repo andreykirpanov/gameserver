@@ -1,4 +1,4 @@
-package model.gameObjects;
+package model.gameInfo.utils;
 
 import ticker.Tickable;
 

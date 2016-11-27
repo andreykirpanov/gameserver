@@ -1,6 +1,9 @@
-package model.gameInfo;
+package model.gameInfo.utils;
 
 
+import model.gameInfo.Location;
+import model.gameInfo.Player;
+import model.gameInfo.utils.PlayerPlacer;
 import model.gameObjects.GameField;
 import model.gameObjects.PlayerCell;
 import org.jetbrains.annotations.NotNull;
@@ -20,12 +23,12 @@ public class RandomPlayerPlacer implements PlayerPlacer {
 
    @Override
    public void place(@NotNull Player player) {
-      assert(player.getCells().size() == 1);
-      Random random = new Random();
-      for (PlayerCell playerCell : player.getCells()) {
-        Location newLocation = new Location(playerCell.getRadius() + random.nextInt(field.getWidth() - 2 * playerCell.getRadius()),
+       assert(player.getCells().size() == 1);
+       Random random = new Random();
+       for (PlayerCell playerCell : player.getCells()) {
+           Location newLocation = new Location(playerCell.getRadius() + random.nextInt(field.getWidth() - 2 * playerCell.getRadius()),
                 playerCell.getRadius() + random.nextInt(field.getHeight() - 2 * playerCell.getRadius()));
-        playerCell.setLocation(newLocation);
-      }
-    }
+           playerCell.setLocation(newLocation);
+       }
+   }
 }

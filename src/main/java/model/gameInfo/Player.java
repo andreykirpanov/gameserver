@@ -1,5 +1,7 @@
 package model.gameInfo;
 
+import model.gameInfo.utils.SequentialIDGenerator;
+import model.gameObjects.Cell;
 import model.gameObjects.PlayerCell;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,6 +22,7 @@ public class Player {
     private String name;
     @NotNull
     private final List<PlayerCell> cells = new ArrayList<>();
+    public static final SequentialIDGenerator idGenerator = new SequentialIDGenerator();
 
     public final long id;
 
@@ -31,7 +34,7 @@ public class Player {
   public Player(@NotNull String name, long id) {
       this.name = name;
       this.id = id;
-      addCell(new PlayerCell(id, new Location(0,0)));
+      addCell(new PlayerCell(Cell.idGenerator.next(), new Location(0,0)));
       if (log.isInfoEnabled()) {
           log.info(toString() + " created");
       }

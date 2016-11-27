@@ -5,7 +5,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Created by User on 10.10.2016.
@@ -17,6 +19,8 @@ public class GameField {
     public final int height;
     @NotNull
     private final HashSet<SmallFood> foods = new HashSet<>();
+    @NotNull
+    private final List<Virus> viruses = new ArrayList<>();
 
     public GameField() {
         this.width = GameConstants.FIELD_WIDTH;
@@ -45,5 +49,10 @@ public class GameField {
     @NotNull
     public HashSet<SmallFood> getFoods() {
         return foods;
+    }
+
+    @NotNull
+    public List<Virus> getViruses() {
+        return viruses;
     }
 }

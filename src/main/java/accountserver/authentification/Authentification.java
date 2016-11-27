@@ -90,14 +90,14 @@ public class Authentification {
         }
     }
 
-    public static void validateToken(String stringToken) throws Exception{
+    public static boolean validateToken(String stringToken) throws Exception{
         Token requestedToken = tokenDAO.getTokenByStringToken(stringToken);
         if(requestedToken != null){
             log.info("Correct token from '{}'", userDAO.getUserById(tokenDAO.getUserIdByStringToken(stringToken)));
+            return true;
         } else{
             throw new Exception("Token validation exception");
         }
-
     }
 
     @Autorized

@@ -18,16 +18,16 @@ public interface GameSession {
    *
    * @param player player to join the game
    */
-  void join(@NotNull Player player);
+    void join(@NotNull Player player);
 
   /**
    * Player leaves the GameSession
    *
    * @param player player to leave the game
    */
-  void leave(@NotNull Player player);
+    void leave(@NotNull Player player);
 
-  List<Player> getPlayers();
+    List<Player> getPlayers();
 
-  GameField getField();
+    GameField getField();
 }
