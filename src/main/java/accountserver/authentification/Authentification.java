@@ -1,4 +1,4 @@
-package accountserver.authentification;
+package accountServer.authentification;
 
 import model.authDAO.LB;
 import model.authDAO.TokenDAO;

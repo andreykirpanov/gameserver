@@ -1,6 +1,6 @@
 package model.authInfo;
 
-import accountserver.authentification.Authentification;
+import accountServer.authentification.Authentification;
 
 /**
  * Created by Max on 07.11.2016.

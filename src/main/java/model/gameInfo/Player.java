@@ -1,8 +1,12 @@
 package model.gameInfo;
 
+import model.gameObjects.PlayerCell;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Server player avatar
@@ -11,10 +15,11 @@ import org.jetbrains.annotations.NotNull;
  * @author Alpi
  */
 public class Player {
-    @NotNull
     private static final Logger log = LogManager.getLogger(Player.class);
     @NotNull
     private String name;
+    @NotNull
+    private final List<PlayerCell> cells = new ArrayList<>();
 
     public final long id;
 
@@ -24,21 +29,35 @@ public class Player {
    * @param name        visible name
    */
   public Player(@NotNull String name, long id) {
-    this.name = name;
-    this.id = id;
-    if (log.isInfoEnabled()) {
-      log.info(toString() + " created");
-    }
+      this.name = name;
+      this.id = id;
+      addCell(new PlayerCell(id, new Location(0,0)));
+      if (log.isInfoEnabled()) {
+          log.info(toString() + " created");
+      }
   }
+
+    @NotNull
+    public List<PlayerCell> getCells() {
+        return cells;
+    }
 
     @NotNull
     public String getName() {
         return name;
     }
 
+    public void addCell(@NotNull PlayerCell cell) {
+        cells.add(cell);
+    }
+
+    public void removeCell(@NotNull PlayerCell cell) {
+        cells.remove(cell);
+    }
+
     @Override
-  public String toString() {
-    return "Player{" +
+    public String toString() {
+        return "Player{" +
         "name='" + name + '\'' +
         "id='" + id + '\'' +
         '}';

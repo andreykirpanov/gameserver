@@ -1,6 +1,9 @@
 package model.gameInfo;
 
+import model.gameObjects.GameField;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 /**
  * Single agar.io game session
@@ -15,5 +18,16 @@ public interface GameSession {
    *
    * @param player player to join the game
    */
-  void join(@NotNull Player player) throws SessionIsFullException;
+  void join(@NotNull Player player);
+
+  /**
+   * Player leaves the GameSession
+   *
+   * @param player player to leave the game
+   */
+  void leave(@NotNull Player player);
+
+  List<Player> getPlayers();
+
+  GameField getField();
 }

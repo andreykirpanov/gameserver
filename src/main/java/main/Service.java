@@ -1,12 +1,9 @@
 package main;
 
-import messagesystem.Message;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import messagesystem.Address;
-
-import java.util.Collection;
+import messageSystem.Address;
 
 /**
  * Created by User on 26.11.2016.

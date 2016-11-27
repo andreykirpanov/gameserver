@@ -1,6 +1,6 @@
-package accountserver.usersdata;
+package accountServer.usersdata;
 
-import accountserver.authentification.Authentification;
+import accountServer.authentification.Authentification;
 import model.authInfo.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

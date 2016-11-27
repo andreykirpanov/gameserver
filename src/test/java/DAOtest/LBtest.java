@@ -1,7 +1,7 @@
 package DAOtest;
 
 import client.AuthRequests;
-import accountserver.authentification.Authentification;
+import accountServer.authentification.Authentification;
 import model.authInfo.Leader;
 import model.authInfo.User;
 import org.apache.logging.log4j.LogManager;

@@ -1,22 +1,26 @@
 package model.gameObjects;
 
-import matchmaker.SinglePlayerMatchMaker;
+import model.gameInfo.GameConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.HashSet;
 
 /**
  * Created by User on 10.10.2016.
  */
 public class GameField {
     @NotNull
-    private final Logger log = LogManager.getLogger(SinglePlayerMatchMaker.class);
+    private final Logger log = LogManager.getLogger(GameField.class);
     public final int width;
     public final int height;
+    @NotNull
+    private final HashSet<SmallFood> foods = new HashSet<>();
 
-    public GameField(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public GameField() {
+        this.width = GameConstants.FIELD_WIDTH;
+        this.height = GameConstants.FIELD_HEIGHT;
         if (log.isInfoEnabled()) {
             log.info(toString() + " created");
         }
@@ -28,5 +32,18 @@ public class GameField {
                 "width=" + width + " " +
                 "height=" + height +
                 '}';
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    @NotNull
+    public HashSet<SmallFood> getFoods() {
+        return foods;
     }
 }

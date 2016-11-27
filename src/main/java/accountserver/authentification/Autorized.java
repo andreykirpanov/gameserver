@@ -1,4 +1,4 @@
-package accountserver.authentification;
+package accountServer.authentification;
 
 import javax.ws.rs.NameBinding;
 import java.lang.annotation.ElementType;

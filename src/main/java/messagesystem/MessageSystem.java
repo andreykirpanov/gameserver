@@ -1,4 +1,4 @@
-package messagesystem;
+package messageSystem;
 
 import main.Service;
 import org.apache.logging.log4j.LogManager;

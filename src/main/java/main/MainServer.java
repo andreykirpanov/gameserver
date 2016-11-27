@@ -1,7 +1,7 @@
 package main;
 
-import accountserver.AccountServer;
-import messagesystem.MessageSystem;
+import accountServer.AccountServer;
+import messageSystem.MessageSystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

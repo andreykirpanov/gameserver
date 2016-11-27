@@ -1,18 +1,17 @@
-package accountserver;
+package accountServer;
 
 import main.ApplicationContext;
 import main.Service;
-import messagesystem.MessageSystem;
+import messageSystem.MessageSystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import accountserver.authentification.AutorizationFilter;
+import accountServer.authentification.AutorizationFilter;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.Collection;
 
 /**
  * Created by User on 20.10.2016.
@@ -43,7 +42,7 @@ public class AccountServer extends Service {
 
         jerseyServlet.setInitParameter(
                 "jersey.config.server.provider.packages",
-                "accountserver"
+                "accountServer"
         );
 
         jerseyServlet.setInitParameter(
