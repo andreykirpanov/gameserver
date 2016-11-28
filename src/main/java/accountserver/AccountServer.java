@@ -1,5 +1,6 @@
 package accountServer;
 
+import accountServer.authentification.Authentification;
 import main.ApplicationContext;
 import main.Service;
 import messageSystem.MessageSystem;
@@ -52,6 +53,7 @@ public class AccountServer extends Service {
 
         try {
             gameServer.start();
+            Authentification.userDAO.getAll();
         }catch (Exception e){
             StringWriter sw = new StringWriter();
             PrintWriter pw = new PrintWriter(sw);

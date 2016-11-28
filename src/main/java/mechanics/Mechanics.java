@@ -4,6 +4,7 @@ import main.ApplicationContext;
 import main.Service;
 import messageSystem.Message;
 import messageSystem.MessageSystem;
+import messageSystem.messages.ReplicateLeaderboardMsg;
 import messageSystem.messages.ReplicateMsg;
 import model.gameInfo.Player;
 import org.apache.logging.log4j.LogManager;
@@ -20,7 +21,7 @@ public class Mechanics extends Service implements Tickable {
     private final static Logger log = LogManager.getLogger(Mechanics.class);
 
     public Mechanics() {
-        super("java/mechanics");
+        super("mechanics");
     }
 
     @Override
@@ -43,6 +44,8 @@ public class Mechanics extends Service implements Tickable {
         log.info("Start replication");
         @NotNull MessageSystem messageSystem = ApplicationContext.get(MessageSystem.class);
         Message message = new ReplicateMsg(this.getAddress());
+        messageSystem.sendMessage(message);
+        message = new ReplicateLeaderboardMsg(this.getAddress());
         messageSystem.sendMessage(message);
 
         //execute all messages from queue
