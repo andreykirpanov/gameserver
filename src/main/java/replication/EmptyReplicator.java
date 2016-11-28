@@ -12,6 +12,6 @@ public class EmptyReplicator implements Replicator {
 
     @Override
     public void replicate() {
-
+        log.info("Empty replication");
     }
 }
