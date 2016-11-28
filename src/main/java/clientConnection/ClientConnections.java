@@ -31,4 +31,13 @@ public class ClientConnections {
     public Set<Map.Entry<Player, Session>> getConnections() {
       return connections.entrySet();
     }
+
+    public Player getConnectedPlayer(Session session){
+        for(Map.Entry<Player, Session> entry: getConnections()){
+            if(session.equals(entry.getValue())){
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
 }

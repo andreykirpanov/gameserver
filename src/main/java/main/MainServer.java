@@ -1,6 +1,11 @@
 package main;
 
 import accountServer.AccountServer;
+import clientConnection.ClientConnectionServer;
+import clientConnection.ClientConnections;
+import matchmaker.MatchMaker;
+import matchmaker.MatchMakerImpl;
+import mechanics.Mechanics;
 import messageSystem.MessageSystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,8 +26,12 @@ public class MainServer  {
 
         MessageSystem messageSystem = new MessageSystem();
         ApplicationContext.put(MessageSystem.class, messageSystem);
+        ApplicationContext.put(MatchMaker.class, new MatchMakerImpl());
+        ApplicationContext.put(ClientConnections.class, new ClientConnections());
 
         messageSystem.registerService(AccountServer.class, new AccountServer(8081));
+        messageSystem.registerService(ClientConnectionServer.class, new ClientConnectionServer(7000));
+        messageSystem.registerService(Mechanics.class, new Mechanics());
         messageSystem.getServices().forEach(Service::start);
 
     }

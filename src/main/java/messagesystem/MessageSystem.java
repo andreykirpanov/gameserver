@@ -31,7 +31,7 @@ public class MessageSystem {
         log.info(service + " registered");
     }
 
-    public <T> T getService(Class<T> type){
+    public <T extends Service> T getService(Class<T> type){
         return (T)services.get(type);
     }
 

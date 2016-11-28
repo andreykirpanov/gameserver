@@ -1,6 +1,8 @@
-package messageSystem;
+package messageSystem.messages;
 
 import main.Service;
+import messageSystem.Address;
+import messageSystem.Message;
 
 /**
  * Created by User on 26.11.2016.

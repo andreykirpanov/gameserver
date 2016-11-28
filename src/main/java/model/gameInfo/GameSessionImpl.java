@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class GameSessionImpl implements GameSession {
     private static final SequentialIDGenerator idGenerator = new SequentialIDGenerator();
-    private final int id = idGenerator.next();
+    private final long id = idGenerator.next();
     @NotNull
     private final GameField field = new GameField();
     @NotNull

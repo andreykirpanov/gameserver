@@ -1,5 +1,6 @@
 package clientConnection.handlers;
 
+import accountServer.authentification.Authentification;
 import clientConnection.ClientConnections;
 import clientConnection.JSONHelper.JSONDeserializationException;
 import clientConnection.JSONHelper.JSONHelper;
@@ -8,7 +9,6 @@ import clientConnection.packets.PacketAuthOk;
 import main.ApplicationContext;
 import matchmaker.MatchMaker;
 import model.gameInfo.Player;
-import org.eclipse.jetty.server.Authentication;
 import org.eclipse.jetty.websocket.api.Session;
 import org.jetbrains.annotations.NotNull;
 import protocol.CommandAuth;
@@ -24,21 +24,22 @@ public class PacketHandlerAuth {
             e.printStackTrace();
             return;
         }
-        if (true//!Authentication.validateToken(commandAuth.getToken())) {
-                ){
+        try {
+            if (Authentification.validateToken(commandAuth.getToken())) {
+                try {
+                    Player player = new Player(commandAuth.getLogin(), Player.idGenerator.next());
+                    ApplicationContext.get(ClientConnections.class).registerConnection(player, session);
+                    new PacketAuthOk().write(session);
+                    ApplicationContext.get(MatchMaker.class).joinGame(player);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (Exception e){
             try {
                 new PacketAuthFail(commandAuth.getLogin(), commandAuth.getToken(), "Invalid user or password").write(session);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            try {
-                Player player = new Player(commandAuth.getLogin(), Player.idGenerator.next());
-                ApplicationContext.get(ClientConnections.class).registerConnection(player, session);
-                new PacketAuthOk().write(session);
-                ApplicationContext.get(MatchMaker.class).joinGame(player);
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
             }
         }
     }
