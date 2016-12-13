@@ -1,5 +1,6 @@
 package model.gameInfo.utils;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -7,8 +8,8 @@ import java.util.concurrent.atomic.AtomicLong;
  * @since 31.10.16
  */
 public class SequentialIDGenerator {
-    private final AtomicLong current = new AtomicLong(0);
-    public long next() {
+    private final AtomicInteger current = new AtomicInteger(0);
+    public int next() {
         return current.getAndIncrement();
     }
 }

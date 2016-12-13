@@ -24,14 +24,14 @@ public class Player {
     private final List<PlayerCell> cells = new ArrayList<>();
     public static final SequentialIDGenerator idGenerator = new SequentialIDGenerator();
 
-    public final long id;
+    public final int id;
 
   /**
    * Create new Player
    *
    * @param name        visible name
    */
-  public Player(@NotNull String name, long id) {
+  public Player(@NotNull String name, int id) {
       this.name = name;
       this.id = id;
       addCell(new PlayerCell(Cell.idGenerator.next(), new Location(0,0)));
@@ -56,6 +56,10 @@ public class Player {
 
     public void removeCell(@NotNull PlayerCell cell) {
         cells.remove(cell);
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override

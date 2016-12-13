@@ -5,7 +5,6 @@ import clientConnection.ClientConnectionServer;
 import clientConnection.ClientConnections;
 import leaderboardReplicator.LeaderboardReplicator;
 import matchmaker.MatchMaker;
-import matchmaker.MatchMakerImpl;
 import mechanics.Mechanics;
 import messageSystem.MessageSystem;
 import org.apache.logging.log4j.LogManager;
@@ -14,8 +13,6 @@ import replication.Replicator;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
@@ -23,7 +20,7 @@ import java.util.Properties;
 /**
  * Created by User on 26.11.2016.
  */
-public class MainServer  {
+public class MainServer {
 
     private final static Logger log = LogManager.getLogger(MainServer.class);
     private Properties properties = new Properties();
@@ -70,6 +67,9 @@ public class MainServer  {
             }
 
             messageSystem.getServices().forEach(Service::start);
+            for (Service service : messageSystem.getServices()) {
+                service.join();
+            }
         } catch (Throwable e){
             log.info("Error getting properties instance");
             e.printStackTrace();

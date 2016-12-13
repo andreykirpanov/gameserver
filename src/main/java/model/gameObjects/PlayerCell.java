@@ -12,14 +12,14 @@ import org.apache.logging.log4j.Logger;
 //Игровая сущность, управляемая игроком
 public class PlayerCell extends Cell {
 
-    private final long id;
+    private final int id;
 
-    public PlayerCell(long id, Location location) {
+    public PlayerCell(int id, Location location) {
         super(location, GameConstants.DEFAULT_PLAYER_CELL_MASS);
         this.id = id;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
