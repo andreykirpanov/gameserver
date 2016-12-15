@@ -1,13 +1,12 @@
 package messageSystem.messages;
 
 import clientConnection.ClientConnectionServer;
+import leaderboardReplicator.LeaderboardReplicator;
 import main.ApplicationContext;
 import main.Service;
 import messageSystem.Address;
 import messageSystem.Message;
 import messageSystem.MessageSystem;
-import leaderboardReplicator.LeaderboardReplicator;
-import replication.Replicator;
 
 /**
  * Created by User on 28.11.2016.
