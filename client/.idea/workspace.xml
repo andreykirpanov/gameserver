@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2b30c115-70e2-4f24-b185-d65401cf7f31" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshot.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/Game$AuthOption.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/Game$GameState.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/Game.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/GameConstants.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/GameThread.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/Main.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/auth/AuthClient.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/controller/KeyboardListener.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/network/ServerConnectionSocket.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/network/handlers/PacketHandlerAuthFail.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/network/handlers/PacketHandlerAuthOk.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/network/handlers/PacketHandlerLeaderBoard.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/network/handlers/PacketHandlerReplicate.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/network/packets/PacketAuth.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/network/packets/PacketEjectMass.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/network/packets/PacketMove.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/network/packets/PacketSplit.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/util/JSONDeserializationException.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/util/JSONHelper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/util/Reporter.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/view/Cell.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/view/Food.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/view/GameCanvas.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/zagar/view/GameFrame.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/zagar-client-1.0-SNAPSHOT.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/Command.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandAuth.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandAuthFail.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandAuthOk.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandEjectMass.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandLeaderBoard.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandMove.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandReplicate.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandSplit.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandThankYou.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/Cell.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/Food.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/zagar-protocol-1.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__atom_zagar_protocol_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_intellij_annotations_12_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_9_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_2_3_v20140905.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_2_3_v20140905.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_api_9_2_3_v20140905.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_client_9_2_3_v20140905.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_common_9_2_3_v20140905.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/log4j2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/Game.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/GameConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/GameThread.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/Main.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/auth/AuthClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/controller/KeyboardListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/network/ServerConnectionSocket.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerAuthFail.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerAuthOk.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerLeaderBoard.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerReplicate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/network/packets/PacketAuth.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/network/packets/PacketEjectMass.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/network/packets/PacketMove.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/network/packets/PacketSplit.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/util/JSONDeserializationException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/util/JSONHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/util/Reporter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/view/Cell.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/view/Food.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/view/GameCanvas.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/zagar/view/GameFrame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/.idea/libraries/Maven__com_intellij_annotations_12_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/Command.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandAuth.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandAuthFail.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandAuthOk.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandEjectMass.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandLeaderBoard.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandMove.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandReplicate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandSplit.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandThankYou.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/model/Cell.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/src/protocol/model/Food.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../protocol/target/maven-archiver/pom.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__atom_zagar_client_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__atom_zagar_protocol_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_fasterxml_classmate_1_3_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_5_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_5_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_5_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_github_dblock_waffle_waffle_jna_1_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_google_code_gson_gson_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_intellij_annotations_12_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_squareup_okhttp_okhttp_2_7_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_squareup_okio_okio_1_6_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__javax_annotation_jsr250_api_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__javax_el_el_api_2_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__javax_enterprise_cdi_api_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__junit_junit_4_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__net_java_dev_jna_jna_4_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__net_java_dev_jna_jna_platform_4_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jta_1_1_spec_1_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_6_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_6_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_jetty_continuation_9_1_1_v20140108.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_3_12_v20160915.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_3_12_v20160915.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_3_12_v20160915.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_3_12_v20160915.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_3_12_v20160915.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_3_12_v20160915.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_api_9_3_7_v20160115.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_client_9_3_7_v20160115.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_common_9_3_7_v20160115.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_server_9_3_7_v20160115.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_servlet_9_3_7_v20160115.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_persistence_javax_persistence_2_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_antlr_2_5_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_asm_2_5_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_core_2_5_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_moxy_2_5_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_hk2_external_javax_inject_2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_hk2_hk2_locator_2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_jersey_bundles_repackaged_jersey_guava_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_jersey_containers_jersey_container_jetty_http_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_jersey_containers_jersey_container_servlet_core_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_client_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_server_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_moxy_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_3_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_jboss_jandex_2_0_0_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_jboss_spec_javax_interceptor_jboss_interceptors_api_1_1_spec_1_0_0_Beta1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_postgresql_postgresql_9_4_1200_jdbc41.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/vcs.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../leader.json" afterPath="$PROJECT_DIR$/../server/leader.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../pom.xml" afterPath="$PROJECT_DIR$/../server/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../replica.json" afterPath="$PROJECT_DIR$/../server/replica.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/accountServer/AccountServer.java" afterPath="$PROJECT_DIR$/../server/src/main/java/accountServer/AccountServer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/accountServer/authentification/Authentification.java" afterPath="$PROJECT_DIR$/../server/src/main/java/accountServer/authentification/Authentification.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/accountServer/authentification/AutorizationFilter.java" afterPath="$PROJECT_DIR$/../server/src/main/java/accountServer/authentification/AutorizationFilter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/accountServer/authentification/Autorized.java" afterPath="$PROJECT_DIR$/../server/src/main/java/accountServer/authentification/Autorized.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/accountServer/usersdata/UserDataChanger.java" afterPath="$PROJECT_DIR$/../server/src/main/java/accountServer/usersdata/UserDataChanger.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/accountServer/usersdata/UserDataProvider.java" afterPath="$PROJECT_DIR$/../server/src/main/java/accountServer/usersdata/UserDataProvider.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/client/AuthRequests.java" afterPath="$PROJECT_DIR$/../server/src/main/java/client/AuthRequests.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/ClientConnectionHandler.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/ClientConnectionHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/ClientConnectionServer.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/ClientConnectionServer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/ClientConnectionServlet.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/ClientConnectionServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/ClientConnections.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/ClientConnections.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/JSONHelper/JSONDeserializationException.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/JSONHelper/JSONDeserializationException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/JSONHelper/JSONHelper.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/JSONHelper/JSONHelper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/handlers/PacketHandlerAuth.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/handlers/PacketHandlerAuth.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/handlers/PacketHandlerEjectMass.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/handlers/PacketHandlerEjectMass.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/handlers/PacketHandlerMove.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/handlers/PacketHandlerMove.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/handlers/PacketHandlerSplit.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/handlers/PacketHandlerSplit.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/packets/PacketAuthFail.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketAuthFail.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/packets/PacketAuthOk.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketAuthOk.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/packets/PacketLeaderBoard.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketLeaderBoard.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/clientConnection/packets/PacketReplicate.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketReplicate.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/leaderboardReplicator/EmptyLeaderboardReplicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/leaderboardReplicator/EmptyLeaderboardReplicator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/leaderboardReplicator/LeaderReplicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/leaderboardReplicator/LeaderReplicator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/leaderboardReplicator/LeaderboardReplicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/leaderboardReplicator/LeaderboardReplicator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/main/ApplicationContext.java" afterPath="$PROJECT_DIR$/../server/src/main/java/main/ApplicationContext.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/main/MainServer.java" afterPath="$PROJECT_DIR$/../server/src/main/java/main/MainServer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/main/Service.java" afterPath="$PROJECT_DIR$/../server/src/main/java/main/Service.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/matchmaker/MatchMaker.java" afterPath="$PROJECT_DIR$/../server/src/main/java/matchmaker/MatchMaker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/matchmaker/MatchMakerImpl.java" afterPath="$PROJECT_DIR$/../server/src/main/java/matchmaker/MatchMakerImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/matchmaker/package-info.java" afterPath="$PROJECT_DIR$/../server/src/main/java/matchmaker/package-info.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/mechanics/Mechanics.java" afterPath="$PROJECT_DIR$/../server/src/main/java/mechanics/Mechanics.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/messageSystem/Address.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/Address.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/messageSystem/Message.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/Message.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/messageSystem/MessageSystem.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/MessageSystem.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/messageSystem/messages/EjectMassMsg.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/messages/EjectMassMsg.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/messageSystem/messages/MessageExample.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/messages/MessageExample.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/messageSystem/messages/MoveMsg.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/messages/MoveMsg.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/messageSystem/messages/ReplicateLeaderboardMsg.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/messages/ReplicateLeaderboardMsg.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/messageSystem/messages/ReplicateMsg.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/messages/ReplicateMsg.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/messageSystem/messages/SplitMsg.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/messages/SplitMsg.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authDAO/AuthDAO.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authDAO/AuthDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authDAO/DbConnection.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authDAO/DbConnection.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authDAO/JDBCDbConnection.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authDAO/JDBCDbConnection.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authDAO/LB.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authDAO/LB.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authDAO/TokenDAO.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authDAO/TokenDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authDAO/UserDAO.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authDAO/UserDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authInfo/Leader.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authInfo/Leader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authInfo/Token.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authInfo/Token.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authInfo/User.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authInfo/User.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/authInfo/UsersJSON.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/authInfo/UsersJSON.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/GameConstants.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameConstants.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/GameSession.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSession.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/GameSessionImpl.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSessionImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/Location.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/Location.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/Player.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/Player.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/utils/FoodGenerator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/utils/FoodGenerator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/utils/PlayerPlacer.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/utils/PlayerPlacer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/utils/RandomPlayerPlacer.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/utils/RandomPlayerPlacer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/utils/RandomVirusGenerator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/utils/RandomVirusGenerator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/utils/SequentialIDGenerator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/utils/SequentialIDGenerator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/utils/UniformFoodGenerator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/utils/UniformFoodGenerator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameInfo/utils/VirusGenerator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/utils/VirusGenerator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameObjects/Cell.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/Cell.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameObjects/GameField.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/GameField.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameObjects/PlayerCell.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/PlayerCell.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameObjects/SmallFood.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/SmallFood.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/model/gameObjects/Virus.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/Virus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/replication/DefaultReplication.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/DefaultReplication.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/replication/EmptyReplicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/EmptyReplicator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/replication/FileReplicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/FileReplicator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/replication/Replicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/Replicator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/ticker/Tickable.java" afterPath="$PROJECT_DIR$/../server/src/main/java/ticker/Tickable.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/java/ticker/Ticker.java" afterPath="$PROJECT_DIR$/../server/src/main/java/ticker/Ticker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/resources/File.properties" afterPath="$PROJECT_DIR$/../server/src/main/resources/File.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/resources/FileAndLeader.properties" afterPath="$PROJECT_DIR$/../server/src/main/resources/FileAndLeader.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/resources/Leader.properties" afterPath="$PROJECT_DIR$/../server/src/main/resources/Leader.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/resources/handlePacketsTestConfig.properties" afterPath="$PROJECT_DIR$/../server/src/main/resources/handlePacketsTestConfig.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/../server/src/main/resources/hibernate.cfg.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/main/resources/log4j2.properties" afterPath="$PROJECT_DIR$/../server/src/main/resources/log4j2.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/test/java/ClientConnectionTest/ClientConnectionTest.java" afterPath="$PROJECT_DIR$/../server/src/test/java/ClientConnectionTest/ClientConnectionTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/test/java/DAOtest/LBtest.java" afterPath="$PROJECT_DIR$/../server/src/test/java/DAOtest/LBtest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/test/java/DAOtest/TokenDAOtest.java" afterPath="$PROJECT_DIR$/../server/src/test/java/DAOtest/TokenDAOtest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/test/java/DAOtest/UserDAOtest.java" afterPath="$PROJECT_DIR$/../server/src/test/java/DAOtest/UserDAOtest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/test/java/clientTest/ClientTest.java" afterPath="$PROJECT_DIR$/../server/src/test/java/clientTest/ClientTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../src/test/java/matchMakerTests/SinglePlayerMatchMakerTest.java" afterPath="$PROJECT_DIR$/../server/src/test/java/matchMakerTests/SinglePlayerMatchMakerTest.java" />
+    </list>
+    <ignored path="zagar-client.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="zagar-client" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/zagar/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zagar-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zagar-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zagar-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zagar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../server/pom.xml" />
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="zagar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="zagar.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="zagar-client" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="zagar-client" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2b30c115-70e2-4f24-b185-d65401cf7f31" name="Default" comment="" />
+      <created>1480371749522</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1480371749522</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39863843" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/zagar/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/network/ServerConnectionSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-487">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
