@@ -3,20 +3,16 @@ package zagar.view;
 import org.jetbrains.annotations.NotNull;
 import zagar.Game;
 import zagar.GameConstants;
-import zagar.Main;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics2D;
-import java.awt.Polygon;
-import java.awt.image.BufferedImage;
-import java.util.ConcurrentModificationException;
+import java.awt.*;
 
-public class Food {
+/**
+ * Created by Max on 15.12.2016.
+ */
+public class Virus {
     public double x, y;
     public float size;
-    private int r=0, g=255, b=0;
+    private int r=255, g=0, b=0;
     @NotNull
     public float sizeRender;
     public double xRender;
@@ -24,7 +20,7 @@ public class Food {
     public int mass;
     private float rotation = 0;
 
-    public Food(double x, double y) {
+    public Virus(double x, double y) {
         this.x = x;
         this.y = y;
         this.size = (float)Math.sqrt(GameConstants.FOOD_MASS/Math.PI);
@@ -42,7 +38,9 @@ public class Food {
     }
 
     public void render(@NotNull Graphics2D g, float scale) {
-        if (Game.player.size() > 0){
+        if (Game.player.size() > 0) {
+            Color color = new Color(this.r, this.g, this.b);
+            g.setColor(color);
             int size = (int) ((this.sizeRender * 2f * scale) * Game.zoom);
 
             float avgX = 0;
@@ -54,9 +52,6 @@ public class Food {
                     avgY += c.yRender;
                 }
             }
-            Color color = new Color(this.r, this.g, this.b);
-            g.setColor(color);
-
 
             avgX /= Game.player.size();
             avgY /= Game.player.size();
@@ -69,6 +64,17 @@ public class Food {
             }
 
             int massRender = (int) ((this.size * this.size) / 100);
+            /*Polygon hexagon = new Polygon();
+            int a = 2 * (massRender / 8 + 10);
+            a = Math.min(a, 100);
+            for (int i = 0; i < a; i++) {
+                float pi = 3.14f;
+                int spike = 0;
+                if (i % 2 == 0) {
+                    spike = (int) (20 * Math.min(Math.max(1, (massRender / 80f)), 8) * Game.zoom);
+                }
+                hexagon.addPoint((int) ((x + (size + spike) / 2) * Math.cos(-rotation + i * 2 * pi / a) + size / 2), (int) ((y + ((size + spike) / 2) * Math.sin(-rotation + i * 2 * pi / a) + size / 2)));
+            }*/
             Polygon hexagon = new Polygon();
             int a = massRender / 20 + 5;
             a = Math.min(a, 50);
@@ -92,21 +98,6 @@ public class Food {
         g.setColor(new Color(255, 255, 255));
         g.drawString(string, x, y);
     }
-
-    /*public void setColor(byte r, byte g, byte b) {
-        this.r = r;
-        this.g = g;
-        this.b = b;
-        if (r < 0) {
-            this.r = r + 256;
-        }
-        if (g < 0) {
-            this.g = g + 256;
-        }
-        if (b < 0) {
-            this.b = b + 256;
-        }
-    }*/
 
     @Override
     public String toString() {

@@ -25,6 +25,7 @@ import zagar.util.Reporter;
 import zagar.view.Cell;
 import zagar.view.Food;
 import zagar.view.GameFrame;
+import zagar.view.Virus;
 
 import static zagar.GameConstants.*;
 
@@ -35,6 +36,8 @@ public class Game {
   public static volatile Cell[] cells = new Cell[0];
   @NotNull
   public static volatile Food[] food= new Food[0];
+  @NotNull
+  public static volatile Virus[] virus = new Virus[0];
   @NotNull
   public static ConcurrentLinkedDeque<Cell> player = new ConcurrentLinkedDeque<>();
   @NotNull
@@ -118,13 +121,13 @@ public class Game {
   private AuthOption chooseAuthOption() {
     Object[] options = {AuthOption.LOGIN, AuthOption.REGISTER};
     int authOption = JOptionPane.showOptionDialog(null,
-        "Choose authentication option",
-        "Authentication",
-        JOptionPane.YES_NO_CANCEL_OPTION,
-        JOptionPane.QUESTION_MESSAGE,
-        null,
-        options,
-        options[1]);
+            "Choose authentication option",
+            "Authentication",
+            JOptionPane.YES_NO_CANCEL_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            options,
+            options[1]);
 
     if (authOption == 0) {
       return AuthOption.LOGIN;
@@ -218,11 +221,18 @@ public class Game {
       }
     }
 
+    for(int i = 0; i<virus.length; i++){
+      if(virus[i] != null){
+        virus[i].tick();
+      }
+    }
+
     sortTimer++;
 
     if (sortTimer > 10) {
       sortCells();
-      sortFood();
+      //sortFood();
+      //sortVirus();
       sortTimer = 0;
     }
   }
@@ -242,7 +252,7 @@ public class Game {
     });
   }
 
-  public static void sortFood() {
+  /*public static void sortFood() {
     Arrays.sort(food, (o1, o2) -> {
       if (o1 == null && o2 == null) {
         return 0;
@@ -255,7 +265,22 @@ public class Game {
       }
       return Float.compare(o1.size, o2.size);
     });
-  }
+  }*/
+
+  /*public static void sortVirus() {
+    Arrays.sort(virus, (o1, o2) -> {
+      if (o1 == null && o2 == null) {
+        return 0;
+      }
+      if (o1 == null) {
+        return 1;
+      }
+      if (o2 == null) {
+        return -1;
+      }
+      return Float.compare(o1.size, o2.size);
+    });
+  }*/
 
   private enum AuthOption {
     REGISTER, LOGIN;

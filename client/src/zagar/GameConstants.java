@@ -17,4 +17,6 @@ public interface GameConstants {
   @NotNull
   String DEFAULT_PASSWORD = "pass";
 
+  int FOOD_MASS = 314;
+  int VIRUS_MASS = 100;
 }

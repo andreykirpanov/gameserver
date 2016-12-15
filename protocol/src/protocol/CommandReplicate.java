@@ -2,7 +2,8 @@ package protocol;
 
 import org.jetbrains.annotations.NotNull;
 import protocol.model.Cell;
-import protocol.model.Food;
+import protocol.model.pFood;
+import protocol.model.pVirus;
 
 /**
  * @author apomosov
@@ -11,13 +12,17 @@ public final class CommandReplicate extends Command {
   @NotNull
   public static final String NAME = "cells";
   @NotNull
-  private final Food[] food;
+  private final pFood[] food;
   @NotNull
   private final Cell[] cells;
-  public CommandReplicate(@NotNull Food[] food, @NotNull Cell[] cells) {
+  @NotNull
+  private final pVirus[] virus;
+
+  public CommandReplicate(@NotNull pFood[] foods,@NotNull Cell[] cells, @NotNull pVirus[] viruss) {
     super(NAME);
-    this.food = food;
+    this.food = foods;
     this.cells = cells;
+    this.virus = viruss;
   }
 
   @NotNull
@@ -26,7 +31,9 @@ public final class CommandReplicate extends Command {
   }
 
   @NotNull
-  public Food[] getFood() {
+  public pFood[] getFood() {
     return food;
   }
+  @NotNull
+  public pVirus[] getVirus() { return virus;}
 }

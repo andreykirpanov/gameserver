@@ -97,6 +97,12 @@ public class GameCanvas extends JPanel {
       }
     }
 
+    for(int i3=0; i3<Game.virus.length;i3++){
+      Virus viruss = Game.virus[i3];
+      if(viruss !=null){
+        viruss.render(g,1);
+      }
+    }
     g.setFont(font);
 
     String scoreString = "Score: " + Game.score;
