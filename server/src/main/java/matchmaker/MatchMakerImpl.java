@@ -32,24 +32,21 @@ public class MatchMakerImpl implements MatchMaker {
      */
     @Override
     public void joinGame(@NotNull Player player) {
-        if(activeGameSessions.size() == 0) {
+        if(activeGameSessions.isEmpty()) {
             GameSession newGameSession = createNewGame();
             activeGameSessions.add(newGameSession);
-            newGameSession.genFood();
-            newGameSession.genVirus();
             newGameSession.join(player);
             log.info(player + " joined " + newGameSession);
         }
         else {
-            if(activeGameSessions.get(activeGameSessions.size() - 1).getPlayers().size() < MAX_PLAYERS_IN_SESSION ) {
-                activeGameSessions.get(activeGameSessions.size() - 1).join(player);
-                log.info(player + " joined " + activeGameSessions.get(0));
+            GameSession currentGameSession = activeGameSessions.get(activeGameSessions.size() - 1);
+            if(currentGameSession.getPlayers().size() < MAX_PLAYERS_IN_SESSION ) {
+                currentGameSession.join(player);
+                log.info(player + " joined " + currentGameSession);
             }
             else{
                 GameSession newGameSession = createNewGame();
                 activeGameSessions.add(newGameSession);
-                newGameSession.genFood();
-                newGameSession.genVirus();
                 newGameSession.join(player);
                 log.info(player + " joined " + newGameSession);
             }
@@ -61,17 +58,13 @@ public class MatchMakerImpl implements MatchMaker {
         return new ArrayList<>(activeGameSessions);
     }
 
-    /**
-     * @return new GameSession
-     */
-    private
-    @NotNull
-    GameSession createNewGame() {
+
+    private @NotNull GameSession createNewGame() {
         GameField field = new GameField();
         //TODO
-        //Ticker ticker = ApplicationContext.instance().get(Ticker.class);
-        UniformFoodGenerator foodGenerator = new UniformFoodGenerator(field, GameConstants.MAX_FOOD_ON_FIELD);
-        //ticker.registerTickable(foodGenerator);
-        return new GameSessionImpl(foodGenerator, new RandomPlayerPlacer(field), new UniformVirusGenerator(field, GameConstants.NUMBER_OF_VIRUSES));
+        UniformFoodGenerator foodGenerator = new UniformFoodGenerator(field, GameConstants.FOOD_PER_SECOND_GENERATION,
+                GameConstants.MAX_FOOD_ON_FIELD);
+        return new GameSessionImpl(foodGenerator, new RandomPlayerPlacer(field), new UniformVirusGenerator(field, GameConstants.NUMBER_OF_VIRUSES),
+                field);
     }
 }

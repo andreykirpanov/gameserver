@@ -30,7 +30,4 @@ public interface GameSession {
   List<Player> getPlayers();
 
   GameField getField();
-  void genFood();
-  void genVirus();
-  void Update();
 }

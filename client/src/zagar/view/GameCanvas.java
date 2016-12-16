@@ -83,7 +83,7 @@ public class GameCanvas extends JPanel {
     for (int i2 = 0; i2 < Game.cells.length; i2++) {
       Cell cell = Game.cells[i2];
       if (cell != null) {
-        cell.render(g, 1);
+        cell.render(g, 10);
         if (cell.mass > 9) {
           cell.render(g, Math.max(1 - 1f / (cell.mass / 10f), 0.87f));
         }
@@ -93,7 +93,7 @@ public class GameCanvas extends JPanel {
     for(int i2=0; i2<Game.food.length;i2++){
       Food foods = Game.food[i2];
       if(foods !=null){
-        foods.render(g,1);
+        foods.render(g,10);
       }
     }
 

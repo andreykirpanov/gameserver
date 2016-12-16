@@ -139,16 +139,11 @@
         </dependency>
 
         <dependency>
-            <groupId>atom</groupId>
-            <artifactId>zagar-protocol</artifactId>
+            <groupId>gameserver</groupId>
+            <artifactId>protocol</artifactId>
             <version>1.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>atom</groupId>
-            <artifactId>zagar-client</artifactId>
-            <version>1.0</version>
-        </dependency>
 
         <dependency>
             <groupId>com.google.code.gson</groupId>

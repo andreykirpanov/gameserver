@@ -27,16 +27,16 @@ public class Ticker {
     public void loop() {
         long elapsed = sleepTimeNanos;
         while (!Thread.currentThread().isInterrupted()) {
-        long started = System.nanoTime();
-        tickable.tick(elapsed);
-        elapsed = System.nanoTime() - started;
-        if (elapsed < sleepTimeNanos) {
-            log.info("All tickers finish at " + TimeUnit.NANOSECONDS.toMillis(elapsed) + " ms");
-            LockSupport.parkNanos(sleepTimeNanos - elapsed);
-        } else {
-            log.warn("tick lag " + TimeUnit.NANOSECONDS.toMillis(elapsed - sleepTimeNanos) + " ms");
-        }
-        log.info(tickable + " <tick> " + tickNumber.incrementAndGet());
+            long started = System.nanoTime();
+            tickable.tick(sleepTimeNanos - elapsed);
+            elapsed = System.nanoTime() - started;
+            if (elapsed < sleepTimeNanos) {
+                log.info("All tickers finish at " + TimeUnit.NANOSECONDS.toMillis(elapsed) + " ms");
+                LockSupport.parkNanos(sleepTimeNanos - elapsed);
+            } else {
+                log.warn("tick lag " + TimeUnit.NANOSECONDS.toMillis(elapsed - sleepTimeNanos) + " ms");
+            }
+            log.info(tickable + " <tick> " + tickNumber.incrementAndGet());
         }
     }
 }
