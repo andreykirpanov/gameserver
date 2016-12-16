@@ -18,9 +18,9 @@ public class GameField {
     public final int width;
     public final int height;
     @NotNull
-    private final HashSet<SmallFood> foods = new HashSet<>();
+    private final List<Food> foods = new ArrayList<>();
     @NotNull
-    private final List<Virus> viruses = new ArrayList<>();
+    private final List<Virus> virus = new ArrayList<>();
 
     public GameField() {
         this.width = GameConstants.FIELD_WIDTH;
@@ -47,12 +47,26 @@ public class GameField {
     }
 
     @NotNull
-    public HashSet<SmallFood> getFoods() {
+    public List<Food> getFoods() {
         return foods;
     }
 
     @NotNull
-    public List<Virus> getViruses() {
-        return viruses;
+    public List<Virus> getVirus() {
+        return virus;
+    }
+    public void addFood(Food f){
+        foods.add(f);
+    }
+
+    public void addVirus(Virus v){
+        virus.add(v);
+    }
+    public void removeFood(int index){
+        foods.remove(index);
+    }
+
+    public void removeVirus(int index){
+        virus.remove(index);
     }
 }

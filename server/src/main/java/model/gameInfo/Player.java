@@ -26,19 +26,19 @@ public class Player {
 
     public final int id;
 
-  /**
-   * Create new Player
-   *
-   * @param name        visible name
-   */
-  public Player(@NotNull String name, int id) {
-      this.name = name;
-      this.id = id;
-      addCell(new PlayerCell(Cell.idGenerator.next(), new Location(0,0)));
-      if (log.isInfoEnabled()) {
-          log.info(toString() + " created");
-      }
-  }
+    /**
+     * Create new Player
+     *
+     * @param name        visible name
+     */
+    public Player(@NotNull String name, int id) {
+        this.name = name;
+        this.id = id;
+        addCell(new PlayerCell(Cell.idGenerator.next(), new Location(0,0)));
+        if (log.isInfoEnabled()) {
+            log.info(toString() + " created");
+        }
+    }
 
     @NotNull
     public List<PlayerCell> getCells() {
@@ -65,8 +65,11 @@ public class Player {
     @Override
     public String toString() {
         return "Player{" +
-        "name='" + name + '\'' +
-        "id='" + id + '\'' +
-        '}';
-  }
+                "name='" + name + '\'' +
+                "id='" + id + '\'' +
+                '}';
+    }
+    public void addMass(int mass){
+        cells.get(0).setMass(cells.get(0).getMass()+mass);
+    }
 }

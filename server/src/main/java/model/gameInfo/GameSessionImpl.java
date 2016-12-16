@@ -3,17 +3,23 @@ package model.gameInfo;
 import model.gameInfo.utils.PlayerPlacer;
 import model.gameInfo.utils.VirusGenerator;
 import model.gameInfo.utils.FoodGenerator;
+import model.gameObjects.Food;
 import model.gameObjects.GameField;
 import model.gameInfo.utils.SequentialIDGenerator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static model.gameInfo.GameConstants.MAX_FOOD_ON_FIELD;
+
 /**
  * @author apomosov
  */
 public class GameSessionImpl implements GameSession {
+    private final static Logger log = LogManager.getLogger(GameSessionImpl.class);
     private static final SequentialIDGenerator idGenerator = new SequentialIDGenerator();
     private final long id = idGenerator.next();
     @NotNull
@@ -41,7 +47,7 @@ public class GameSessionImpl implements GameSession {
     }
 
     @Override
-        public void leave(@NotNull Player player) {
+    public void leave(@NotNull Player player) {
         players.remove(player);
     }
 
@@ -58,7 +64,38 @@ public class GameSessionImpl implements GameSession {
     @Override
     public String toString() {
         return "GameSessionImpl{" +
-            "id=" + id +
-            '}';
+                "id=" + id +
+                '}';
+    }
+    @Override
+    public void genFood(){
+        while(field.getFoods().size() < MAX_FOOD_ON_FIELD) {
+            field.addFood(foodGenerator.generate());
+        }
+    }
+
+    @Override
+    public void genVirus(){
+        while(field.getVirus().size() < 5){
+            field.addVirus(virusGenerator.generate());
+        }
+    }
+    public void Update(){
+        log.info("Updating begin");
+        List<Integer> DeleteIndex = new ArrayList<>();
+        for(Player p: players) {
+            for(Food f: field.getFoods()){
+                float dist = (p.getCells().get(0).getLocation().getX()-f.getLocation().getX())*(p.getCells().get(0).getLocation().getX()-f.getLocation().getX()) + (p.getCells().get(0).getLocation().getY()-f.getLocation().getY())*(p.getCells().get(0).getLocation().getY()-f.getLocation().getY());
+                if( Math.sqrt(dist) < p.getCells().get(0).getRadius()+f.getRadius()){
+                    DeleteIndex.add(field.getFoods().indexOf(f));
+                    p.addMass(f.getMass());
+                    log.info("########################################################food updated");
+                }
+            }
+        }
+        for(Integer i : DeleteIndex){
+            field.removeFood(i);
+        }
+        genFood();
     }
 }

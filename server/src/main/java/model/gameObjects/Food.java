@@ -7,9 +7,9 @@ import model.gameInfo.Location;
  * Created by User on 10.10.2016.
  */
 
-public class SmallFood extends Cell {
+public class Food extends Cell {
 
-    public SmallFood(Location location){
+    public Food(Location location){
         super(location, GameConstants.FOOD_MASS);
     }
 }
