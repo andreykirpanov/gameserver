@@ -23,4 +23,6 @@ public interface MatchMaker {
    */
     @NotNull
     List<GameSession> getActiveGameSessions();
+
+    GameSession getSessionForPlayer(Player player);
 }

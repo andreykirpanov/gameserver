@@ -27,19 +27,19 @@ public class Mechanics extends Service implements Tickable {
     @Override
     public void run() {
         log.info(getAddress() + " started");
-        Ticker ticker = new Ticker(this, 1);
+        Ticker ticker = new Ticker(this, 10);
         ticker.loop();
     }
 
     @Override
     public void tick(long elapsedNanos) {
-        try {
-            Thread.sleep(1500);
+        /*try {
+            //Thread.sleep(10);
         } catch (InterruptedException e) {
             log.error(e);
             Thread.currentThread().interrupt();
             e.printStackTrace();
-        }
+        }*/
 
         log.info("Start replication");
         @NotNull MessageSystem messageSystem = ApplicationContext.get(MessageSystem.class);
@@ -59,11 +59,6 @@ public class Mechanics extends Service implements Tickable {
 
     public boolean split(Player player){
         log.info(player + " split");
-        return true;
-    }
-
-    public boolean move(Player player, float dx, float dy){
-        log.info(player + " move. Change x to " + dx + ", y to " + dy);
         return true;
     }
 }

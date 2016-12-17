@@ -2,59 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1d20781-e756-4135-8247-be4c90ac4d3b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../client/.idea/libraries/Maven__gameserver_protocol_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__gameserver_protocol_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/gameConfig.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/.idea/libraries/Maven__atom_zagar_protocol_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../protocol/target/zagar-protocol-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__atom_zagar_client_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__atom_zagar_protocol_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/matchmaker/package-info.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/GameConstants.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/GameConstants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/auth/AuthClient.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/auth/AuthClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/view/Cell.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/view/Cell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/view/Food.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/view/Food.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/view/Virus.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/view/Virus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/AuthRequests.class" afterPath="$PROJECT_DIR$/target/classes/client/AuthRequests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/MainServer.class" afterPath="$PROJECT_DIR$/target/classes/main/MainServer.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../client/.idea/libraries/Maven__gameserver_protocol_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__gameserver_protocol_1_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__gameserver_protocol_1_0.xml" afterPath="$PROJECT_DIR$/../client/.idea/libraries/Maven__gameserver_protocol_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/network/ServerConnectionSocket.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/network/ServerConnectionSocket.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/network/handlers/PacketHandlerReplicate.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/network/handlers/PacketHandlerReplicate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/network/packets/PacketMove.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/network/packets/PacketMove.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/view/GameCanvas.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/view/GameCanvas.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/Cell.class" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/Cell.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/pFood.class" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/pFood.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/pVirus.class" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/pVirus.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/clientConnection/handlers/PacketHandlerMove.class" afterPath="$PROJECT_DIR$/target/classes/clientConnection/handlers/PacketHandlerMove.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/matchmaker/MatchMaker.class" afterPath="$PROJECT_DIR$/target/classes/matchmaker/MatchMaker.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/matchmaker/MatchMakerImpl.class" afterPath="$PROJECT_DIR$/target/classes/matchmaker/MatchMakerImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/authDAO/DbConnection.class" afterPath="$PROJECT_DIR$/target/classes/model/authDAO/DbConnection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/authDAO/LB.class" afterPath="$PROJECT_DIR$/target/classes/model/authDAO/LB.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/authDAO/UserDAO.class" afterPath="$PROJECT_DIR$/target/classes/model/authDAO/UserDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/GameConstants.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/GameConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mechanics/Mechanics.class" afterPath="$PROJECT_DIR$/target/classes/mechanics/Mechanics.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messageSystem/messages/MoveMsg.class" afterPath="$PROJECT_DIR$/target/classes/messageSystem/messages/MoveMsg.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/GameSession.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/GameSession.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/GameSessionImpl.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/GameSessionImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/Location.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/Location.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/FoodGenerator.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/FoodGenerator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/Player.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/RandomPlayerPlacer.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/RandomPlayerPlacer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/RandomVirusGenerator.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/RandomVirusGenerator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/UniformFoodGenerator.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/UniformFoodGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameObjects/GameField.class" afterPath="$PROJECT_DIR$/target/classes/model/gameObjects/GameField.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/UniformVirusGenerator.class" afterPath="$PROJECT_DIR$/target/classes/model/gameInfo/utils/UniformVirusGenerator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/replication/DefaultReplication.class" afterPath="$PROJECT_DIR$/target/classes/replication/DefaultReplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ticker/Ticker.class" afterPath="$PROJECT_DIR$/target/classes/ticker/Ticker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/replication/FileReplicator.class" afterPath="$PROJECT_DIR$/target/classes/replication/FileReplicator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/pom.xml" afterPath="$PROJECT_DIR$/../client/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/GameConstants.java" afterPath="$PROJECT_DIR$/../client/src/zagar/GameConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/view/Cell.java" afterPath="$PROJECT_DIR$/../client/src/zagar/view/Cell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/view/GameCanvas.java" afterPath="$PROJECT_DIR$/../client/src/zagar/view/GameCanvas.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/network/ServerConnectionSocket.java" afterPath="$PROJECT_DIR$/../client/src/zagar/network/ServerConnectionSocket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/network/packets/PacketMove.java" afterPath="$PROJECT_DIR$/../client/src/zagar/network/packets/PacketMove.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/zagar-client.iml" afterPath="$PROJECT_DIR$/../client/zagar-client.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../protocol/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/pom.xml" afterPath="$PROJECT_DIR$/../protocol/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/src/protocol/model/Cell.java" afterPath="$PROJECT_DIR$/../protocol/src/protocol/model/Cell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/src/protocol/model/pFood.java" afterPath="$PROJECT_DIR$/../protocol/src/protocol/model/pFood.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/src/protocol/model/pVirus.java" afterPath="$PROJECT_DIR$/../protocol/src/protocol/model/pVirus.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/../protocol/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameserver.iml" afterPath="$PROJECT_DIR$/gameserver.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/MainServer.java" afterPath="$PROJECT_DIR$/src/main/java/main/MainServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/matchmaker/MatchMaker.java" afterPath="$PROJECT_DIR$/src/main/java/matchmaker/MatchMaker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/matchmaker/MatchMakerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/matchmaker/MatchMakerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/gameInfo/GameConstants.java" afterPath="$PROJECT_DIR$/src/main/java/model/gameInfo/GameConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mechanics/Mechanics.java" afterPath="$PROJECT_DIR$/src/main/java/mechanics/Mechanics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messageSystem/messages/MoveMsg.java" afterPath="$PROJECT_DIR$/src/main/java/messageSystem/messages/MoveMsg.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/gameInfo/GameSession.java" afterPath="$PROJECT_DIR$/src/main/java/model/gameInfo/GameSession.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/gameInfo/GameSessionImpl.java" afterPath="$PROJECT_DIR$/src/main/java/model/gameInfo/GameSessionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/gameInfo/utils/FoodGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/model/gameInfo/utils/FoodGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/gameInfo/utils/UniformFoodGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/model/gameInfo/utils/UniformFoodGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/gameObjects/GameField.java" afterPath="$PROJECT_DIR$/src/main/java/model/gameObjects/GameField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/replication/DefaultReplication.java" afterPath="$PROJECT_DIR$/src/main/java/replication/DefaultReplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ticker/Ticker.java" afterPath="$PROJECT_DIR$/src/main/java/ticker/Ticker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j2.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/log4j2.properties" afterPath="$PROJECT_DIR$/target/classes/log4j2.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/gameInfo/Location.java" afterPath="$PROJECT_DIR$/src/main/java/model/gameInfo/Location.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/gameInfo/Player.java" afterPath="$PROJECT_DIR$/src/main/java/model/gameInfo/Player.java" />
     </list>
     <ignored path="gameserver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,11 +69,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClientConnectionHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/ClientConnectionHandler.java">
+      <file leaf-file-name="Mechanics.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mechanics/Mechanics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+            <state relative-caret-position="170">
+              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -89,38 +82,78 @@
       <file leaf-file-name="Cell.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/gameObjects/Cell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="119">
               <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/main/MainServer.java">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+            <state relative-caret-position="323">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameConstants.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/GameConstants.java">
+      <file leaf-file-name="GameSession.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/GameSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="470">
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerCell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/gameObjects/PlayerCell.java">
+      <file leaf-file-name="GameSessionImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/GameSessionImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="161">
+              <caret line="50" column="50" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoveMsg.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/messageSystem/messages/MoveMsg.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchMakerImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/matchmaker/MatchMakerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RandomPlayerPlacer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/utils/RandomPlayerPlacer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2431">
+              <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -151,7 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/utils/VirusGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/utils/UniformVirusGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/gameObjects/Cell.java" />
@@ -160,23 +192,27 @@
         <option value="$PROJECT_DIR$/src/main/java/model/gameObjects/Virus.java" />
         <option value="$PROJECT_DIR$/src/main/java/clientConnection/packets/PacketReplicate.java" />
         <option value="$PROJECT_DIR$/src/main/resources/handlePacketsTestConfig.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/mechanics/Mechanics.java" />
         <option value="$PROJECT_DIR$/src/main/java/replication/FileReplicator.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/utils/RandomVirusGenerator.java" />
         <option value="$PROJECT_DIR$/src/test/java/ClientConnectionTest/ClientConnectionTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/GameSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/utils/FoodGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/resources/gameConfig.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j2.properties" />
         <option value="$PROJECT_DIR$/src/main/java/replication/DefaultReplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/gameObjects/GameField.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/GameSessionImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/matchmaker/MatchMakerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ticker/Ticker.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/utils/UniformFoodGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/MainServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/GameConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/matchmaker/MatchMakerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/matchmaker/MatchMaker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/Location.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/GameSession.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/messageSystem/messages/MoveMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/gameInfo/GameSessionImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mechanics/Mechanics.java" />
       </list>
     </option>
   </component>
@@ -191,6 +227,9 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -223,6 +262,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,10 +348,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -330,36 +368,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="replication" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -448,12 +456,30 @@
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gameInfo" />
+              <option name="myItemId" value="gameserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messageSystem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -479,7 +505,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="messageSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -502,6 +532,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mechanics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -553,58 +587,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leaderboardReplicator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="clientConnection" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -635,7 +617,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="packets" />
+              <option name="myItemId" value="JSONHelper" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -671,13 +653,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../atom/zagar_server/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1012,7 +991,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58919805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1051,25 +1030,31 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/clientConnection/packets/PacketReplicate.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/clientConnection/packets/PacketReplicate.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/clientConnection/handlers/PacketHandlerEjectMass.java</url>
           <line>26</line>
           <properties />
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/clientConnection/packets/PacketReplicate.java</url>
-          <line>25</line>
+          <url>file://$PROJECT_DIR$/src/main/java/matchmaker/MatchMakerImpl.java</url>
+          <line>74</line>
           <properties />
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/matchmaker/MatchMakerImpl.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/messageSystem/messages/MoveMsg.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1078,89 +1063,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/mechanics/Mechanics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messageSystem/messages/ReplicateLeaderboardMsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/MainServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/replication/FileReplicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/utils/RandomVirusGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ClientConnectionTest/ClientConnectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/utils/UniformFoodGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/packets/PacketReplicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/handlePacketsTestConfig.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,15 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/matchmaker/MatchMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1216,7 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1224,25 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mechanics/Mechanics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="145" column="8" selection-start-line="145" selection-start-column="8" selection-end-line="145" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,15 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/replication/EmptyReplicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1266,7 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1274,15 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/utils/RandomPlayerPlacer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1290,9 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1300,7 +1151,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1308,6 +1158,94 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameObjects/GameField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/utils/UniformFoodGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/replica.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/MainServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding>
+            <element signature="e#787#788#0" expanded="false" />
+            <element signature="e#850#851#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ticker/Tickable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/replication/EmptyReplicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/replication/FileReplicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/authDAO/AuthDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/authDAO/DbConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-844">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ticker/Ticker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1316,55 +1254,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/JSONHelper/JSONHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/GameSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameObjects/GameField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/matchmaker/MatchMakerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/GameSessionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ticker/Ticker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="119">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1372,40 +1268,66 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/utils/UniformFoodGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/handlers/PacketHandlerEjectMass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameObjects/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="68">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/packets/PacketReplicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/ClientConnections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/ClientConnectionServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/messageSystem/messages/SplitMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/replication/DefaultReplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/messageSystem/messages/EjectMassMsg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/ClientConnectionServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/handlers/PacketHandlerSplit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1418,44 +1340,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/replica.json">
+    <entry file="file://$PROJECT_DIR$/src/main/java/replication/DefaultReplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="52" column="129" selection-start-line="52" selection-start-column="129" selection-end-line="52" selection-end-column="129" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/replication/FileReplicator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/matchmaker/MatchMaker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/handlers/PacketHandlerEjectMass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="374">
+          <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/MainServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameObjects/Cell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state relative-caret-position="119">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/GameConstants.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/Location.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/clientConnection/handlers/PacketHandlerMove.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/utils/RandomPlayerPlacer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/GameSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/messageSystem/messages/MoveMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/matchmaker/MatchMakerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/gameInfo/GameSessionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="50" column="50" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mechanics/Mechanics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
           <folding />
         </state>
       </provider>

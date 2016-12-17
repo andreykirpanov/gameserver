@@ -7,10 +7,10 @@ public  class Cell {
   private final int cellId;
   private final int playerId;
   private final float size;
-  private int x;
-  private int y;
+  private double x;
+  private double y;
 
-  public Cell(int cellId, int playerId, float size, int x, int y) {
+  public Cell(int cellId, int playerId, float size, double x, double y) {
     this.cellId = cellId;
     this.playerId = playerId;
     this.size = size;
@@ -22,11 +22,11 @@ public  class Cell {
     return playerId;
   }
 
-  public int getX() {
+  public double getX() {
     return x;
   }
 
-  public int getY() {
+  public double getY() {
     return y;
   }
 

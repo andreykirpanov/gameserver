@@ -30,4 +30,6 @@ public interface GameSession {
   List<Player> getPlayers();
 
   GameField getField();
+
+  void move(Player player, double dx, double dy);
 }

@@ -1,6 +1,7 @@
 package model.gameInfo;
 
 import model.gameInfo.utils.*;
+import model.gameObjects.Cell;
 import model.gameObjects.Food;
 import model.gameObjects.GameField;
 import org.apache.logging.log4j.LogManager;
@@ -39,6 +40,17 @@ public class GameSessionImpl implements GameSession {
         //virusGenerator.generate();
         Thread foodGenerationTask = new Thread(foodGenerator);
         foodGenerationTask.start();
+    }
+
+    public void move(Player player, double dx, double dy){
+        for(Cell cell: player.getCells()){
+            if(dx - cell.getRadius() < 0 || dx + cell.getRadius() > field.getWidth() ||
+                    dy - cell.getRadius() < 0 || dy + cell.getRadius() > field.getHeight()){
+                return;
+            } else {
+                cell.setLocation(new Location(dx, dy));
+            }
+        }
     }
 
     @Override

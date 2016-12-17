@@ -67,4 +67,14 @@ public class MatchMakerImpl implements MatchMaker {
         return new GameSessionImpl(foodGenerator, new RandomPlayerPlacer(field), new UniformVirusGenerator(field, GameConstants.NUMBER_OF_VIRUSES),
                 field);
     }
+
+    @Override
+    public GameSession getSessionForPlayer(Player player){
+        for(GameSession session: activeGameSessions){
+            if(session.getPlayers().contains(player)){
+                return session;
+            }
+        }
+        return null;
+    }
 }

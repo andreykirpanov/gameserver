@@ -26,11 +26,6 @@ public class Player {
 
     public final int id;
 
-    /**
-     * Create new Player
-     *
-     * @param name        visible name
-     */
     public Player(@NotNull String name, int id) {
         this.name = name;
         this.id = id;
