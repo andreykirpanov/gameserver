@@ -7,6 +7,7 @@ import clientConnection.handlers.PacketHandlerMove;
 import clientConnection.handlers.PacketHandlerSplit;
 import com.google.gson.JsonObject;
 import main.ApplicationContext;
+import matchmaker.MatchMaker;
 import model.gameInfo.Player;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +31,7 @@ public class ClientConnectionHandler extends WebSocketAdapter {
     @Override
     public void onWebSocketText(@NotNull String message) {
         super.onWebSocketText(message);
-        log.info("Received packet: " + message);
+        //log.info("Received packet: " + message);
         if (getSession().isOpen()) {
         handlePacket(message);
         }
@@ -41,6 +42,9 @@ public class ClientConnectionHandler extends WebSocketAdapter {
         super.onWebSocketClose(statusCode, reason);
         log.info("Socket closed: [" + statusCode + "] " + reason);
         ClientConnections clientConnections = ApplicationContext.get(ClientConnections.class);
+        Player p = clientConnections.getConnectedPlayer(getSession());
+        int index =  ApplicationContext.get(MatchMaker.class).getPlayerSession().get(p.getId());
+        ApplicationContext.get(MatchMaker.class).getActiveGameSessions().get(index).leave(p);
         clientConnections.removeConnection(clientConnections.getConnectedPlayer(getSession()));
     }
 

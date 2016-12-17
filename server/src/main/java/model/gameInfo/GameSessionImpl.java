@@ -1,11 +1,11 @@
 package model.gameInfo;
 
-import model.gameInfo.utils.PlayerPlacer;
-import model.gameInfo.utils.VirusGenerator;
-import model.gameInfo.utils.FoodGenerator;
+import accountServer.authentification.Authentification;
+import model.authInfo.Leader;
+import model.gameInfo.utils.*;
+import model.gameObjects.Cell;
 import model.gameObjects.Food;
 import model.gameObjects.GameField;
-import model.gameInfo.utils.SequentialIDGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +23,7 @@ public class GameSessionImpl implements GameSession {
     private static final SequentialIDGenerator idGenerator = new SequentialIDGenerator();
     private final long id = idGenerator.next();
     @NotNull
-    private final GameField field = new GameField();
+    private final GameField field;
     @NotNull
     private final List<Player> players = new ArrayList<>();
     @NotNull
@@ -33,22 +33,39 @@ public class GameSessionImpl implements GameSession {
     @NotNull
     private final VirusGenerator virusGenerator;
 
-    public GameSessionImpl(@NotNull FoodGenerator foodGenerator, @NotNull PlayerPlacer playerPlacer, @NotNull VirusGenerator virusGenerator) {
+    public GameSessionImpl(@NotNull FoodGenerator foodGenerator, @NotNull PlayerPlacer playerPlacer, @NotNull VirusGenerator virusGenerator,
+                           @NotNull GameField gameField) {
         this.foodGenerator = foodGenerator;
         this.playerPlacer = playerPlacer;
         this.virusGenerator = virusGenerator;
-        virusGenerator.generate();
+        field = gameField;
+        //virusGenerator.generate();
+        Thread foodGenerationTask = new Thread(foodGenerator);
+        foodGenerationTask.start();
+    }
+
+    public void move(Player player, double dx, double dy){
+        for(Cell cell: player.getCells()){
+            if(dx - cell.getRadius() < 0 || dx + cell.getRadius() > field.getWidth() ||
+                    dy - cell.getRadius() < 0 || dy + cell.getRadius() > field.getHeight()){
+                return;
+            } else {
+                cell.setLocation(new Location(dx, dy));
+            }
+        }
     }
 
     @Override
     public void join(@NotNull Player player) {
         players.add(player);
+        player.setPts(Authentification.LB.getUserScore(player.getId()));
         this.playerPlacer.place(player);
     }
 
     @Override
     public void leave(@NotNull Player player) {
         players.remove(player);
+        log.info("Player " + player.getName() + " leaved");
     }
 
     @Override
@@ -67,35 +84,5 @@ public class GameSessionImpl implements GameSession {
                 "id=" + id +
                 '}';
     }
-    @Override
-    public void genFood(){
-        while(field.getFoods().size() < MAX_FOOD_ON_FIELD) {
-            field.addFood(foodGenerator.generate());
-        }
-    }
 
-    @Override
-    public void genVirus(){
-        while(field.getVirus().size() < 5){
-            field.addVirus(virusGenerator.generate());
-        }
-    }
-    public void Update(){
-        log.info("Updating begin");
-        List<Integer> DeleteIndex = new ArrayList<>();
-        for(Player p: players) {
-            for(Food f: field.getFoods()){
-                float dist = (p.getCells().get(0).getLocation().getX()-f.getLocation().getX())*(p.getCells().get(0).getLocation().getX()-f.getLocation().getX()) + (p.getCells().get(0).getLocation().getY()-f.getLocation().getY())*(p.getCells().get(0).getLocation().getY()-f.getLocation().getY());
-                if( Math.sqrt(dist) < p.getCells().get(0).getRadius()+f.getRadius()){
-                    DeleteIndex.add(field.getFoods().indexOf(f));
-                    p.addMass(f.getMass());
-                    log.info("########################################################food updated");
-                }
-            }
-        }
-        for(Integer i : DeleteIndex){
-            field.removeFood(i);
-        }
-        genFood();
-    }
 }

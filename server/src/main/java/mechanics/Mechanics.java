@@ -1,11 +1,14 @@
 package mechanics;
 
+import accountServer.authentification.Authentification;
 import main.ApplicationContext;
 import main.Service;
+import matchmaker.MatchMaker;
 import messageSystem.Message;
 import messageSystem.MessageSystem;
 import messageSystem.messages.ReplicateLeaderboardMsg;
 import messageSystem.messages.ReplicateMsg;
+import model.gameInfo.GameSession;
 import model.gameInfo.Player;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,12 +16,15 @@ import org.jetbrains.annotations.NotNull;
 import ticker.Tickable;
 import ticker.Ticker;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Created by User on 28.11.2016.
  */
 public class Mechanics extends Service implements Tickable {
     @NotNull
     private final static Logger log = LogManager.getLogger(Mechanics.class);
+    private int times = 1;
 
     public Mechanics() {
         super("mechanics");
@@ -27,21 +33,27 @@ public class Mechanics extends Service implements Tickable {
     @Override
     public void run() {
         log.info(getAddress() + " started");
-        Ticker ticker = new Ticker(this, 1);
+        Ticker ticker = new Ticker(this, 10);
         ticker.loop();
     }
 
     @Override
     public void tick(long elapsedNanos) {
-        try {
+        /*try {
             Thread.sleep(1500);
         } catch (InterruptedException e) {
             log.error(e);
             Thread.currentThread().interrupt();
             e.printStackTrace();
+        }*/
+        if(times == 6400){
+            for(GameSession g:ApplicationContext.get(MatchMaker.class).getActiveGameSessions()){
+                for(Player p:g.getPlayers()){
+                    Authentification.LB.updateScore(p.getId(),p.getPts());
+                }
+            }
+            times=1;
         }
-
-        log.info("Start replication");
         @NotNull MessageSystem messageSystem = ApplicationContext.get(MessageSystem.class);
         Message message = new ReplicateMsg(this.getAddress());
         messageSystem.sendMessage(message);
@@ -50,6 +62,8 @@ public class Mechanics extends Service implements Tickable {
 
         //execute all messages from queue
         messageSystem.executeForService(this);
+
+        times++;
     }
 
     public boolean ejectMass(Player player){
@@ -59,11 +73,6 @@ public class Mechanics extends Service implements Tickable {
 
     public boolean split(Player player){
         log.info(player + " split");
-        return true;
-    }
-
-    public boolean move(Player player, float dx, float dy){
-        log.info(player + " move. Change x to " + dx + ", y to " + dy);
         return true;
     }
 }

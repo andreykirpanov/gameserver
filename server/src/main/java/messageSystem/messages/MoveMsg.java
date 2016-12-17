@@ -1,6 +1,8 @@
 package messageSystem.messages;
 
+import main.ApplicationContext;
 import main.Service;
+import matchmaker.MatchMaker;
 import mechanics.Mechanics;
 import messageSystem.Address;
 import messageSystem.Message;
@@ -11,9 +13,9 @@ import model.gameInfo.Player;
  */
 public class MoveMsg extends Message {
     private Player player;
-    private float dx, dy;
+    private double dx, dy;
 
-    public MoveMsg(Address from, Address to, Player player, float dx, float dy) {
+    public MoveMsg(Address from, Address to, Player player, double dx, double dy) {
         super(from, to);
         this.player = player;
         this.dx = dx;
@@ -22,6 +24,6 @@ public class MoveMsg extends Message {
 
     @Override
     public void execute(Service service) {
-        ((Mechanics)service).move(player,dx,dy);
+        ApplicationContext.get(MatchMaker.class).getSessionForPlayer(player).move(player, dx, dy);
     }
 }

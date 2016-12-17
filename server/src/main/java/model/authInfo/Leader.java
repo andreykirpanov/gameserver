@@ -28,7 +28,8 @@ public class Leader {
     }
 
     public String toJSON(){
-        User JUser = Authentification.userDAO.getUserById(id);
-        return "\"" + JUser.getLogin()+ "\": "+this.points;
+        //User JUser = Authentification.userDAO.getUserById(id);
+        //return "\"" + JUser.getLogin()+ "\": "+this.points;
+        return  this.id + " : " + this.points;
     }
 }

@@ -26,7 +26,7 @@ public class MainServer {
     private Properties properties = new Properties();
 
     public static void main(String[] args) {
-        new MainServer("handlePacketsTestConfig.properties").start();
+        new MainServer("gameConfig.properties").start();
     }
 
     public MainServer(String configFileName){

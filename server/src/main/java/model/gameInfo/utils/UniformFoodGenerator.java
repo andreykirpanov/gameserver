@@ -1,10 +1,12 @@
 package model.gameInfo.utils;
 
 import model.gameInfo.Location;
-import model.gameInfo.utils.FoodGenerator;
 import model.gameObjects.Food;
 import model.gameObjects.GameField;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import ticker.Ticker;
 
 import java.util.Random;
 
@@ -12,10 +14,12 @@ import java.util.Random;
  * @author apomosov
  */
 public class UniformFoodGenerator implements FoodGenerator {
-    /*@NotNull
+    @NotNull
     private final GameField field;
     private final int threshold;
     private final double foodPerSecond;
+
+    private final static Logger log = LogManager.getLogger(UniformFoodGenerator.class);
 
     public UniformFoodGenerator(@NotNull GameField field, double foodPerSecond, int threshold) {
         this.field = field;
@@ -26,29 +30,23 @@ public class UniformFoodGenerator implements FoodGenerator {
     @Override
     public void tick(long elapsedNanos) {
         if (field.getFoods().size() <= threshold) {
-        int toGenerate = (int) Math.ceil(foodPerSecond * elapsedNanos / 1_000_000_000.);
+            int toGenerate = (int) Math.floor(foodPerSecond * elapsedNanos / 1_000_000_000.);
+            Random random = new Random();
+            for(int i = 0; i < toGenerate; i ++){
+                Food newFood = new Food(new Location(0,0));
+                Location newLocation = new Location(newFood.getRadius() + random.nextInt(field.getWidth() - 2 * newFood.getRadius()),
+                        newFood.getRadius() + random.nextInt(field.getHeight() - 2 * newFood.getRadius()));
+                newFood.setLocation(newLocation);
+                field.getFoods().add(newFood);
+            }
+            log.info(toGenerate + " food generated");
         }
-    }*/
-
-    @NotNull
-    private final GameField field;
-    private final int threshold;
-    private final double foodPerSecond=0.1;
-    Random random = new Random();
-
+    }
 
 
     @Override
-    public void tick(long elapsedNanos) {
-
+    public void run() {
+        Ticker ticker = new Ticker(this, 1);
+        ticker.loop();
     }
-    public UniformFoodGenerator(@NotNull GameField field,int threshold) {
-        this.field = field;
-        this.threshold = threshold;
-    }
-    @Override
-    public Food generate(){
-        return new Food(new Location(10+random.nextInt(field.getWidth()-20),10+random.nextInt(field.getHeight()-20)));
-    }
-
 }

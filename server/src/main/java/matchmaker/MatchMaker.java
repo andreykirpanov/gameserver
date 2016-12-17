@@ -5,6 +5,7 @@ import model.gameInfo.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Provides (searches or creates) {@link GameSession} for {@link Player}
@@ -23,4 +24,8 @@ public interface MatchMaker {
    */
     @NotNull
     List<GameSession> getActiveGameSessions();
+
+    GameSession getSessionForPlayer(Player player);
+
+    ConcurrentHashMap<Integer,Integer> getPlayerSession();
 }

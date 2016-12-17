@@ -6,6 +6,6 @@ import ticker.Tickable;
 /**
  * @author apomosov
  */
-public interface FoodGenerator extends Tickable {
-    Food generate();
+public interface FoodGenerator extends Tickable, Runnable {
+
 }

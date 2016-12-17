@@ -4,23 +4,23 @@ package model.gameInfo;
  * Created by User on 10.10.2016.
  */
 public class Location {
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
-    public Location(int x, int y){
+    public Location(double x, double y){
         setLocation(x,y);
     }
 
-    public int getX(){
+    public double getX(){
         return x;
     }
 
-    public int getY(){
+    public double getY(){
         return y;
     }
 
     //TODO: check whether x and y are set correctly
-    public void setLocation(int x, int y){
+    public void setLocation(double x, double y){
         this.x = x;
         this.y = y;
     }

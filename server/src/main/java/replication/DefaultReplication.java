@@ -31,7 +31,6 @@ public class DefaultReplication implements Replicator {
             int i =0;
             List<Virus> virus1 = gameSession.getField().getVirus();
             pVirus[] virus = new pVirus[virus1.size()];
-            log.info("###########3"+gameSession.getField().getVirus().size());
             for(Virus v: virus1){
                 virus[i] = new pVirus(v.getLocation().getX(),v.getLocation().getY());
                 i++;

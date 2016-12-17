@@ -25,12 +25,8 @@ public class Player {
     public static final SequentialIDGenerator idGenerator = new SequentialIDGenerator();
 
     public final int id;
+    private int pts = 0;
 
-    /**
-     * Create new Player
-     *
-     * @param name        visible name
-     */
     public Player(@NotNull String name, int id) {
         this.name = name;
         this.id = id;
@@ -61,6 +57,10 @@ public class Player {
     public int getId() {
         return id;
     }
+
+    public int getPts() {return  pts;}
+
+    public void setPts(int pts) { this.pts = pts; }
 
     @Override
     public String toString() {

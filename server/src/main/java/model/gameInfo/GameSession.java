@@ -1,5 +1,6 @@
 package model.gameInfo;
 
+import model.authInfo.Leader;
 import model.gameObjects.GameField;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,9 +29,7 @@ public interface GameSession {
   void leave(@NotNull Player player);
 
   List<Player> getPlayers();
-
   GameField getField();
-  void genFood();
-  void genVirus();
-  void Update();
+
+  void move(Player player, double dx, double dy);
 }
