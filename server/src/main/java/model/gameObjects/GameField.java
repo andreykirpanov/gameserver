@@ -21,6 +21,8 @@ public class GameField {
     @NotNull
     private final CopyOnWriteArrayList<Food> foods = new CopyOnWriteArrayList<>();
     @NotNull
+    private CopyOnWriteArrayList<Food> foodsOnPreviousReplica = new CopyOnWriteArrayList<>();
+    @NotNull
     private final List<Virus> virus = new ArrayList<>();
 
     public GameField() {
@@ -50,6 +52,14 @@ public class GameField {
     @NotNull
     public List<Food> getFoods() {
         return foods;
+    }
+    @NotNull
+    public CopyOnWriteArrayList<Food> getFoodsOnPreviousReplica() {
+        return foodsOnPreviousReplica;
+    }
+
+    public void setFoodsOnPreviousReplica(@NotNull CopyOnWriteArrayList<Food> foodsOnPreviousReplica) {
+        this.foodsOnPreviousReplica = foodsOnPreviousReplica;
     }
 
     @NotNull

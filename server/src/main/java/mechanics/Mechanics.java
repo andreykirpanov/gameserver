@@ -27,7 +27,7 @@ public class Mechanics extends Service implements Tickable {
     @Override
     public void run() {
         log.info(getAddress() + " started");
-        Ticker ticker = new Ticker(this, 10);
+        Ticker ticker = new Ticker(this, 20);
         ticker.loop();
     }
 

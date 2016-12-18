@@ -51,6 +51,25 @@ public class GameSessionImpl implements GameSession {
                 cell.setLocation(new Location(dx, dy));
             }
         }
+        checkFoodCollisions(player);
+    }
+
+    public void checkFoodCollisions(Player player){
+        for(Cell cell: player.getCells()) {
+            double lowerX = cell.getLocation().getX() - cell.getRadius() * 10;
+            double upperX = cell.getLocation().getX() + cell.getRadius() * 10;
+            double lowerY = cell.getLocation().getY() - cell.getRadius() * 10;
+            double upperY = cell.getLocation().getY() + cell.getRadius() * 10;
+            for(Food food: field.getFoods()){
+                double x = food.getLocation().getX();
+                double y = food.getLocation().getY();
+                if( x > lowerX && x < upperX && y > lowerY && y < upperY){
+                    cell.setMass(cell.getMass() + GameConstants.FOOD_MASS);
+                    //TODO: update player's score
+                    field.getFoods().remove(food);
+                }
+            }
+        }
     }
 
     @Override

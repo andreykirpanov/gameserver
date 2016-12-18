@@ -2,52 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a552b9-eebc-4bdb-9c4e-e9222e57d8e4" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../client/.idea/libraries/Maven__gameserver_protocol_1_0.xml" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__gameserver_protocol_1_1.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../server/.idea/libraries/Maven__gameserver_protocol_1_0.xml" afterPath="$PROJECT_DIR$/../client/.idea/libraries/Maven__gameserver_protocol_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/network/ServerConnectionSocket.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/network/ServerConnectionSocket.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/network/handlers/PacketHandlerReplicate.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/network/handlers/PacketHandlerReplicate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/network/packets/PacketMove.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/network/packets/PacketMove.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/view/GameCanvas.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/view/GameCanvas.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/protocol/model/Cell.class" afterPath="$PROJECT_DIR$/target/classes/protocol/model/Cell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/protocol/model/pFood.class" afterPath="$PROJECT_DIR$/target/classes/protocol/model/pFood.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/protocol/model/pVirus.class" afterPath="$PROJECT_DIR$/target/classes/protocol/model/pVirus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/clientConnection/handlers/PacketHandlerMove.class" afterPath="$PROJECT_DIR$/../server/target/classes/clientConnection/handlers/PacketHandlerMove.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/matchmaker/MatchMaker.class" afterPath="$PROJECT_DIR$/../server/target/classes/matchmaker/MatchMaker.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/SmartReplicator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/protocol/CommandReplicate.class" afterPath="$PROJECT_DIR$/target/classes/protocol/CommandReplicate.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/matchmaker/MatchMakerImpl.class" afterPath="$PROJECT_DIR$/../server/target/classes/matchmaker/MatchMakerImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/mechanics/Mechanics.class" afterPath="$PROJECT_DIR$/../server/target/classes/mechanics/Mechanics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/messageSystem/messages/MoveMsg.class" afterPath="$PROJECT_DIR$/../server/target/classes/messageSystem/messages/MoveMsg.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameSession.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameSession.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameConstants.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameConstants.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameSessionImpl.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameSessionImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/Location.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/Location.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/Player.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/RandomPlayerPlacer.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/RandomPlayerPlacer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/RandomVirusGenerator.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/RandomVirusGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/UniformFoodGenerator.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/UniformFoodGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/UniformVirusGenerator.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/UniformVirusGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/replication/DefaultReplication.class" afterPath="$PROJECT_DIR$/../server/target/classes/replication/DefaultReplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/replication/FileReplicator.class" afterPath="$PROJECT_DIR$/../server/target/classes/replication/FileReplicator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/pom.xml" afterPath="$PROJECT_DIR$/../client/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/network/ServerConnectionSocket.java" afterPath="$PROJECT_DIR$/../client/src/zagar/network/ServerConnectionSocket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/network/packets/PacketMove.java" afterPath="$PROJECT_DIR$/../client/src/zagar/network/packets/PacketMove.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/zagar-client.iml" afterPath="$PROJECT_DIR$/../client/zagar-client.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/network/handlers/PacketHandlerReplicate.java" afterPath="$PROJECT_DIR$/../client/src/zagar/network/handlers/PacketHandlerReplicate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/view/Food.java" afterPath="$PROJECT_DIR$/../client/src/zagar/view/Food.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/protocol/model/Cell.java" afterPath="$PROJECT_DIR$/src/protocol/model/Cell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/protocol/model/pFood.java" afterPath="$PROJECT_DIR$/src/protocol/model/pFood.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/protocol/model/pVirus.java" afterPath="$PROJECT_DIR$/src/protocol/model/pVirus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/protocol/CommandReplicate.java" afterPath="$PROJECT_DIR$/src/protocol/CommandReplicate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/gameserver.iml" afterPath="$PROJECT_DIR$/../server/gameserver.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/pom.xml" afterPath="$PROJECT_DIR$/../server/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/matchmaker/MatchMaker.java" afterPath="$PROJECT_DIR$/../server/src/main/java/matchmaker/MatchMaker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/matchmaker/MatchMakerImpl.java" afterPath="$PROJECT_DIR$/../server/src/main/java/matchmaker/MatchMakerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketReplicate.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketReplicate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/mechanics/Mechanics.java" afterPath="$PROJECT_DIR$/../server/src/main/java/mechanics/Mechanics.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/messageSystem/messages/MoveMsg.java" afterPath="$PROJECT_DIR$/../server/src/main/java/messageSystem/messages/MoveMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSession.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSession.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameConstants.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameConstants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSessionImpl.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSessionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/Location.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/Location.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/Player.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/GameField.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/GameField.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/replication/DefaultReplication.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/DefaultReplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/replication/FileReplicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/FileReplicator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/resources/gameConfig.properties" afterPath="$PROJECT_DIR$/../server/src/main/resources/gameConfig.properties" />
     </list>
     <ignored path="zagar-protocol.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,7 +49,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#239#240#0" expanded="false" />
+                <element signature="e#263#264#0" expanded="false" />
+                <element signature="e#291#292#0" expanded="false" />
+                <element signature="e#315#316#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,29 +64,30 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandReplicate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/protocol/CommandReplicate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#417#418#0" expanded="false" />
+                <element signature="e#442#443#0" expanded="false" />
+                <element signature="e#468#469#0" expanded="false" />
+                <element signature="e#486#487#0" expanded="false" />
+                <element signature="e#512#513#0" expanded="false" />
+                <element signature="e#530#531#0" expanded="false" />
+                <element signature="e#558#559#0" expanded="false" />
+                <element signature="e#581#582#0" expanded="false" />
+                <element signature="e#609#610#0" expanded="false" />
+                <element signature="e#630#631#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="CommandReplicate.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/protocol/CommandReplicate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
-              <folding />
+            <state relative-caret-position="476">
+              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,11 +113,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/protocol/model/Food.java" />
-        <option value="$PROJECT_DIR$/src/protocol/CommandReplicate.java" />
         <option value="$PROJECT_DIR$/src/protocol/model/pVirus.java" />
         <option value="$PROJECT_DIR$/src/protocol/model/pFood.java" />
         <option value="$PROJECT_DIR$/src/protocol/model/Cell.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/protocol/CommandReplicate.java" />
       </list>
     </option>
   </component>
@@ -186,7 +167,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -248,7 +229,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -536,7 +517,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -574,7 +555,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#239#240#0" expanded="false" />
+            <element signature="e#263#264#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+            <element signature="e#315#316#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/protocol/model/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+          <folding>
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#442#443#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#630#631#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/protocol/CommandReplicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/protocol/model/pVirus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#239#240#0" expanded="false" />
+            <element signature="e#263#264#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+            <element signature="e#315#316#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -582,7 +618,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#442#443#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#630#631#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -616,7 +663,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#442#443#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#630#631#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -624,7 +682,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="e#239#240#0" expanded="false" />
+            <element signature="e#263#264#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+            <element signature="e#315#316#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -658,7 +721,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#442#443#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#630#631#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,7 +740,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="e#239#240#0" expanded="false" />
+            <element signature="e#263#264#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+            <element signature="e#315#316#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -680,28 +759,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/protocol/model/pFood.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/protocol/model/pVirus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/protocol/CommandReplicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#239#240#0" expanded="false" />
+            <element signature="e#263#264#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+            <element signature="e#315#316#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -710,7 +776,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
-          <folding />
+          <folding>
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#442#443#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#630#631#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,6 +796,24 @@
         <state relative-caret-position="408">
           <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/protocol/model/pFood.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/protocol/CommandReplicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

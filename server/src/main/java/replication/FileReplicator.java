@@ -71,7 +71,7 @@ public class FileReplicator implements Replicator {
             for (Map.Entry<Player, Session> connection : ApplicationContext.get(ClientConnections.class).getConnections()) {
                 if (gameSession.getPlayers().contains(connection.getKey()) && connection.getValue().isOpen()) {
                     try {
-                        new PacketReplicate(cell, food,virus).write(connection.getValue());
+                        new PacketReplicate(cell, food, new pFood[0],virus).write(connection.getValue());
                     } catch (IOException e) {
 
                     }

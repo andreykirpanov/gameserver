@@ -17,36 +17,55 @@ import protocol.model.pFood;
 import protocol.model.pVirus;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * Created by Max on 29.11.2016.
+ * Created by User on 18.12.2016.
  */
-public class DefaultReplication implements Replicator {
-    private final static Logger log = LogManager.getLogger(DefaultReplication.class);
+public class SmartReplicator implements Replicator {
+    private static final Logger log = LogManager.getLogger(SmartReplicator.class);
     @Override
     public void replicate() {
         for (GameSession gameSession : ApplicationContext.get(MatchMaker.class).getActiveGameSessions()) {
             int i =0;
+
             List<Virus> virus1 = gameSession.getField().getVirus();
             pVirus[] virus = new pVirus[virus1.size()];
             for(Virus v: virus1){
                 virus[i] = new pVirus(v.getLocation().getX(),v.getLocation().getY());
                 i++;
             }
-            List<Food> food1 = gameSession.getField().getFoods();
-            pFood[] food = new pFood[food1.size()];
+
+            List<Food> currentFood = gameSession.getField().getFoods();
+            List<Food> foodOnPreviousReplica = gameSession.getField().getFoodsOnPreviousReplica();
+
+            List<Food> bufferFoodToAdd = new ArrayList<>(currentFood);
+            bufferFoodToAdd.removeAll(foodOnPreviousReplica);
+            pFood[] foodToAdd = new pFood[bufferFoodToAdd.size()];
             i=0;
-            for(Food f: food1){
-                food[i]= new pFood(f.getLocation().getX(),f.getLocation().getY());
+            for(Food f: bufferFoodToAdd){
+                foodToAdd[i]= new pFood(f.getLocation().getX(),f.getLocation().getY());
                 i++;
             }
+
+            List<Food> bufferFoodToRemove = new ArrayList<>(foodOnPreviousReplica);
+            bufferFoodToRemove.removeAll(currentFood);
+            pFood[] foodToRemove = new pFood[bufferFoodToRemove.size()];
+            i=0;
+            for(Food f: bufferFoodToRemove){
+                foodToRemove[i]= new pFood(f.getLocation().getX(),f.getLocation().getY());
+                i++;
+            }
+
             int numberOfCellsInSession = 0;
             for (Player player : gameSession.getPlayers()) {
                 numberOfCellsInSession += player.getCells().size();
             }
             Cell[] cells = new Cell[numberOfCellsInSession];
+
             i = 0;
             for (Player player : gameSession.getPlayers()) {
                 for (PlayerCell playerCell : player.getCells()) {
@@ -54,15 +73,17 @@ public class DefaultReplication implements Replicator {
                     i++;
                 }
             }
+
             for (Map.Entry<Player, Session> connection : ApplicationContext.get(ClientConnections.class).getConnections()) {
                 if (gameSession.getPlayers().contains(connection.getKey()) && connection.getValue().isOpen()) {
                     try {
-                        new PacketReplicate(cells, food, new pFood[0], virus).write(connection.getValue());
+                        new PacketReplicate(cells, foodToAdd, foodToRemove, virus).write(connection.getValue());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
             }
+            gameSession.getField().setFoodsOnPreviousReplica(new CopyOnWriteArrayList<>(currentFood));
         }
     }
 }
