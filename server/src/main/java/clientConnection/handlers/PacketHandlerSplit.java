@@ -18,13 +18,7 @@ import protocol.CommandSplit;
 
 public class PacketHandlerSplit {
     public PacketHandlerSplit(@NotNull Session session, @NotNull String json) {
-        CommandSplit commandSplit;
-        try {
-            commandSplit = JSONHelper.fromJSON(json, CommandSplit.class);
-        } catch (JSONDeserializationException e) {
-            e.printStackTrace();
-            return;
-        }
+
         MessageSystem messageSystem = ApplicationContext.get(MessageSystem.class);
         Address from = messageSystem.getService(ClientConnectionServer.class).getAddress();
         Address to = messageSystem.getService(Mechanics.class).getAddress();

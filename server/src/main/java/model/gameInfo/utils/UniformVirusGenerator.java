@@ -19,10 +19,7 @@ public class UniformVirusGenerator implements VirusGenerator{
 
     @Override
     public void tick(long elapsedNanos) {
-    /*if (field.getFoods().size() <= threshold) {
-      Food f = new Food(10+random.nextInt(field.getWidth()-20),10+random.nextInt(field.getHeight()-20));
-      field.getFoods().add(f);
-    }*/
+
     }
     public UniformVirusGenerator(@NotNull GameField field, int threshold) {
         this.field = field;

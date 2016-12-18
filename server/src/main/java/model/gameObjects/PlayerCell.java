@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
  * Created by User on 10.10.2016.
  */
 
-//Игровая сущность, управляемая игроком
 public class PlayerCell extends Cell {
 
     private final int id;

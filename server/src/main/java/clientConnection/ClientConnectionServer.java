@@ -36,7 +36,6 @@ public class ClientConnectionServer extends Service {
 
         server.setHandler(context);
 
-        // Add a websocket to a specific path spec
         ClientConnectionServlet clientConnectionServlet = new ClientConnectionServlet();
         context.addServlet(new ServletHolder(clientConnectionServlet), "/clientConnection");
 

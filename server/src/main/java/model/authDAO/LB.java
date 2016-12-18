@@ -19,8 +19,6 @@ public class LB implements AuthDAO<Leader> {
     private static final Logger log = LogManager.getLogger(LB.class);
     private static final String INSERT_POINTS_TEMPLATE =
             "INSERT INTO leaderboard VALUES (%d);";
-    //private static final String UPDATE_ID=
-     //       "UPDATE leaderboard SET userid=%d WHERE muser=\'%s\';";
     private static final String UPDATE_POINTS =
             "UPDATE leaderboard SET score = %d WHERE userid =%d;";
     private static final String SELECT_LEADERS =

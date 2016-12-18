@@ -16,7 +16,6 @@ import org.eclipse.jetty.websocket.api.WebSocketAdapter;
 import org.jetbrains.annotations.NotNull;
 import protocol.*;
 
-import java.util.Map;
 
 public class ClientConnectionHandler extends WebSocketAdapter {
     private final static @NotNull

@@ -69,7 +69,6 @@ public class GameSessionImpl implements GameSession {
                 double y = food.getLocation().getY();
                 if( x > lowerX && x < upperX && y > lowerY && y < upperY){
                     cell.setMass(cell.getMass() + GameConstants.FOOD_MASS);
-                    //TODO: update player's score
                     field.getFoodsToRemove().add(food);
                     field.getFoods().remove(food);
                 }

@@ -74,6 +74,5 @@ public class Token {
 
     public Long getNumber(){return number;}
 
-    //TODO: get/set for date and token
 
 }

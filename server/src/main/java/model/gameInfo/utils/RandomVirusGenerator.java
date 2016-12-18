@@ -31,10 +31,8 @@ public class RandomVirusGenerator implements VirusGenerator {
     public Virus generate() {
         Random random = new Random();
         int virusRadius = (int) Math.sqrt(GameConstants.VIRUS_MASS / Math.PI);
-        //for (int i = 0; i < numberOfViruses; i++) {
         Virus virus = new Virus( new Location(virusRadius + random.nextInt(field.getWidth() - 2 * virusRadius),
               virusRadius + random.nextInt(field.getHeight() - 2 * virusRadius)));
-       //}
         return virus;
     }
 }

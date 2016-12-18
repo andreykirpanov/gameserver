@@ -23,7 +23,7 @@ public class AccountServer extends Service {
     private static final Logger log = LogManager.getLogger(AccountServer.class);
 
     public AccountServer(int port){
-        super("account_server_on_port_8081");
+        super("account_server");
         log.info("account server start");
         this.port = port;
     }

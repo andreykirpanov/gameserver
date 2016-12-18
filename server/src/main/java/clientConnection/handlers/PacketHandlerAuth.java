@@ -8,8 +8,6 @@ import clientConnection.packets.PacketAuthFail;
 import clientConnection.packets.PacketAuthOk;
 import main.ApplicationContext;
 import matchmaker.MatchMaker;
-import model.authDAO.UserDAO;
-import model.authInfo.User;
 import model.gameInfo.Player;
 import org.eclipse.jetty.websocket.api.Session;
 import org.jetbrains.annotations.NotNull;

@@ -33,9 +33,5 @@ public class Location {
                 '}';
     }
 
-    public static Location getRandomLocation(){
-        return new Location(0,0);
-    }
-
 
 }
