@@ -9,13 +9,15 @@ public  class Cell {
   private final float size;
   private double x;
   private double y;
+  private String name;
 
-  public Cell(int cellId, int playerId, float size, double x, double y) {
+  public Cell(int cellId, int playerId, float size, double x, double y, String name) {
     this.cellId = cellId;
     this.playerId = playerId;
     this.size = size;
     this.x = x;
     this.y = y;
+    this.name = name;
   }
 
   public int getPlayerId() {
@@ -37,4 +39,5 @@ public  class Cell {
   public float getSize() {
     return size;
   }
+  public String getName() {return  name;}
 }

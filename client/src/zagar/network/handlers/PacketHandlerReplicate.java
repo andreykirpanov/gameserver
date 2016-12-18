@@ -42,7 +42,7 @@ public class PacketHandlerReplicate {
     Virus[] gameVirus = new Virus[commandReplicate.getVirus().length];
     for (int i = 0; i < commandReplicate.getCells().length; i++) {
       protocol.model.Cell c = commandReplicate.getCells()[i];
-      gameCells[i] = new Cell(c.getX(), c.getY(), c.getSize(), c.getCellId());
+      gameCells[i] = new Cell(c.getX(), c.getY(), c.getSize(), c.getCellId(),c.getName());
     }
     for (int i = 0; i < commandReplicate.getFoodToAdd().length; i++) {
       pFood c = commandReplicate.getFoodToAdd()[i];
