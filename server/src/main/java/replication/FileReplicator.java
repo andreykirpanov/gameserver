@@ -63,7 +63,8 @@ public class FileReplicator implements Replicator {
         i=0;
         for(JsonElement c:jsonCells){
             JsonObject jsonc=c.getAsJsonObject();
-            Cell c1= new Cell(jsonc.get("cellId").getAsInt(),jsonc.get("playerId").getAsInt(),jsonc.get("size").getAsFloat(),jsonc.get("x").getAsInt(),jsonc.get("y").getAsInt());
+            Cell c1= new Cell(jsonc.get("cellId").getAsInt(),jsonc.get("playerId").getAsInt(),jsonc.get("size").getAsFloat(),jsonc.get("x").getAsInt(),jsonc.get("y").getAsInt(),
+                    "a");
             cell[i]=c1;
             i++;
         }

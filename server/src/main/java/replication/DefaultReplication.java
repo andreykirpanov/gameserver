@@ -50,7 +50,8 @@ public class DefaultReplication implements Replicator {
             i = 0;
             for (Player player : gameSession.getPlayers()) {
                 for (PlayerCell playerCell : player.getCells()) {
-                    cells[i] = new Cell(playerCell.getId(), player.getId(), playerCell.getRadius(), playerCell.getLocation().getX(), playerCell.getLocation().getY());
+                    cells[i] = new Cell(playerCell.getId(), player.getId(), playerCell.getRadius(), playerCell.getLocation().getX(), playerCell.getLocation().getY(),
+                            playerCell.getName());
                     i++;
                 }
             }

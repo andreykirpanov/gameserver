@@ -30,7 +30,7 @@ public class Player {
     public Player(@NotNull String name, int id) {
         this.name = name;
         this.id = id;
-        addCell(new PlayerCell(Cell.idGenerator.next(), new Location(0,0)));
+        addCell(new PlayerCell(Cell.idGenerator.next(), new Location(0,0), name));
         if (log.isInfoEnabled()) {
             log.info(toString() + " created");
         }

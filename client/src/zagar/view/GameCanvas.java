@@ -85,7 +85,7 @@ public class GameCanvas extends JPanel {
       if (cell != null) {
         cell.render(g, 10);
         if (cell.mass > 9) {
-          cell.render(g, Math.max(1 - 1f / (cell.mass / 10f), 0.87f));
+          cell.render(g, (float) Math.max(1 - 1f / (cell.mass / 10f), 0.87));
         }
       }
     }
