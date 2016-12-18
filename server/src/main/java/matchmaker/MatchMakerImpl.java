@@ -35,27 +35,33 @@ public class MatchMakerImpl implements MatchMaker {
      */
     @Override
     public void joinGame(@NotNull Player player) {
-        if(activeGameSessions.isEmpty()) {
-            GameSession newGameSession = createNewGame();
-            activeGameSessions.add(newGameSession);
-            newGameSession.join(player);
-            PlayerSession.put(player.getId(),0);
-            log.info(player + " joined " + newGameSession);
-        }
-        else {
-            GameSession currentGameSession = activeGameSessions.get(activeGameSessions.size() - 1);
-            if(currentGameSession.getPlayers().size() < MAX_PLAYERS_IN_SESSION ) {
-                currentGameSession.join(player);
-                PlayerSession.put(player.getId(),activeGameSessions.indexOf(currentGameSession));
-                log.info(player + " joined " + currentGameSession);
-            }
-            else{
+        if(PlayerSession.get(player.getId())==null) {
+            if (activeGameSessions.isEmpty()) {
                 GameSession newGameSession = createNewGame();
                 activeGameSessions.add(newGameSession);
                 newGameSession.join(player);
-                PlayerSession.put(player.getId(),activeGameSessions.indexOf(newGameSession));
+                PlayerSession.put(player.getId(), 0);
                 log.info(player + " joined " + newGameSession);
+            } else {
+                for (GameSession g : activeGameSessions) {
+                    if (g.getPlayers().size() < MAX_PLAYERS_IN_SESSION) {
+                        g.join(player);
+                        PlayerSession.put(player.getId(), activeGameSessions.indexOf(g));
+                        break;
+                    } else {
+                        if (activeGameSessions.indexOf(g) == activeGameSessions.size() - 1) {
+                            GameSession newGameSession = createNewGame();
+                            activeGameSessions.add(newGameSession);
+                            newGameSession.join(player);
+                            PlayerSession.put(player.getId(), activeGameSessions.indexOf(newGameSession));
+                            log.info(player + " joined " + newGameSession);
+                        }
+                    }
+                }
             }
+        }
+        else{
+            log.info("Player already in session #"+PlayerSession.get(player.getId()));
         }
     }
 
@@ -86,4 +92,9 @@ public class MatchMakerImpl implements MatchMaker {
 
     @Override
     public ConcurrentHashMap<Integer,Integer> getPlayerSession(){return PlayerSession;}
+
+    @Override
+    public void removePlayerSession(int id){
+        log.info("here " + PlayerSession.get(id));
+        PlayerSession.remove(id);}
 }

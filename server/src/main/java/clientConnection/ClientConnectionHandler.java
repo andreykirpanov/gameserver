@@ -31,25 +31,24 @@ public class ClientConnectionHandler extends WebSocketAdapter {
     @Override
     public void onWebSocketText(@NotNull String message) {
         super.onWebSocketText(message);
-        //log.info("Received packet: " + message);
         if (getSession().isOpen()) {
-        handlePacket(message);
+            handlePacket(message);
         }
     }
 
     @Override
     public void onWebSocketClose(int statusCode, @NotNull String reason) {
-        super.onWebSocketClose(statusCode, reason);
-        log.info("Socket closed: [" + statusCode + "] " + reason);
         ClientConnections clientConnections = ApplicationContext.get(ClientConnections.class);
         Player p = clientConnections.getConnectedPlayer(getSession());
         int index =  ApplicationContext.get(MatchMaker.class).getPlayerSession().get(p.getId());
         ApplicationContext.get(MatchMaker.class).getActiveGameSessions().get(index).leave(p);
         clientConnections.removeConnection(clientConnections.getConnectedPlayer(getSession()));
+        super.onWebSocketClose(statusCode, reason);
+        log.info("Socket closed: [" + statusCode + "] " + reason);
     }
 
-        @Override
-        public void onWebSocketError(@NotNull Throwable cause) {
+    @Override
+    public void onWebSocketError(@NotNull Throwable cause) {
         super.onWebSocketError(cause);
         cause.printStackTrace(System.err);
     }

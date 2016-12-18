@@ -46,7 +46,7 @@ public class Mechanics extends Service implements Tickable {
             Thread.currentThread().interrupt();
             e.printStackTrace();
         }*/
-        if(times == 6400){
+        if(times == 64000){
             for(GameSession g:ApplicationContext.get(MatchMaker.class).getActiveGameSessions()){
                 for(Player p:g.getPlayers()){
                     Authentification.LB.updateScore(p.getId(),p.getPts());

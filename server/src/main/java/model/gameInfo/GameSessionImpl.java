@@ -1,6 +1,8 @@
 package model.gameInfo;
 
 import accountServer.authentification.Authentification;
+import main.ApplicationContext;
+import matchmaker.MatchMaker;
 import model.authInfo.Leader;
 import model.gameInfo.utils.*;
 import model.gameObjects.Cell;
@@ -39,7 +41,6 @@ public class GameSessionImpl implements GameSession {
         this.playerPlacer = playerPlacer;
         this.virusGenerator = virusGenerator;
         field = gameField;
-        //virusGenerator.generate();
         Thread foodGenerationTask = new Thread(foodGenerator);
         foodGenerationTask.start();
     }
@@ -64,8 +65,11 @@ public class GameSessionImpl implements GameSession {
 
     @Override
     public void leave(@NotNull Player player) {
-        players.remove(player);
         log.info("Player " + player.getName() + " leaved");
+        ApplicationContext.get(MatchMaker.class).removePlayerSession(player.getId());
+        Authentification.LB.updateScore(player.getId(), player.getPts());
+        Authentification.tokenDAO.delete(Authentification.tokenDAO.getTokenByUserId(player.getId()));
+        players.remove(player);
     }
 
     @Override
