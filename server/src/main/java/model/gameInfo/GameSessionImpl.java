@@ -59,7 +59,6 @@ public class GameSessionImpl implements GameSession {
     @Override
     public void join(@NotNull Player player) {
         players.add(player);
-        player.setPts(Authentification.LB.getUserScore(player.getId()));
         this.playerPlacer.place(player);
     }
 
@@ -67,7 +66,7 @@ public class GameSessionImpl implements GameSession {
     public void leave(@NotNull Player player) {
         log.info("Player " + player.getName() + " leaved");
         ApplicationContext.get(MatchMaker.class).removePlayerSession(player.getId());
-        Authentification.LB.updateScore(player.getId(), player.getPts());
+        Authentification.LB.updateScore(player.getId(),0);
         Authentification.tokenDAO.delete(Authentification.tokenDAO.getTokenByUserId(player.getId()));
         players.remove(player);
     }
