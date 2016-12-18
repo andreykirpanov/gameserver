@@ -94,6 +94,13 @@ public class MatchMakerImpl implements MatchMaker {
     public ConcurrentHashMap<Integer,Integer> getPlayerSession(){return PlayerSession;}
 
     @Override
+    public void tick() {
+        for(GameSession session: activeGameSessions){
+            session.tick();
+        }
+    }
+
+    @Override
     public void removePlayerSession(int id){
         log.info("here " + PlayerSession.get(id));
         PlayerSession.remove(id);}

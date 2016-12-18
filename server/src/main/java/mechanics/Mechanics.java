@@ -8,6 +8,7 @@ import messageSystem.Message;
 import messageSystem.MessageSystem;
 import messageSystem.messages.ReplicateLeaderboardMsg;
 import messageSystem.messages.ReplicateMsg;
+import model.gameInfo.GameConstants;
 import model.gameInfo.GameSession;
 import model.gameInfo.Player;
 import org.apache.logging.log4j.LogManager;
@@ -33,7 +34,7 @@ public class Mechanics extends Service implements Tickable {
     @Override
     public void run() {
         log.info(getAddress() + " started");
-        Ticker ticker = new Ticker(this, 25);
+        Ticker ticker = new Ticker(this, GameConstants.SERVER_FPS);
         ticker.loop();
     }
 
@@ -48,6 +49,8 @@ public class Mechanics extends Service implements Tickable {
             }
             times=1;
         }
+        ApplicationContext.get(MatchMaker.class).tick();
+
         @NotNull MessageSystem messageSystem = ApplicationContext.get(MessageSystem.class);
         messageSystem.executeForService(this);
 

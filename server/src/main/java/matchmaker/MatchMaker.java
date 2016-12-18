@@ -28,4 +28,5 @@ public interface MatchMaker {
   GameSession getSessionForPlayer(Player player);
   void removePlayerSession(int id);
   ConcurrentHashMap<Integer,Integer> getPlayerSession();
+  void tick();
 }

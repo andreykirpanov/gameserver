@@ -46,19 +46,40 @@ public class GameSessionImpl implements GameSession {
         foodGenerationTask.start();
     }
 
-    public void move(Player player, double dx, double dy){
+    @Override
+    public void offerNewLocation(Player player, double dx, double dy){
         for(Cell cell: player.getCells()){
-            if(dx - cell.getRadius() < 0 || dx + cell.getRadius() > field.getWidth() ||
-                    dy - cell.getRadius() < 0 || dy + cell.getRadius() > field.getHeight()){
+            double newX = cell.getLocation().getX() +
+                    Math.signum(dx - cell.getLocation().getX()) * Math.pow(dx - cell.getLocation().getX(), 2/3)*
+                    cell.getSpeed() / GameConstants.SERVER_FPS;
+            double newY = cell.getLocation().getY() +
+                    Math.signum(dy - cell.getLocation().getY()) * Math.pow(dy - cell.getLocation().getY(), 2/3)*
+                    cell.getSpeed() / GameConstants.SERVER_FPS;
+            if(newX - cell.getRadius() < 0 || newX + cell.getRadius() > field.getWidth() ||
+                    newY - cell.getRadius() < 0 || newY + cell.getRadius() > field.getHeight()){
                 return;
             } else {
-                cell.setLocation(new Location(dx, dy));
+                cell.setNewLocation(new Location(newX, newY));
             }
         }
-        checkFoodCollisions(player);
     }
 
-    public void checkFoodCollisions(Player player){
+    @Override
+    public void tick() {
+        for(Player player: players){
+            move(player);
+            checkFoodCollisions(player);
+        }
+    }
+
+
+    private void move(Player player){
+        for(Cell cell: player.getCells()){
+            cell.setLocation(cell.getNewLocation());
+        }
+    }
+
+    private void checkFoodCollisions(Player player){
         for(Cell cell: player.getCells()) {
             double lowerX = cell.getLocation().getX() - cell.getRadius() * 10;
             double upperX = cell.getLocation().getX() + cell.getRadius() * 10;

@@ -24,6 +24,6 @@ public class MoveMsg extends Message {
 
     @Override
     public void execute(Service service) {
-        ApplicationContext.get(MatchMaker.class).getSessionForPlayer(player).move(player, dx, dy);
+        ApplicationContext.get(MatchMaker.class).getSessionForPlayer(player).offerNewLocation(player, dx, dy);
     }
 }
