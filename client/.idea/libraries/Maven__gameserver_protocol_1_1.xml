@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: gameserver:protocol:1.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/gameserver/protocol/1.1/protocol-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/gameserver/protocol/1.1/protocol-1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/gameserver/protocol/1.1/protocol-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

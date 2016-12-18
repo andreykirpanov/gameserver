@@ -33,7 +33,7 @@ public class Mechanics extends Service implements Tickable {
     @Override
     public void run() {
         log.info(getAddress() + " started");
-        Ticker ticker = new Ticker(this, 1);
+        Ticker ticker = new Ticker(this, 25);
         ticker.loop();
     }
 
@@ -49,7 +49,6 @@ public class Mechanics extends Service implements Tickable {
 
         log.info("Start replication");
         //execute all messages from queue
-        }*/
         if(times == 64000){
             for(GameSession g:ApplicationContext.get(MatchMaker.class).getActiveGameSessions()){
                 for(Player p:g.getPlayers()){
