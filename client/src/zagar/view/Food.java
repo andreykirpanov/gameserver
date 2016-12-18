@@ -33,6 +33,24 @@ public class Food {
         this.sizeRender = this.size;
     }
 
+    @Override
+    public boolean equals(Object another){
+        if(!(another instanceof Food)){
+            return false;
+        } else {
+            if( this.x == ((Food) another).x && this.y == ((Food) another).y){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    @Override
+    public int hashCode(){
+        return (int)(x + y * 13);
+    }
+
     public void tick() {
         this.xRender -= (this.xRender - x) / 5f;
         this.yRender -= (this.yRender - y) / 5f;

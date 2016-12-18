@@ -2,9 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd33cbed-fd55-4b17-90da-d5b81d8c28cc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__gameserver_protocol_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/SmartReplicator.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__atom_zagar_protocol_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../protocol/target/zagar-protocol-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../server/.idea/libraries/Maven__atom_zagar_client_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../server/.idea/libraries/Maven__atom_zagar_protocol_1_0.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/zagar/GameConstants.class" afterPath="$PROJECT_DIR$/target/classes/zagar/GameConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/zagar/auth/AuthClient.class" afterPath="$PROJECT_DIR$/target/classes/zagar/auth/AuthClient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/zagar/network/ServerConnectionSocket.class" afterPath="$PROJECT_DIR$/target/classes/zagar/network/ServerConnectionSocket.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/zagar/network/handlers/PacketHandlerReplicate.class" afterPath="$PROJECT_DIR$/target/classes/zagar/network/handlers/PacketHandlerReplicate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/zagar/network/packets/PacketMove.class" afterPath="$PROJECT_DIR$/target/classes/zagar/network/packets/PacketMove.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/zagar/view/Cell.class" afterPath="$PROJECT_DIR$/target/classes/zagar/view/Cell.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/zagar/view/Food.class" afterPath="$PROJECT_DIR$/target/classes/zagar/view/Food.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/zagar/view/GameCanvas.class" afterPath="$PROJECT_DIR$/target/classes/zagar/view/GameCanvas.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/zagar/view/Virus.class" afterPath="$PROJECT_DIR$/target/classes/zagar/view/Virus.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandReplicate.class" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/CommandReplicate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/Cell.class" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/Cell.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/pFood.class" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/pFood.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/pVirus.class" afterPath="$PROJECT_DIR$/../protocol/target/classes/protocol/model/pVirus.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/client/AuthRequests.class" afterPath="$PROJECT_DIR$/../server/target/classes/client/AuthRequests.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/clientConnection/packets/PacketReplicate.class" afterPath="$PROJECT_DIR$/../server/target/classes/clientConnection/packets/PacketReplicate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/authDAO/DbConnection.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/authDAO/DbConnection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/authDAO/LB.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/authDAO/LB.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameConstants.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/UniformFoodGenerator.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/utils/UniformFoodGenerator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameObjects/GameField.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameObjects/GameField.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/ticker/Ticker.class" afterPath="$PROJECT_DIR$/../server/target/classes/ticker/Ticker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zagar/GameConstants.java" afterPath="$PROJECT_DIR$/src/zagar/GameConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zagar/network/ServerConnectionSocket.java" afterPath="$PROJECT_DIR$/src/zagar/network/ServerConnectionSocket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerReplicate.java" afterPath="$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerReplicate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zagar/network/packets/PacketMove.java" afterPath="$PROJECT_DIR$/src/zagar/network/packets/PacketMove.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zagar/view/Cell.java" afterPath="$PROJECT_DIR$/src/zagar/view/Cell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zagar/view/Food.java" afterPath="$PROJECT_DIR$/src/zagar/view/Food.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zagar/view/GameCanvas.java" afterPath="$PROJECT_DIR$/src/zagar/view/GameCanvas.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zagar-client.iml" afterPath="$PROJECT_DIR$/zagar-client.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../protocol/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/pom.xml" afterPath="$PROJECT_DIR$/../protocol/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/src/protocol/CommandReplicate.java" afterPath="$PROJECT_DIR$/../protocol/src/protocol/CommandReplicate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/src/protocol/model/Cell.java" afterPath="$PROJECT_DIR$/../protocol/src/protocol/model/Cell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/src/protocol/model/pFood.java" afterPath="$PROJECT_DIR$/../protocol/src/protocol/model/pFood.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/src/protocol/model/pVirus.java" afterPath="$PROJECT_DIR$/../protocol/src/protocol/model/pVirus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../protocol/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/../protocol/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/gameserver.iml" afterPath="$PROJECT_DIR$/../server/gameserver.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/pom.xml" afterPath="$PROJECT_DIR$/../server/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketReplicate.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketReplicate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/mechanics/Mechanics.java" afterPath="$PROJECT_DIR$/../server/src/main/java/mechanics/Mechanics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameConstants.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSessionImpl.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSessionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/utils/UniformFoodGenerator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/utils/UniformFoodGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/GameField.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/GameField.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/replication/DefaultReplication.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/DefaultReplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/replication/FileReplicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/FileReplicator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/ticker/Ticker.java" afterPath="$PROJECT_DIR$/../server/src/main/java/ticker/Ticker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/resources/gameConfig.properties" afterPath="$PROJECT_DIR$/../server/src/main/resources/gameConfig.properties" />
     </list>
     <ignored path="zagar-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +81,7 @@
       <file leaf-file-name="PacketHandlerReplicate.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerReplicate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="527">
               <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
               <folding />
             </state>
@@ -40,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/src/zagar/view/Cell.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2261">
-              <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+              <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -49,7 +101,7 @@
       <file leaf-file-name="Food.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/zagar/view/Food.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1802">
+            <state relative-caret-position="1768">
               <caret line="117" column="1" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
               <folding />
             </state>
@@ -80,7 +132,7 @@
         <entry file="file://$PROJECT_DIR$/src/zagar/GameConstants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -179,9 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -382,6 +431,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -679,7 +731,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -731,6 +783,70 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerReplicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/view/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2261">
+          <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/view/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="117" column="1" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/view/GameCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/view/Virus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zagar/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4505">
+          <caret line="292" column="0" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerReplicate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -926,14 +1042,14 @@
     <entry file="file://$PROJECT_DIR$/src/zagar/view/Cell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2261">
-          <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+          <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/zagar/view/Food.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
+        <state relative-caret-position="1768">
           <caret line="117" column="1" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
           <folding />
         </state>
@@ -958,14 +1074,14 @@
     <entry file="file://$PROJECT_DIR$/src/zagar/GameConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/zagar/network/handlers/PacketHandlerReplicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="527">
           <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
           <folding />
         </state>

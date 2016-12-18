@@ -18,19 +18,23 @@ public class PacketReplicate {
     @NotNull
     private final Cell[] cells;
     @NotNull
-    private final pFood[] food;
+    private final pFood[] foodToAdd;
+    @NotNull
+    private final pFood[] foodToRemove;
     @NotNull
     private final pVirus[] virus;
 
-    public PacketReplicate(@NotNull Cell[] cells, @NotNull pFood[] food,@NotNull pVirus[] virus) {
+    public PacketReplicate(@NotNull Cell[] cells, @NotNull pFood[] foodToAdd, @NotNull pFood[] foodToRemove,
+                           @NotNull pVirus[] virus) {
         this.cells = cells;
-        this.food = food;
+        this.foodToAdd = foodToAdd;
+        this.foodToRemove = foodToRemove;
         this.virus = virus;
     }
 
     public void write(@NotNull Session session) throws IOException {
-        String msg = JSONHelper.toJSON(new CommandReplicate(food, cells,virus));
-        //log.info("Sending [" + msg + "]");
+        String msg = JSONHelper.toJSON(new CommandReplicate(foodToAdd, foodToRemove, cells,virus));
+        log.info("Sending [" + msg + "]");
         session.getRemote().sendString(msg);
     }
 }

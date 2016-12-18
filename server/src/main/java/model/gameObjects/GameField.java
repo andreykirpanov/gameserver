@@ -8,7 +8,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Created by User on 10.10.2016.
@@ -20,6 +19,10 @@ public class GameField {
     public final int height;
     @NotNull
     private final CopyOnWriteArrayList<Food> foods = new CopyOnWriteArrayList<>();
+    @NotNull
+    private CopyOnWriteArrayList<Food> foodsToAdd = new CopyOnWriteArrayList<>();
+    @NotNull
+    private CopyOnWriteArrayList<Food> foodsToRemove = new CopyOnWriteArrayList<>();
     @NotNull
     private final List<Virus> virus = new ArrayList<>();
 
@@ -51,6 +54,16 @@ public class GameField {
     public List<Food> getFoods() {
         return foods;
     }
+    @NotNull
+    public List<Food> getFoodsToRemove() {
+        return foodsToRemove;
+    }
+
+    @NotNull
+    public List<Food> getFoodsToAdd() {
+        return foodsToAdd;
+    }
+
 
     @NotNull
     public List<Virus> getVirus() {

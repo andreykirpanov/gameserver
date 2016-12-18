@@ -38,6 +38,7 @@ public class UniformFoodGenerator implements FoodGenerator {
                         newFood.getRadius() + random.nextInt(field.getHeight() - 2 * newFood.getRadius()));
                 newFood.setLocation(newLocation);
                 field.getFoods().add(newFood);
+                field.getFoodsToAdd().add(newFood);
             }
             log.info(toGenerate + " food generated");
         }

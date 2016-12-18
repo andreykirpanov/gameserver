@@ -33,18 +33,22 @@ public class Mechanics extends Service implements Tickable {
     @Override
     public void run() {
         log.info(getAddress() + " started");
-        Ticker ticker = new Ticker(this, 10);
+        Ticker ticker = new Ticker(this, 1);
         ticker.loop();
     }
 
     @Override
     public void tick(long elapsedNanos) {
         /*try {
-            Thread.sleep(1500);
+            //Thread.sleep(10);
         } catch (InterruptedException e) {
             log.error(e);
             Thread.currentThread().interrupt();
             e.printStackTrace();
+        }*/
+
+        log.info("Start replication");
+        //execute all messages from queue
         }*/
         if(times == 64000){
             for(GameSession g:ApplicationContext.get(MatchMaker.class).getActiveGameSessions()){
@@ -55,15 +59,12 @@ public class Mechanics extends Service implements Tickable {
             times=1;
         }
         @NotNull MessageSystem messageSystem = ApplicationContext.get(MessageSystem.class);
+        messageSystem.executeForService(this);
+
         Message message = new ReplicateMsg(this.getAddress());
         messageSystem.sendMessage(message);
         message = new ReplicateLeaderboardMsg(this.getAddress());
         messageSystem.sendMessage(message);
-
-        //execute all messages from queue
-        messageSystem.executeForService(this);
-
-        times++;
     }
 
     public boolean ejectMass(Player player){
