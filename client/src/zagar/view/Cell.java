@@ -1,5 +1,7 @@
 package zagar.view;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import zagar.Game;
 import zagar.Main;
@@ -12,6 +14,7 @@ import java.awt.Polygon;
 import java.awt.image.BufferedImage;
 
 public class Cell {
+  private static final Logger log = LogManager.getLogger(Cell.class);
   public double x, y;
   public int id;
   public float size;
@@ -21,10 +24,10 @@ public class Cell {
   public float sizeRender;
   public double xRender;
   public double yRender;
-  public int mass;
+  public double mass ;
   private float rotation = 0;
 
-  public Cell(double x, double y, float size, int id) {
+  public Cell(double x, double y, float size, int id,String name) {
     this.x = x;
     this.y = y;
     this.size = size;
@@ -32,6 +35,8 @@ public class Cell {
     this.xRender = this.x;
     this.yRender = this.y;
     this.sizeRender = this.size;
+    this.mass = size*size*Math.PI;
+    this.name = name;
   }
 
   public void tick() {
@@ -87,8 +92,7 @@ public class Cell {
       }
       g.fillPolygon(hexagon);
 
-
-      if (this.name.length() > 0 || (this.mass > 30)) {
+      if (this.name.length() > 0 || (this.mass > 3)) {
         Font font = Main.frame.canvas.fontCells;
         BufferedImage img = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
         FontMetrics fm = img.getGraphics().getFontMetrics(font);
