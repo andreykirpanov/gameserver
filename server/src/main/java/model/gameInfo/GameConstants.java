@@ -16,4 +16,5 @@ public interface GameConstants {
     int MAX_FOOD_ON_FIELD = 50;
     int NUMBER_OF_VIRUSES = 10;
     int SERVER_FPS = 30;
+    int SCALE = 10;
 }

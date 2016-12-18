@@ -69,6 +69,7 @@ public class GameSessionImpl implements GameSession {
         for(Player player: players){
             move(player);
             checkFoodCollisions(player);
+            checkCellCollisions(player);
         }
     }
 
@@ -94,6 +95,69 @@ public class GameSessionImpl implements GameSession {
                     field.getFoods().remove(food);
                 }
             }
+        }
+    }
+
+    private void checkCellCollisions(Player player){
+        for(Cell cell: player.getCells()){
+            double lowerX = cell.getLocation().getX() - cell.getRadius() * 10;
+            double upperX = cell.getLocation().getX() + cell.getRadius() * 10;
+            double lowerY = cell.getLocation().getY() - cell.getRadius() * 10;
+            double upperY = cell.getLocation().getY() + cell.getRadius() * 10;
+            for(Player currentPlayer: getPlayers()){
+                if(currentPlayer.equals(player)){
+                    break;
+                }
+                for(Cell currentCell: currentPlayer.getCells()){
+                    double curLowerX = currentCell.getLocation().getX() - cell.getRadius() * 10;
+                    double curUpperX = currentCell.getLocation().getX() + cell.getRadius() * 10;
+                    double curLowerY = currentCell.getLocation().getY() - cell.getRadius() * 10;
+                    double curUpperY = currentCell.getLocation().getY() + cell.getRadius() * 10;
+                    if(((lowerX < curLowerX && curLowerX < upperX) || (lowerX < curUpperX && curUpperX < upperX))
+                            && ((lowerY < curLowerY && curLowerY < upperY) || (lowerY < curUpperY && curUpperY < upperY))){
+                        if((cell.getMass() < currentCell.getMass() && currentCell.getMass() < cell.getMass() * 1.5) ||
+                                (currentCell.getMass() < cell.getMass() && cell.getMass() < currentCell.getMass()*1.5)){
+                            //TODO: lock movements of both cells towards each other
+                        } else {
+                            if(cell.getMass() < currentCell.getMass()){
+                                eatCell(cell, currentCell);
+                            } else {
+                                eatCell(currentCell, cell);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public static void eatCell(Cell small, Cell big){
+        double smallX = small.getLocation().getX();
+        double smallY = small.getLocation().getY();
+        double bigX = big.getLocation().getX();
+        double bigY = big.getLocation().getY();
+        double dx;
+        double dy;
+        int scale = GameConstants.SCALE;
+        if(smallX < bigX){
+            dx = (smallX + small.getRadius() * scale) - (bigX - big.getRadius() * scale);
+        } else {
+            dx = (bigX + big.getRadius() * scale) - (smallX - small.getRadius() * scale);
+        }
+        if(smallY < bigY){
+            dy = (smallY + small.getRadius() * scale) - (bigY - big.getRadius() * scale);
+        } else {
+            dy = (bigY + big.getRadius() * scale) - (smallY - small.getRadius() * scale);
+        }
+        if(dx < 0 || dy < 0){
+            return;
+        }
+        if(dy * dx / scale / scale / Math.pow(2 * small.getRadius(), 2 ) > 1){
+            big.setMass(big.getMass() + small.getMass());
+            small.setMass(0);
+        } else {
+            big.setMass(big.getMass() + (int) (dy * dx / scale / scale / Math.pow(2 * small.getRadius(), 2) * small.getMass()));
+            small.setMass(small.getMass() - (int) (dy * dx / scale / scale / Math.pow(2 * small.getRadius(), 2) * small.getMass()));
         }
     }
 
