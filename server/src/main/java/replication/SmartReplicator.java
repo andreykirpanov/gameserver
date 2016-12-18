@@ -39,26 +39,20 @@ public class SmartReplicator implements Replicator {
                 i++;
             }
 
-            List<Food> currentFood = gameSession.getField().getFoods();
-            List<Food> foodOnPreviousReplica = gameSession.getField().getFoodsOnPreviousReplica();
-
-            List<Food> bufferFoodToAdd = new ArrayList<>(currentFood);
-            bufferFoodToAdd.removeAll(foodOnPreviousReplica);
-            pFood[] foodToAdd = new pFood[bufferFoodToAdd.size()];
+            pFood[] foodToAdd = new pFood[gameSession.getField().getFoodsToAdd().size()];
             i=0;
-            for(Food f: bufferFoodToAdd){
+            for(Food f: gameSession.getField().getFoodsToAdd()){
                 foodToAdd[i]= new pFood(f.getLocation().getX(),f.getLocation().getY());
                 i++;
             }
 
-            List<Food> bufferFoodToRemove = new ArrayList<>(foodOnPreviousReplica);
-            bufferFoodToRemove.removeAll(currentFood);
-            pFood[] foodToRemove = new pFood[bufferFoodToRemove.size()];
+            pFood[] foodToRemove = new pFood[gameSession.getField().getFoodsToRemove().size()];
             i=0;
-            for(Food f: bufferFoodToRemove){
+            for(Food f: gameSession.getField().getFoodsToRemove()){
                 foodToRemove[i]= new pFood(f.getLocation().getX(),f.getLocation().getY());
                 i++;
             }
+
 
             int numberOfCellsInSession = 0;
             for (Player player : gameSession.getPlayers()) {
@@ -83,7 +77,8 @@ public class SmartReplicator implements Replicator {
                     }
                 }
             }
-            gameSession.getField().setFoodsOnPreviousReplica(new CopyOnWriteArrayList<>(currentFood));
+            gameSession.getField().getFoodsToRemove().clear();
+            gameSession.getField().getFoodsToAdd().clear();
         }
     }
 }

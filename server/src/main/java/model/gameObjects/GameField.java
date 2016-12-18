@@ -21,7 +21,9 @@ public class GameField {
     @NotNull
     private final CopyOnWriteArrayList<Food> foods = new CopyOnWriteArrayList<>();
     @NotNull
-    private CopyOnWriteArrayList<Food> foodsOnPreviousReplica = new CopyOnWriteArrayList<>();
+    private CopyOnWriteArrayList<Food> foodsToAdd = new CopyOnWriteArrayList<>();
+    @NotNull
+    private CopyOnWriteArrayList<Food> foodsToRemove = new CopyOnWriteArrayList<>();
     @NotNull
     private final List<Virus> virus = new ArrayList<>();
 
@@ -54,13 +56,15 @@ public class GameField {
         return foods;
     }
     @NotNull
-    public CopyOnWriteArrayList<Food> getFoodsOnPreviousReplica() {
-        return foodsOnPreviousReplica;
+    public List<Food> getFoodsToRemove() {
+        return foodsToRemove;
     }
 
-    public void setFoodsOnPreviousReplica(@NotNull CopyOnWriteArrayList<Food> foodsOnPreviousReplica) {
-        this.foodsOnPreviousReplica = foodsOnPreviousReplica;
+    @NotNull
+    public List<Food> getFoodsToAdd() {
+        return foodsToAdd;
     }
+
 
     @NotNull
     public List<Virus> getVirus() {

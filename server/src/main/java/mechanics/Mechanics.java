@@ -27,7 +27,7 @@ public class Mechanics extends Service implements Tickable {
     @Override
     public void run() {
         log.info(getAddress() + " started");
-        Ticker ticker = new Ticker(this, 20);
+        Ticker ticker = new Ticker(this, 30);
         ticker.loop();
     }
 
@@ -42,14 +42,14 @@ public class Mechanics extends Service implements Tickable {
         }*/
 
         log.info("Start replication");
+        //execute all messages from queue
         @NotNull MessageSystem messageSystem = ApplicationContext.get(MessageSystem.class);
+        messageSystem.executeForService(this);
+
         Message message = new ReplicateMsg(this.getAddress());
         messageSystem.sendMessage(message);
         message = new ReplicateLeaderboardMsg(this.getAddress());
         messageSystem.sendMessage(message);
-
-        //execute all messages from queue
-        messageSystem.executeForService(this);
     }
 
     public boolean ejectMass(Player player){

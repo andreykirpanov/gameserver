@@ -2,27 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a552b9-eebc-4bdb-9c4e-e9222e57d8e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/SmartReplicator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/protocol/CommandReplicate.class" afterPath="$PROJECT_DIR$/target/classes/protocol/CommandReplicate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/network/handlers/PacketHandlerReplicate.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/network/handlers/PacketHandlerReplicate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/target/classes/zagar/view/Food.class" afterPath="$PROJECT_DIR$/../client/target/classes/zagar/view/Food.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/clientConnection/ClientConnectionHandler.class" afterPath="$PROJECT_DIR$/../server/target/classes/clientConnection/ClientConnectionHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/clientConnection/packets/PacketReplicate.class" afterPath="$PROJECT_DIR$/../server/target/classes/clientConnection/packets/PacketReplicate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/leaderboardReplicator/LeaderReplicator.class" afterPath="$PROJECT_DIR$/../server/target/classes/leaderboardReplicator/LeaderReplicator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/matchmaker/MatchMakerImpl.class" afterPath="$PROJECT_DIR$/../server/target/classes/matchmaker/MatchMakerImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/mechanics/Mechanics.class" afterPath="$PROJECT_DIR$/../server/target/classes/mechanics/Mechanics.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameConstants.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameConstants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameSessionImpl.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameInfo/GameSessionImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/model/gameObjects/GameField.class" afterPath="$PROJECT_DIR$/../server/target/classes/model/gameObjects/GameField.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/replication/DefaultReplication.class" afterPath="$PROJECT_DIR$/../server/target/classes/replication/DefaultReplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/replication/FileReplicator.class" afterPath="$PROJECT_DIR$/../server/target/classes/replication/FileReplicator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/target/classes/ticker/Ticker.class" afterPath="$PROJECT_DIR$/../server/target/classes/ticker/Ticker.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/network/handlers/PacketHandlerReplicate.java" afterPath="$PROJECT_DIR$/../client/src/zagar/network/handlers/PacketHandlerReplicate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/zagar/view/Food.java" afterPath="$PROJECT_DIR$/../client/src/zagar/view/Food.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/protocol/CommandReplicate.java" afterPath="$PROJECT_DIR$/src/protocol/CommandReplicate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketReplicate.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/packets/PacketReplicate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/clientConnection/ClientConnectionHandler.java" afterPath="$PROJECT_DIR$/../server/src/main/java/clientConnection/ClientConnectionHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/leaderboardReplicator/LeaderReplicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/leaderboardReplicator/LeaderReplicator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/mechanics/Mechanics.java" afterPath="$PROJECT_DIR$/../server/src/main/java/mechanics/Mechanics.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameConstants.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameConstants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSessionImpl.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameInfo/GameSessionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/GameField.java" afterPath="$PROJECT_DIR$/../server/src/main/java/model/gameObjects/GameField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/replication/DefaultReplication.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/DefaultReplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/replication/FileReplicator.java" afterPath="$PROJECT_DIR$/../server/src/main/java/replication/FileReplicator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/resources/gameConfig.properties" afterPath="$PROJECT_DIR$/../server/src/main/resources/gameConfig.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/src/main/java/ticker/Ticker.java" afterPath="$PROJECT_DIR$/../server/src/main/java/ticker/Ticker.java" />
     </list>
     <ignored path="zagar-protocol.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -507,7 +507,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
