@@ -72,4 +72,5 @@ public class Player {
     public void addMass(int mass){
         cells.get(0).setMass(cells.get(0).getMass()+mass);
     }
+    public int cellsCount(){return cells.size();}
 }

@@ -23,6 +23,6 @@ public interface GameSession {
   GameField getField();
 
   void offerNewLocation(Player player, double dx, double dy);
-
+  void split(Player player,double dx, double dy);
   void tick();
 }
