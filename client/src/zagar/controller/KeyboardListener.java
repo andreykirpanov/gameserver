@@ -16,10 +16,10 @@ public class KeyboardListener implements KeyListener {
       if (Game.socket != null && Game.socket.session != null) {
         if (Game.socket.session.isOpen()) {
           if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            new PacketSplit().write();
+            new PacketSplit(Game.followX,Game.followY).write();
           }
           if (e.getKeyCode() == KeyEvent.VK_W) {
-            new PacketEjectMass().write();
+            new PacketEjectMass(Game.followX,Game.followY).write();
           }
           if (e.getKeyCode() == KeyEvent.VK_T) {
             Game.rapidEject = true;

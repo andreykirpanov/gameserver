@@ -6,6 +6,7 @@ import main.ApplicationContext;
 import matchmaker.MatchMaker;
 import model.gameInfo.GameSession;
 import model.gameInfo.Player;
+import model.gameObjects.EjectedMass;
 import model.gameObjects.Food;
 import model.gameObjects.PlayerCell;
 import model.gameObjects.Virus;
@@ -13,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.websocket.api.Session;
 import protocol.model.Cell;
+import protocol.model.pEjectedMass;
 import protocol.model.pFood;
 import protocol.model.pVirus;
 
@@ -29,6 +31,14 @@ public class DefaultReplication implements Replicator {
     public void replicate() {
         for (GameSession gameSession : ApplicationContext.get(MatchMaker.class).getActiveGameSessions()) {
             int i =0;
+
+            List<EjectedMass> ejectedMasses1 = gameSession.getEjectedMasses();
+            pEjectedMass[] ejectedMasses = new pEjectedMass[ejectedMasses1.size()];
+            for(EjectedMass em: ejectedMasses1){
+                ejectedMasses[i] = new pEjectedMass(em.getLocation().getX(),em.getLocation().getY());
+                i++;
+            }
+
             List<Virus> virus1 = gameSession.getField().getVirus();
             pVirus[] virus = new pVirus[virus1.size()];
             for(Virus v: virus1){
@@ -58,7 +68,7 @@ public class DefaultReplication implements Replicator {
             for (Map.Entry<Player, Session> connection : ApplicationContext.get(ClientConnections.class).getConnections()) {
                 if (gameSession.getPlayers().contains(connection.getKey()) && connection.getValue().isOpen()) {
                     try {
-                        new PacketReplicate(cells, food, new pFood[0], virus).write(connection.getValue());
+                        new PacketReplicate(cells, food, new pFood[0], virus,ejectedMasses).write(connection.getValue());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

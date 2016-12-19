@@ -1,6 +1,7 @@
 package model.gameInfo;
 
 import model.authInfo.Leader;
+import model.gameObjects.EjectedMass;
 import model.gameObjects.GameField;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,6 +24,8 @@ public interface GameSession {
   GameField getField();
 
   void offerNewLocation(Player player, double dx, double dy);
-
+  void ejectMass(Player player, double dx,double dy);
+  void split(Player player,double dx, double dy);
+  List<EjectedMass> getEjectedMasses();
   void tick();
 }

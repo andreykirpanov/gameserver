@@ -15,6 +15,7 @@ public abstract class Cell {
     private int mass;
     private double speed;
 
+
     public Cell(Location location, int mass) {
         this.location = location;
         this.mass = mass;

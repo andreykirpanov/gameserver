@@ -25,6 +25,12 @@ public class Location {
         this.y = y;
     }
 
+    public double range(Location location){
+        double dx = this.x-location.getX();
+        double dy = this.y-location.getY();
+        return Math.sqrt(dx*dx+dy*dy);
+    }
+
     @Override
     public String toString() {
         return "Location{" +

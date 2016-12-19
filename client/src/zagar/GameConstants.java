@@ -19,4 +19,5 @@ public interface GameConstants {
 
   int FOOD_MASS = 10;
   int VIRUS_MASS = 20;
+  int EJECT_PIECE_MASS = (int)0.72*18;
 }

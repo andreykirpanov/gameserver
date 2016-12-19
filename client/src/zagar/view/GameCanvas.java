@@ -1,5 +1,7 @@
 package zagar.view;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import zagar.Game;
 
 import java.awt.BasicStroke;
@@ -15,6 +17,7 @@ import java.util.ConcurrentModificationException;
 import javax.swing.JPanel;
 
 public class GameCanvas extends JPanel {
+  private static final Logger log = LogManager.getLogger(GameCanvas.class);
   private static final long serialVersionUID = 5570080027060608254L;
   private BufferedImage screen;
   private Font font = new Font("Ubuntu", Font.BOLD, 30);
@@ -101,6 +104,14 @@ public class GameCanvas extends JPanel {
       Virus viruss = Game.virus[i3];
       if(viruss !=null){
         viruss.render(g,1);
+      }
+    }
+
+    for(int i3=0; i3<Game.ejectedMasses.length;i3++){
+      EjectedMass em = Game.ejectedMasses[i3];
+      log.error(em);
+      if(em !=null){
+        em.render(g,10);
       }
     }
     g.setFont(font);

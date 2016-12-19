@@ -40,7 +40,7 @@ public class Mechanics extends Service implements Tickable {
 
     @Override
     public void tick(long elapsedNanos) {
-        log.info("Start replication");
+        //log.info("Start replication");
         if(times == 64000){
             for(GameSession g:ApplicationContext.get(MatchMaker.class).getActiveGameSessions()){
                 for(Player p:g.getPlayers()){

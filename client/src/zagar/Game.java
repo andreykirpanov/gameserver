@@ -22,10 +22,7 @@ import zagar.network.packets.PacketMove;
 import zagar.network.packets.PacketEjectMass;
 import org.jetbrains.annotations.NotNull;
 import zagar.util.Reporter;
-import zagar.view.Cell;
-import zagar.view.Food;
-import zagar.view.GameFrame;
-import zagar.view.Virus;
+import zagar.view.*;
 
 import static zagar.GameConstants.*;
 
@@ -38,6 +35,8 @@ public class Game {
   public static volatile Food[] food= new Food[0];
   @NotNull
   public static volatile Virus[] virus = new Virus[0];
+  @NotNull
+  public static volatile EjectedMass[] ejectedMasses = new EjectedMass[0];
   @NotNull
   public static ConcurrentLinkedDeque<Cell> player = new ConcurrentLinkedDeque<>();
   @NotNull
@@ -204,7 +203,7 @@ public class Game {
         (new PacketMove(x, y)).write(socket.session);
 
         if (rapidEject) {
-          new PacketEjectMass().write();
+          new PacketEjectMass(0.1,0.1).write();
         }
       }
     }
@@ -221,9 +220,15 @@ public class Game {
       }
     }
 
-    for(int i = 0; i<virus.length; i++){
+    for(int i = 0; i < virus.length; i++){
       if(virus[i] != null){
         virus[i].tick();
+      }
+    }
+
+    for(int i = 0; i < ejectedMasses.length; i++){
+      if(ejectedMasses[i] != null){
+        ejectedMasses[i].tick();
       }
     }
 

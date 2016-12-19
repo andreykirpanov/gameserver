@@ -18,11 +18,20 @@ import protocol.CommandEjectMass;
 public class PacketHandlerEjectMass {
     public PacketHandlerEjectMass(@NotNull Session session, @NotNull String json) {
 
+        CommandEjectMass commandEjectMass;
+        try{
+            commandEjectMass = JSONHelper.fromJSON(json,CommandEjectMass.class);
+        } catch (JSONDeserializationException e) {
+            e.printStackTrace();
+            return;
+        }
+
         MessageSystem messageSystem = ApplicationContext.get(MessageSystem.class);
         Address from = messageSystem.getService(ClientConnectionServer.class).getAddress();
         Address to = messageSystem.getService(Mechanics.class).getAddress();
         Player currentPlayer = ApplicationContext.get(ClientConnections.class).getConnectedPlayer(session);
-        Message message = new EjectMassMsg(from, to, currentPlayer );
+        Message message = new EjectMassMsg(from, to, currentPlayer, commandEjectMass.getDx(), commandEjectMass.getDy() );
         messageSystem.sendMessage(message);
+
     }
 }

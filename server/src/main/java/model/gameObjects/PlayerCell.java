@@ -27,4 +27,9 @@ public class PlayerCell extends Cell {
 
     public String getName(){return name;}
 
+    public double range(PlayerCell playerCell){
+        double x = this.getLocation().getX()-playerCell.getLocation().getX();
+        double y = this.getLocation().getY()-playerCell.getLocation().getY();
+        return Math.sqrt(x*x+y*y);
+    }
 }

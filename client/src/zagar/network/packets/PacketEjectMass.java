@@ -13,12 +13,17 @@ public class PacketEjectMass {
   @NotNull
   private static final Logger log = LogManager.getLogger(">>>");
 
-  public PacketEjectMass() {
+  private double x;
+  private double y;
+
+  public PacketEjectMass(double x,double y) {
+    this.x = x;
+    this.y = y;
   }
 
   public void write() throws IOException {
-    String msg = JSONHelper.toJSON(new CommandEjectMass());
-    log.info("Sending [" + msg + "]");
+    String msg = JSONHelper.toJSON(new CommandEjectMass(x,y));
+    log.error("Sending [" + msg + "]");
     Game.socket.session.getRemote().sendString(msg);
   }
 }

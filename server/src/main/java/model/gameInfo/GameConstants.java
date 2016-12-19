@@ -16,4 +16,12 @@ public interface GameConstants {
     int MAX_FOOD_ON_FIELD = 50;
     int NUMBER_OF_VIRUSES = 10;
     int SERVER_FPS = 30;
+    int EJECT_LOSE_MASS = 0;
+    int EJECT_PIECE_MASS = (int)0.72*18;
+    int MIN_MASS_FOR_ABILITIES = 0;
+    double EJECTED_DISTANCE = 20;
+    double EJECTED_SPEED = 333*Math.pow(DEFAULT_PLAYER_CELL_MASS, -1/3);
+    /*int EJECT_LOSE_MASS = 18;
+    int EJECT_PIECE_MASS = (int)0.72*18;
+    int MIN_MASS_FOR_ABILITIES = 35;*/
 }

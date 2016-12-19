@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import protocol.model.pEjectedMass;
 import protocol.model.pFood;
 import com.google.gson.JsonObject;
 import org.apache.logging.log4j.LogManager;
@@ -20,6 +21,7 @@ import zagar.util.JSONHelper;
 import zagar.view.Cell;
 import zagar.Game;
 import org.jetbrains.annotations.NotNull;
+import zagar.view.EjectedMass;
 import zagar.view.Food;
 import zagar.view.Virus;
 
@@ -40,6 +42,7 @@ public class PacketHandlerReplicate {
     Food[] foodToAdd = new Food[commandReplicate.getFoodToAdd().length];
     Food[] foodToRemove = new Food[commandReplicate.getFoodToRemove().length];
     Virus[] gameVirus = new Virus[commandReplicate.getVirus().length];
+    EjectedMass[] ejectedMasses = new EjectedMass[commandReplicate.getEjectedMass().length];
     for (int i = 0; i < commandReplicate.getCells().length; i++) {
       protocol.model.Cell c = commandReplicate.getCells()[i];
       gameCells[i] = new Cell(c.getX(), c.getY(), c.getSize(), c.getCellId(),c.getName());
@@ -56,6 +59,10 @@ public class PacketHandlerReplicate {
       pVirus c = commandReplicate.getVirus()[i];
       gameVirus[i] = new Virus(c.getX(), c.getY());
     }
+    for (int i = 0; i < commandReplicate.getEjectedMass().length; i++) {
+      pEjectedMass em = commandReplicate.getEjectedMass()[i];
+      ejectedMasses[i] = new EjectedMass(em.getX(),em.getY());
+    }
     Game.player.clear();
     Collections.addAll(Game.player, gameCells);
     Game.cells = gameCells;
@@ -64,5 +71,6 @@ public class PacketHandlerReplicate {
     newFood.addAll(new ArrayList<>(Arrays.asList(foodToAdd)));
     Game.food = newFood.toArray(new Food[0]);
     Game.virus = gameVirus;
+    Game.ejectedMasses = ejectedMasses;
   }
 }
