@@ -69,7 +69,7 @@ public class Game {
   public AuthClient authClient = new AuthClient();
 
   public Game() {
-    this.gameServerUrl = "ws://" + (JOptionPane.showInputDialog(null, "Host", DEFAULT_GAME_SERVER_HOST + ":" + DEFAULT_GAME_SERVER_PORT));
+    this.gameServerUrl = "ws://" + DEFAULT_GAME_SERVER_HOST + ":" + DEFAULT_GAME_SERVER_PORT;
 
     authenticate();
 
@@ -94,7 +94,14 @@ public class Game {
     while (serverToken == null) {
       AuthOption authOption = chooseAuthOption();
       if (authOption == null) {
-        return;
+        Object[] options = {"Yes", "No"};
+        int isExit = JOptionPane.showOptionDialog(null, "You should log in. Do you want exit?", "Are you sure?",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]  );
+        if(isExit == 0){
+          System.exit(0);
+        } else {
+          continue;
+        }
       }
       this.login = JOptionPane.showInputDialog(null, "Login", DEFAULT_LOGIN);
       String password = (JOptionPane.showInputDialog(null, "Password", DEFAULT_PASSWORD));
@@ -160,15 +167,10 @@ public class Game {
 
     if (socket.session != null && player.size() > 0) {
       float totalSize = 0;
-      int newScore = 0;
       for (Cell c : player) {
         totalSize += c.size;
-        newScore += (c.size * c.size) / 100;
       }
 
-      if (newScore > score) {
-        score = newScore;
-      }
 
       zoomm = GameFrame.size.height / (1024 / Math.pow(Math.min(64.0 / totalSize, 1), 0.4));
 

@@ -15,6 +15,12 @@ public class PacketHandlerLeaderBoard {
       e.printStackTrace();
       return;
     }
+    for(String score: commandLeaderBoard.getLeaderBoard()){
+      String[] splitted = score.split(" : ");
+      if(splitted[0].equals(Game.login)){
+        Game.score = Integer.parseInt(splitted[1]);
+      }
+    }
     Game.leaderBoard = commandLeaderBoard.getLeaderBoard();
   }
 }

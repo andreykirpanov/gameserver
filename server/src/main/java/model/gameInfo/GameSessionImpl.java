@@ -50,10 +50,10 @@ public class GameSessionImpl implements GameSession {
     public void offerNewLocation(Player player, double dx, double dy){
         for(Cell cell: player.getCells()){
             double newX = cell.getLocation().getX() +
-                    Math.signum(dx - cell.getLocation().getX()) * Math.pow(dx - cell.getLocation().getX(), 2/3)*
+                    Math.signum(dx - cell.getLocation().getX()) * Math.pow(dx - cell.getLocation().getX(), 1/2)*
                     cell.getSpeed() / GameConstants.SERVER_FPS;
             double newY = cell.getLocation().getY() +
-                    Math.signum(dy - cell.getLocation().getY()) * Math.pow(dy - cell.getLocation().getY(), 2/3)*
+                    Math.signum(dy - cell.getLocation().getY()) * Math.pow(dy - cell.getLocation().getY(), 1/2)*
                     cell.getSpeed() / GameConstants.SERVER_FPS;
             if(newX - cell.getRadius() < 0 || newX + cell.getRadius() > field.getWidth() ||
                     newY - cell.getRadius() < 0 || newY + cell.getRadius() > field.getHeight()){
@@ -70,9 +70,17 @@ public class GameSessionImpl implements GameSession {
             move(player);
             checkFoodCollisions(player);
             checkCellCollisions(player);
+            updateScore(player);
         }
     }
 
+    public void updateScore(Player player){
+        int score = 0;
+        for(Cell cell: player.getCells()){
+            score += cell.getMass() / 10;
+        }
+        player.setPts(score);
+    }
 
     private void move(Player player){
         for(Cell cell: player.getCells()){

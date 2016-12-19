@@ -105,7 +105,7 @@ public class Cell {
 
         int massSize = fm.stringWidth(mass);
 
-        outlineString(g, mass, x + size / 2 - massSize / 2, y + size / 2 + 17);
+        outlineString(g, String.valueOf(Game.score), x + size / 2 - massSize / 2, y + size / 2 + 17);
       }
     }
   }
