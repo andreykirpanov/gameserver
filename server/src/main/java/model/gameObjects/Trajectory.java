@@ -26,7 +26,7 @@ public class Trajectory {
 
     public Location UpdateLocation() {
         //log.info("range " + cell.getLocation().range(destination));
-        if (cell.getLocation().range(destination) < 15) {
+        if (cell.getLocation().range(destination) < 30) {
             achieved = true;
             return destination;
         }

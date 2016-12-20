@@ -96,10 +96,10 @@ public class GameSessionImpl implements GameSession {
                     }
                 }
             }
-            /*for(i=0; i < player.cellsCount()-1; i++) {
+            for(i=0; i < player.cellsCount()-1; i++) {
                 for (int j = i + 1; j < player.cellsCount(); j++) {
-                    double size1 = player.getCells().get(i).getRadius();
-                    double size2 = player.getCells().get(j).getRadius();
+                    double size1 = 10*player.getCells().get(i).getRadius();
+                    double size2 = 10*player.getCells().get(j).getRadius();
                     if (newLocations[i].range(newLocations[j]) < (size1 + size2) ) {
                         int signX = (int) Math.signum(newLocations[j].getX() - newLocations[i].getX());
                         int signY = (int) Math.signum(newLocations[j].getY() - newLocations[i].getY());
@@ -109,7 +109,7 @@ public class GameSessionImpl implements GameSession {
                         newLocations[j].setLocation(avgX + signX * size2 , avgY + signY * size2 );
                     }
                 }
-            }*/
+            }
             for(i = 0; i < newLocations.length; i++){
                 player.getCells().get(i).setNewLocation(newLocations[i]);
             }
